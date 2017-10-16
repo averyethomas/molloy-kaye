@@ -1,0 +1,142 @@
+@import "base-files/_themeHead.scss";
+@import "base-files/reset";
+
+
+//UNIVERSAL STYLES
+
+//COLOR PALETTE
+$black: #000000;
+$white: #ffffff;
+$blue: rgb(12,36,37);
+$orange: #FF850E;
+
+//TYPOGRAPHY
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700');
+$sansSerif: 'Source Sans Pro', sans-serif;
+
+body{
+  overflow-x: hidden;
+  font-size: 10px;
+}
+
+h1, h2, h3, h4, h5, h6, p, small {
+    font-family: $sansSerif;
+    padding: 0;
+    margin: .5rem 0 2rem 0;
+    color: $blue;
+}
+
+h1 {
+  font-family: $sansSerif;
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 4.5rem;
+  color: $blue;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+h2 {
+    font-size: 2.7rem;
+    letter-spacing: 0.05rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: $blue;
+    padding: 0;
+    margin: 0.5rem 0 1rem;
+    position: relative;
+    
+    &:after{
+        content: '';
+        height: 4px;
+        width: 45px;
+        background-color: $orange;
+        display: block;
+        position: absolute;
+        bottom: -10px;
+    }
+}
+
+h3 {
+    font-size: 1.9rem;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    padding: 5px 0;
+    margin: 0.5rem 0;
+}
+
+h4 {
+    font-size: 1.9rem;
+    font-weight: 600;
+    letter-spacing: 0.05rem;
+    padding: 5px 0;
+    margin: 0.5rem 0;
+}
+
+h5 {
+  font-family: $sansSerif;
+  font-size: 1.8rem;
+  font-weight: 300;
+  line-height: 2rem;
+  color: $black;
+  margin: 0.5rem 0;
+}
+
+h6 {
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 2rem;
+    letter-spacing: 0.05rem;
+    padding: 0;
+    margin: 0.5rem 0;
+    text-transform: uppercase;
+}
+
+p {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    font-weight: 300;
+    letter-spacing: 0.025rem;
+    margin: 0 0 0.5rem;
+    b{
+        font-weight: 600;
+    }
+}
+
+a {
+  font-family: $sansSerif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.8rem;
+  color: $orange;
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+    color: $blue;
+  }
+}
+
+blockquote{
+  font-family: $sansSerif;
+  font-size: 2.5rem;
+  font-weight: 500;
+  line-height: 3rem;
+  margin: 0.5rem auto 2rem;
+
+  cite{
+    font-family: $sansSerif;
+    font-size: 1rem;
+    font-weight: 300;
+    font-style: italic;
+    display: block;
+  }
+}
+
+.container{
+  width: 100%;
+  max-width: 992px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}

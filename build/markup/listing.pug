@@ -1,0 +1,49 @@
+include includes/header.pug
+  
+div.page.listing
+    div.container
+        div.top
+            div.carousel
+                img(src="https://api.crexi.com/tn/a2abc54c8d144f7096b69f4b6ba720cc_1306x734.jpg")
+            div.information
+                h2 Freestanding Starbucks
+                h6 10330 Curry Ford Road Orlando, FL 32825
+                h6 $6,906,050
+                p Cap Rate: 6.00%
+                p Average Cap Rate: 6.62%
+                p NOI: $414,363
+                p Building Size: 16,900 sq. ft.
+                p Lot Size: 2.78 acres
+                p Year Built: 2017
+                p Status: Available
+                div.download(ng-click="downloadModal = !downloadModal")
+                    p Marketing Package
+        div.highlights
+          h6 Investment Highlights
+          ul
+            li 
+              p 15-Year Corporate Backed Absolute Net Lease Featuring 10% Rental Increases Every 5 Years Throughout Initial Term and Options - One of the Nation's Top Collision Repair Companies with More than 500+ Locations Throughout 18 States 
+            li 
+              p Features Easy Access and Excellent Visibility Hard Corner of Old Roswell Rd and Westside Pkwy, with Combined Daily Traffic Counts in Excess of 14,480+ Vehicles 
+            li 
+              p Densely Populated Affluent Area - Features Over 343,064+ People Residing within a 7-Mile Radius and an Average Household Income in excess of $131,611 within 7-Miles 
+            li 
+              p Within a Strong Industrial / Retail Trade Corridor - Close Proximity to Numerous Car Dealerships & Auto Care Stores Including Hennessy Motors, Porsche North Atlanta, Land Rover North Point, Bentley Atlanta, North Point Volvo, North Ga. Auto Sales and More 
+            li 
+              p Close Proximity to Numerous National and Regional Major Traffic Drawing Retailers Including Walmart Supercenter, Lowe's Home Improvement, T.J. Maxx, Michaels and Many More 
+            li 
+              p Close Proximity to North Point Mall, 1.33 Million SF GGP Two-Level Super Regional Center Featuring 138 Variety Shops Including AMC, H&M, Dillard's, Sephora, Von Maur, and More 
+            li 
+              p Located in the Heart of Atlanta's Affluent North Fulton County - Featuring Over 17 Million Square-Feet of Class A Office Space within Minutes of the Location
+        modal(ng-show="downloadModal")
+            form
+                div.field
+                    input(type="text" required placeholder="First Name *")
+                div.field
+                    input(type="text" required placeholder="Last Name *")
+                div.field
+                    input(type="email" required placeholder="Email Address *")
+                a(href="#") SUBMIT &amp; DOWNLOAD
+            div.close(ng-click="downloadModal = !downloadModal")
+                span
+include includes/footer.pug

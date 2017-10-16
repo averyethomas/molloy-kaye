@@ -1,0 +1,269 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700");
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+body h1 {
+  font-size: 5rem;
+  letter-spacing: 0.4rem;
+  text-transform: uppercase;
+  text-align: center;
+  color: #0c2425;
+  padding: 0;
+  margin: 0 0 2rem;
+}
+
+body h2 {
+  font-size: 2.5rem;
+  line-height: 2.6rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #0c2425;
+  padding: 0;
+  margin: 0 0 10px;
+}
+
+@media all and (min-width: 768px){
+  body h2{
+    font-size: 3rem;
+    line-height: 3.1rem;
+  }
+}
+
+body h3 {
+  font-size: 1.9em;
+  letter-spacing: 0.05em;
+  font-weight: 400;
+  padding: 5px 0;
+  margin: 0 0 7px;
+}
+
+body h4 {
+  font-size: 1.5em;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  padding: 0;
+  margin: 0 0 5px;
+}
+
+body h5 {
+  font-size: 1.25em;
+  font-weight: 300;
+  line-height: 1em;
+  letter-spacing: 0.05em;
+  padding: 0;
+  margin: 0 0 10px;
+}
+
+body h6 {
+  font-size: 1.25em;
+  font-weight: 600;
+  line-height: 1em;
+  letter-spacing: 0.05em;
+  padding: 0;
+  margin: 0 0 10px;
+  text-transform: uppercase;
+}
+
+body p {
+  font-size: 1em;
+  font-weight: 300;
+  letter-spacing: 0.025em;
+  padding: 0;
+  margin: 0 0 5px;
+}
+
+body a {
+  text-decoration: none;
+  font-weight: 300;
+  color: #0c2425;
+}
+
+.container {
+  max-width: 992px;
+  margin: 0 auto;
+  padding: 0 10px;
+  position: relative;
+}
+
+nav {
+  border-bottom: 4px solid #0c2425;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+nav .container .logo {
+  display: inline-block;
+  padding: 3px 0;
+  vertical-align: middle;
+}
+
+nav .container .logo img {
+  display: block;
+  width: 100px;
+}
+
+nav .container ul {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  vertical-align: middle;
+  float: right;
+}
+
+nav .container ul li {
+  display: inline-block;
+  padding: 5px 10px;
+  float: none;
+}
+
+nav .container ul li a {
+  color: #0c2425;
+  font-family: "Source Sans Pro", sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+.page {
+  padding: 30px 0;
+}
+
+.page .listings-container {
+  text-align: center;
+}
+
+.page .listings-container .listing {
+  width: 100%;
+  max-width: 350px;
+  display: block;
+  margin: 0 auto 20px;
+  text-align: left;
+  position: relative;
+  vertical-align: top;
+}
+
+.page .listings-container .listing.available .image h4 {
+  background-color: rgba(255, 113, 14, 0.8);
+}
+
+.page .listings-container .listing .image {
+  width: 100%;
+  height: 200px;
+  background: no-repeat 50% 50%;
+  background-size: cover;
+  position: relative;
+}
+
+.page .listings-container .listing .image h4 {
+  position: absolute;
+  bottom: 0;
+  padding: 5px 10px;
+  margin: 0;
+  color: #fff;
+  background: rgba(12, 36, 37, 0.8);
+}
+
+.page .listings-container .listing h3 {
+  border-bottom: 3px solid #0c2425;
+}
+
+.page .listings-container .listing a {
+  border: 1px solid #0c2425;
+  padding: 3px 10px;
+  color: #0c2425;
+  margin: 10px 0;
+  text-transform: uppercase;
+  display: block;
+  width: 85px;
+  transition: all 0.25s ease-in;
+}
+
+.page .listings-container .listing a:hover {
+  color: #fff;
+  background-color: #0c2425;
+}
+
+@media all and (min-width: 768px) {
+  .page .listings-container .listing {
+    display: inline-block;
+    margin: 20px;
+  }
+}
+
+.page.individual-listing .top {
+  overflow: hidden;
+}
+
+.page.individual-listing .top .carousel img {
+  width: 100%;
+  display: block;
+}
+
+@media all and (min-width: 992px) {
+  .page.individual-listing .top .carousel {
+    width: 55%;
+    display: inline-block;
+    float: right;
+  }
+}
+
+.page.individual-listing .top .information {
+  margin: 20px 0 0;
+}
+
+@media all and (min-width: 992px) {
+  .page.individual-listing .top .information {
+    width: 40%;
+    display: inline-block;
+    float: left;
+    margin: 0;
+  }
+}
+
+.page.individual-listing .top .information h2 {
+  position: relative;
+  display: block;
+  margin: 0 0 15px;
+}
+
+.page.individual-listing .top .information h2:after {
+  content: '';
+  height: 4px;
+  width: 45px;
+  background-color: #FF850E;
+  display: block;
+  position: absolute;
+  bottom: -5px;
+}
+
+.page.individual-listing .top .information a {
+  border: 1px solid #FF850E;
+  background-color: #FF850E;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  margin: 10px 0;
+  display: block;
+  width: 143px;
+  color: #fff;
+  transition: all 0.25s ease-in;
+}
+
+.page.individual-listing .top .information a:hover {
+  color: #FF850E;
+  background-color: #fff;
+}
+
+.page.individual-listing .highlights {
+  clear: both;
+  margin: 30px 0 0;
+  display: block;
+}

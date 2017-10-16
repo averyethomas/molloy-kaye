@@ -1,0 +1,22 @@
+include includes/header.pug
+  
+div.page.contact
+    div.container
+        h1 Contact
+        div.contact-container
+          div.map
+          div.contact-form
+            form
+              div.field
+                input(type="text" required placeholder="First Name *")
+              div.field
+                input(type="text" required placeholder="Last Name *")
+              div.field
+                input(type="email" required placeholder="Email Address *")
+              div.field
+                input(type="tel" required placeholder="Phone Number *")
+              div.field
+                textarea(required placeholder="Your Message Here*" rows="7")
+              button.cta SUBMIT  
+       
+include includes/footer.pug

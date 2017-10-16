@@ -1,12 +1,12 @@
 {
-  "name": "ProjectStart",
+  "name": "WP-Start",
   "version": "1.0.0",
-  "description": "A quick and effecient way to start projects",
+  "description": "A quick way to get started with a custom wordpress theme.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "averyethomas <averyethomas@gmail.com>",
+  "author": "Avery Thomas <averyethomas@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "gulp": "*",

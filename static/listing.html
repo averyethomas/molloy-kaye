@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--STYLES-->
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <!--JAVASCRIPT-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js" type="text/javascript"></script>
+    <script src="assets/js/app.js" type="text/javascript"></script>
+  </head>
+  <body ng-app="angularApp" ng-controller="mainCtrl" ng-class="{'navOpen' : navToggle}">
+    <nav>
+      <div class="container">
+        <div class="logo"><a href="index.html">Logo</a></div>
+        <div class="mobileMenu" ng-click="navToggle = ! navToggle" ng-class="{'navOpen' : navToggle}"><span></span></div>
+        <ul ng-class="{'navOpen' : navToggle}">
+          <li><a href="single.html">About</a></li>
+          <li><a href="single-hero.html">Services</a></li>
+          <li><a href="listings.html">Listings</a></li>
+          <li><a href="press.html">Press</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </body>
+</html>
+<div class="page listing">
+  <div class="container">
+    <div class="top">
+      <div class="carousel"><img src="https://api.crexi.com/tn/a2abc54c8d144f7096b69f4b6ba720cc_1306x734.jpg"></div>
+      <div class="information">
+        <h2>Freestanding Starbucks</h2>
+        <h6>10330 Curry Ford Road Orlando, FL 32825</h6>
+        <h6>$6,906,050</h6>
+        <p>Cap Rate: 6.00%</p>
+        <p>Average Cap Rate: 6.62%</p>
+        <p>NOI: $414,363</p>
+        <p>Building Size: 16,900 sq. ft.</p>
+        <p>Lot Size: 2.78 acres</p>
+        <p>Year Built: 2017</p>
+        <p>Status: Available</p>
+        <div class="download" ng-click="downloadModal = !downloadModal">
+          <p>Marketing Package</p>
+        </div>
+      </div>
+    </div>
+    <div class="highlights">
+      <h6>Investment Highlights</h6>
+      <ul>
+        <li> 
+          <p>15-Year Corporate Backed Absolute Net Lease Featuring 10% Rental Increases Every 5 Years Throughout Initial Term and Options - One of the Nation's Top Collision Repair Companies with More than 500+ Locations Throughout 18 States </p>
+        </li>
+        <li> 
+          <p>Features Easy Access and Excellent Visibility Hard Corner of Old Roswell Rd and Westside Pkwy, with Combined Daily Traffic Counts in Excess of 14,480+ Vehicles </p>
+        </li>
+        <li> 
+          <p>Densely Populated Affluent Area - Features Over 343,064+ People Residing within a 7-Mile Radius and an Average Household Income in excess of $131,611 within 7-Miles </p>
+        </li>
+        <li> 
+          <p>Within a Strong Industrial / Retail Trade Corridor - Close Proximity to Numerous Car Dealerships & Auto Care Stores Including Hennessy Motors, Porsche North Atlanta, Land Rover North Point, Bentley Atlanta, North Point Volvo, North Ga. Auto Sales and More </p>
+        </li>
+        <li> 
+          <p>Close Proximity to Numerous National and Regional Major Traffic Drawing Retailers Including Walmart Supercenter, Lowe's Home Improvement, T.J. Maxx, Michaels and Many More </p>
+        </li>
+        <li> 
+          <p>Close Proximity to North Point Mall, 1.33 Million SF GGP Two-Level Super Regional Center Featuring 138 Variety Shops Including AMC, H&M, Dillard's, Sephora, Von Maur, and More </p>
+        </li>
+        <li> 
+          <p>Located in the Heart of Atlanta's Affluent North Fulton County - Featuring Over 17 Million Square-Feet of Class A Office Space within Minutes of the Location</p>
+        </li>
+      </ul>
+    </div>
+    <modal ng-show="downloadModal">
+      <form>
+        <div class="field">
+          <input type="text" required placeholder="First Name *">
+        </div>
+        <div class="field">
+          <input type="text" required placeholder="Last Name *">
+        </div>
+        <div class="field">
+          <input type="email" required placeholder="Email Address *">
+        </div><a href="#">SUBMIT &amp; DOWNLOAD</a>
+      </form>
+      <div class="close" ng-click="downloadModal = !downloadModal"><span></span></div>
+    </modal>
+  </div>
+</div>
+<footer>
+  <div class="container">  
+    <div class="footerSection">
+      <h3>LOGO</h3>
+      <p>&copy; Copyright 2017, Molloy Kaye.</p>
+    </div>
+  </div>
+</footer>

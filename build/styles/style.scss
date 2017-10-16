@@ -1,52 +1,836 @@
-@import "base";
+@import "base-files/base";
 
-/* http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+.navOpen{
+  overflow-y: hidden;
+  
+  nav{
+    overflow: visible;
+  }
+}
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
+nav{
+  border-bottom: 4px solid $blue;
   padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block;
-}
-body {
-  line-height: 1;
-}
-ol, ul {
-  list-style: none;
-}
-blockquote, q {
-  quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+  background: $white;
+  z-index: 100;
+  
+  .container{
+ 
+    .logo{
+      display: inline-block;
+      padding: 3px 0;
+      a{
+        font-size: 2rem;
+        text-transform: uppercase;
+        margin: 0;
+        padding: 12px 0;
+        display: block;
+        font-weight: 700;
+        color: $blue;
+      }
+      
+      img{
+        display: block;
+        width: 100px;
+      }
+    }
+  
+    .mobileMenu{
+      display: inline-block;
+      width: 35px;
+      height: 35px;
+      float: right;
+      z-index: 1000;
+      position: relative;
+      top: 5px;
+
+      @media all and (min-width: 768px){
+        display: none;
+      }
+
+      span{
+        position: absolute;
+        height: .3rem;
+        width: 2rem;
+        right: 0;
+        top: 50%;
+        margin-top: -1px;
+        background: $blue;
+
+        &:before{
+          position: absolute;
+          content:"";
+          height: .3rem;
+          width: 2rem;
+          top: -10px;
+          display: block;
+          background: $blue;
+          transition: transform 0.3s, top 0.3s 0.3s;
+        }
+
+        &:after{
+          position: absolute;
+          content:"";
+          height: .3rem;
+          width: 2rem;
+          top: 10px;
+          display: block;
+          background: $blue;
+          transition: transform 0.3s, top 0.3s 0.3s;
+        }
+      }
+
+      &.navOpen{
+        span{
+          background: transparent;
+
+          &:before{
+            top:0;
+            background: $white;
+            height: .3rem;
+            transform: rotate(45deg);
+            transition: top 0.3s, transform 0.3s 0.3s;
+          }
+
+          &:after{
+            top:0;
+            background: $white;
+            height: .3rem;
+            transform: rotate(-45deg);
+            transition: top 0.3s, transform 0.3s 0.3s;
+          }
+        }
+      }
+
+      }
+    ul{
+      background: transparent;
+      position: absolute;
+      top: -20px;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: calc(100vh + 20px);
+      z-index: 500;
+      text-align: center;
+      padding: 3.25rem 0 0 0;
+      transition: background 0.3s ease-in;
+      display: none;
+
+      &.navOpen{
+        display: block;
+        background: rgba($blue,0.9);
+      }
+
+      li{
+        display: block;
+        z-index: 20;
+        padding: 1rem 0;
+
+        a{
+          color: $white;
+          font-size: 2rem;
+          font-weight: 500;
+          text-transform: uppercase;
+        }
+      }
+
+      @media all and (min-width: 768px){
+        float: right;
+        display: inline-block;
+        position: relative;
+        padding: 0;
+        height: auto;
+        width: auto;
+        transition: none;
+        background: transparent;
+        top: 0;
+
+        &.navOpen{
+          background: transparent;
+        }
+
+        li{
+          display: inline-block;
+          padding: 10px;
+
+          &:last-of-type{
+            padding: 10px 0 10px 10px;
+          }
+
+          a{
+            font-size: 1.4rem;
+            color: $blue;
+            font-weight: 500;
+
+            &:hover{
+              color: $orange;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
-//Page styles
+.page{
+  padding: 3rem 0;
+  
+  &.home{
+    .hero{
+      position: relative;
+      top: -10px;
+      height: 85vh;
+      background: linear-gradient(rgba($blue, 0.25), rgba($blue, 0.4)), url(http://www.karenatlantahomes.com/wp-content/uploads/2017/04/image1.jpeg) 50% 50% no-repeat;
+      background-size: cover;
+      
+      .text{
+        color: $white;
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        
+        h1{
+          color: $white;
+        }
+        h3{
+          color: $white;
+        }
+      }
+    }
+    .intro{
+      position: relative;
+      top: -10px;
+      padding: 2rem 0;
+      background: $blue;
+      margin: 0 0 2rem;
+      
+      h1{
+        color: $white;
+        font-size: 2.8rem;
+        margin: 0 0 1rem;
+      }
+      
+      h6{
+        text-transform: none;
+        color: $white;
+        font-weight: 300;
+      }
+      
+    }
+    
+    .listings{
+      text-align: center;
+      h2{
+        text-align: center;
+        &:after{
+          display: none;
+        }
+      }
+      
+      .listing{
+          width: 100%;
+          max-width: 350px;
+          display: block;
+          margin: 0 auto 20px;
+          text-align: left;
+          position: relative;
+          vertical-align: top;
+          
+          &.available{
+            .image{
+              h5{
+                background-color: rgba(255,113,14,0.8);
+              }
+            }
+          }
+          
+          .image{
+            width: 100%;
+            height: 200px;
+            background: no-repeat 50% 50%;
+            background-size: cover;
+            position: relative;
+            
+            h5{
+              position: absolute;
+              bottom: 0;
+              padding: 5px 10px;
+              margin: 0;
+              color: #fff;
+              background: rgba(12,36,37,0.8);
+            }
+          }
+            
+          h4{
+            border-bottom: 3px solid $blue;
+          }
+          
+          a{
+            border: 2px solid $blue;
+            padding: 3px 10px;
+            color: $blue;
+            margin: 1.2rem 0;
+            text-transform: uppercase;
+            display: block;
+            width: 130px;
+            transition: all 0.25s ease-in;
+              
+            &:hover{
+              color: #fff;
+              background-color: $blue;
+            }
+          }
+            
+          @media all and (min-width: 768px){
+            display: inline-block;
+            margin: 20px;
+          }
+        }
+      
+    }
+  }
+  
+  &.has-hero{
+    padding: 0 0 3rem;
+  }
+  
+  &.single{
+    .hero{
+      position: relative;
+      top: -10px;
+      min-height: 200px;
+      background: linear-gradient(rgba($blue, 0.25), rgba($blue, 0.4)), url(http://www.karenatlantahomes.com/wp-content/uploads/2017/04/image1.jpeg) 50% 50% no-repeat;
+      background-size: cover;
+      margin: 0 0 2rem;
+      
+      .container{
+        h1{
+          color: $white;
+          padding: 4rem 0 0;
+          margin: 0;
+        }
+      }
+      
+      @media all and (min-width: 768px){
+        min-height: 350px;
+        
+        .container{
+          h1{
+            padding: 8rem 0 0;
+            margin: 0;
+          }
+        }
+      }
+      
+      
+    }
+    
+    .team-container{
+      padding: 3rem 0 0;
+      h2{
+        text-align: center;
+        margin: 0 0 3rem;
+        &:after{
+          display: none;
+        }
+      }
+      .team-member{
+        text-align: center;
+        max-width: 300px;
+        padding: 1rem;
+        margin: 0 auto 2rem;
+        
+        @media all and (min-width: 768px){
+          display: inline-block;
+          margin: 0 1rem 2rem 0;
+          width: calc((100%/2) - 20px);
+          vertical-align: top;
+          max-width: 500px;
+          
+          &:nth-of-type(2n + 2){
+            margin: 0 0 2rem 1rem;
+          }
+          
+          
+        }
+        @media all and (min-width: 992px){
+          width: calc((100%/3) - 23px);
+            
+          &:nth-of-type(3n + 2){
+            margin: 0 1rem 2rem;
+          }
+          &:nth-of-type(3n + 3){
+            margin: 0 0 2rem 1rem;
+          }
+        }
+        .photo{
+          width: 200px;
+          height: 200px;
+          border-radius: 150px;
+          background-color: #cecece;
+          margin: 0 auto;
+        }
+        
+        a{
+          display: block;
+          margin: 0 0 0.5rem;
+          text-align: left;
+        }
+        
+        p{
+          text-align: left;
+        }
+      }
+    }
+  }
+  
+  &.press{
+    .container{
+      .category{
+        padding: 0 0 2.5rem;
+        
+        h2{
+          margin: 0.5rem 0 2.5rem;
+        }
+        .post{
+          border: 1px solid $blue;
+          margin: 0 auto 1.5rem;
+          max-width: 300px;
+          
+          img{
+            width: 100%;
+          }
+          
+          .text{
+            padding: 1rem;
+          }
+          
+          @media all and (min-width: 768px){
+            display: inline-block;
+            width: calc((100%/3) - 25px);
+            vertical-align: top;
+            margin: 0 1rem 1rem;
+            max-width: 500px;
+            
+            &:nth-of-type(3n + 1){
+              margin: 0 1rem 1rem 0;
+            }
+            
+            &:nth-of-type(3n + 3){
+              margin: 0 0 1rem 1rem;
+            }
+          }
+        }
+        .load-more{
+          width: 200px;
+          border: 2px solid $orange;
+          background: $orange;
+          text-align: center;
+          margin: 2.5rem auto;
+          padding: 5px 0;
+          transition: all 0.25s ease;
+          
+          h6{
+            margin: 0;
+            color: $white;
+          }
+          
+          &:hover{
+            border: 2px solid $orange;
+            background: $white;
+            cursor: pointer;
+            
+            h6{
+              color: $orange;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  &.listings{
+     .listings-container{
+        text-align: center;
+
+        .listing{
+          width: 100%;
+          max-width: 350px;
+          display: block;
+          margin: 0 auto 20px;
+          text-align: left;
+          position: relative;
+          vertical-align: top;
+          
+          &.available{
+            .image{
+              h5{
+                background-color: rgba(255,113,14,0.8);
+              }
+            }
+          }
+          
+          .image{
+            width: 100%;
+            height: 200px;
+            background: no-repeat 50% 50%;
+            background-size: cover;
+            position: relative;
+            
+            h5{
+              position: absolute;
+              bottom: 0;
+              padding: 5px 10px;
+              margin: 0;
+              color: #fff;
+              background: rgba(12,36,37,0.8);
+            }
+          }
+            
+          h4{
+            border-bottom: 3px solid $blue;
+          }
+          
+          a{
+            border: 2px solid $blue;
+            padding: 3px 10px;
+            color: $blue;
+            margin: 1.2rem 0;
+            text-transform: uppercase;
+            display: block;
+            width: 130px;
+            transition: all 0.25s ease-in;
+              
+            &:hover{
+              color: #fff;
+              background-color: $blue;
+            }
+          }
+            
+          @media all and (min-width: 768px){
+            display: inline-block;
+            margin: 20px;
+          }
+        }
+      }
+  }
+
+  &.listing{
+    .top{
+      overflow: hidden;
+      margin: 0 0 2.5rem;
+      display: block;
+      .carousel{
+        img{
+          width: 100%;
+          display: block;
+        }
+        @media all and (min-width: 992px){
+          width: 55%;
+          display: inline-block;
+          float: right;
+        }
+      }
+      .information{
+        margin: 20px 0 0;
+        @media all and (min-width: 992px){
+          width: 40%;
+          display: inline-block;
+          float: left;
+          margin: 0;
+      }
+        h2{
+          font-size: 2.5rem;
+          position: relative;
+          display: block;
+          margin: 0 0 15px;
+        }
+        .download{
+          border: 2px solid $orange;
+          background-color: $orange;
+          text-transform: uppercase;
+          padding: 3px 10px;
+          margin: 10px 0;
+          display: block;
+          width: 210px;
+          cursor: pointer;
+          transition: all 0.25s ease-in;
+          
+          p{
+            color: $white;
+            margin: 0;
+            font-weight: 500;
+          }
+        
+          &:hover{
+            background-color: #fff;
+
+            p{
+              color: $orange;
+            }
+          }
+         
+        }
+      }
+      
+    }
+    .highlights{
+      clear: both;
+      display: block;
+      
+      ul{
+        padding: 0 0 0 1.5rem
+      }
+    }
+    modal{
+      position: fixed;
+      top: 10vh;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      width: 85%;
+      max-width: 700px;
+      background: rgba(12,36,37, 0.95);
+      padding: 3rem 2rem 1rem;
+      box-shadow:0 4px 10px 4px rgba($blue,.3);
+      
+      @media all and (min-width: 768px){
+        padding: 4rem 3rem 3rem;
+      }
+      
+      form{
+        .field{
+          
+          @media all and (min-width: 768px){
+            &:nth-of-type(1){
+              display: inline-block;
+              width: calc(50% - 18px);
+              margin: 0 1rem 0 0;
+            }
+            &:nth-of-type(2){
+              display: inline-block;
+              width: calc(50% - 18px);
+              margin: 0 0 0 1rem;
+            }
+          }
+          input{
+            position: relative;
+            border: 1px solid $white;
+            padding: 7px 10px;
+            margin: 0 0 1rem;
+            width: 100%;
+            background: transparent;
+            color: $white;
+              
+            &:active, &:focus {
+              border: 1px solid $orange;
+              
+              &::placeholder{
+                visibility: hidden;
+              }
+            }
+            
+            &::placeholder{
+              color: $white;
+              font-size: 0.8rem;
+            }
+          }
+          }
+          a{
+            border: 2px solid $orange;
+            color: $white;
+            width: 200px;
+            display: block;
+            margin: 1rem auto 0;
+            background: $orange;
+            text-align: center;
+            padding: 3px;
+            
+            &:hover{
+              background: transparent;
+            }
+        }
+      }
+      .close{
+          width: 35px;
+          height: 35px;
+          position: absolute;
+          top: 10px;
+          right: 10px;
+            
+          span{
+            display: block;
+            position: relative;
+              
+            &:before, &:after{
+              position: absolute;
+              top:15px;
+              right: 6px;
+              content:"";
+              height: .2rem;
+              width: 1.5rem;
+              display: block;
+              background: $white; 
+            }
+            &:before{
+              transform: rotate(45deg);
+            }
+            &:after{
+              transform: rotate(-45deg);
+            }
+          }
+          
+          &:hover{
+            span{
+              &:before, &:after{
+                background: $orange;
+              }
+            }
+          }
+        }
+    } 
+  }
+
+  &.contact{
+    .contact-container{
+      width: 100%;
+      overflow: hidden;
+      background: #cecece;
+      
+      .map{
+        min-height: 200px;
+        width: 100%;
+        display: block;
+        background: #cecece;
+
+        @media all and (min-width: 768px){
+          width: 50%;
+          float: left;
+          height: 100%;
+        }
+      }
+      .contact-form{
+        background: $blue;
+        width: 100%;
+        padding: 1rem;
+        
+        @media all and (min-width: 768px){
+          width: 50%;
+          float: right;
+        }
+        
+        form{
+          .field{
+            margin: 0;
+            @media all and (min-width: 768px){
+              &:nth-of-type(1){
+                display: inline-block;
+                width: calc(50% - 18px);
+                margin: 0 1rem 0 0;
+              }
+              &:nth-of-type(2){
+                display: inline-block;
+                width: calc(50% - 18px);
+                margin: 0 0 0 1rem;
+              }
+            }
+            input, textarea{
+              position: relative;
+              border: 1px solid $white;
+              padding: 7px 10px;
+              margin: 0 0 1rem;
+              width: 100%;
+              background: transparent;
+              color: $white;
+                
+              &:active, &:focus {
+                border: 1px solid $orange;
+                
+                &::placeholder{
+                  visibility: hidden;
+                }
+              }
+            
+              &::placeholder{
+                color: $white;
+                font-size: 0.8rem;
+              }
+            }
+          }
+          button{
+            font-family: $sansSerif;
+            display: block;
+            border: 2px solid $orange;
+            color: $white;
+            width: 200px;
+            display: block;
+            margin: 1rem auto 0;
+            background: $orange;
+            text-align: center;
+            padding: 3px;
+            font-size: 1.2rem;
+            font-weight: 500;
+            cursor: pointer;
+              
+            &:hover{
+             background: transparent;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+footer{
+  padding: 1rem 0;
+  background-color: $blue;
+  text-align: center;
+  
+  .footerSection{
+    text-align: center;
+    margin: 0 auto;
+    
+/*    @media all and (min-width: 768px){
+      display: inline-block;
+      width: calc(100%/4);
+    }
+    &:nth-of-type(1){
+      @media all and (min-width: 768px){
+        text-align: left;
+        float: left;
+      }
+    }
+    &:nth-of-type(2){
+      @media all and (min-width: 768px){
+        text-align: right;
+        float: right;
+      }
+    }*/
+    h3{
+      color: $white;
+    }
+    p{
+      color: $white;
+      font-size: 0.8rem;
+      line-height: 1rem;
+    }
+    a{
+      font-size: 0.8rem;
+      line-height: 1rem;
+      color: $white;
+      display: block;
+      margin: 0 0 0.5rem;
+      
+      &:hover{
+        color: $orange;
+      }
+    }
+  }
+}
