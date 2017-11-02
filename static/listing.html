@@ -15,7 +15,7 @@
         <div class="logo"><a href="index.html">Logo</a></div>
         <div class="mobileMenu" ng-click="navToggle = ! navToggle" ng-class="{'navOpen' : navToggle}"><span></span></div>
         <ul ng-class="{'navOpen' : navToggle}">
-          <li><a href="single.html">About</a></li>
+          <li><a href="single.html">About Us</a></li>
           <li><a href="single-hero.html">Services</a></li>
           <li><a href="listings.html">Listings</a></li>
           <li><a href="press.html">Press</a></li>
@@ -28,11 +28,25 @@
 <div class="page listing">
   <div class="container">
     <div class="top">
-      <div class="carousel"><img src="https://api.crexi.com/tn/a2abc54c8d144f7096b69f4b6ba720cc_1306x734.jpg"></div>
+      <div class="gallery" ng-controller="galleryCtrl">
+        <div class="row single">
+          <div class="image" style="background-image: url(https://api.crexi.com/tn/a2abc54c8d144f7096b69f4b6ba720cc_1306x734.jpg);"><img src="https://api.crexi.com/tn/a2abc54c8d144f7096b69f4b6ba720cc_1306x734.jpg"></div>
+        </div>
+        <div class="row triple">
+          <div class="image" style="background-image: url(http://images4.showcase.com/i2/3D49-Y70WKgQ_RgDaqpPViD0ttARyipCqsM2A792bBA/106/image.jpg);"><img src="http://images4.showcase.com/i2/3D49-Y70WKgQ_RgDaqpPViD0ttARyipCqsM2A792bBA/106/image.jpg"></div>
+          <div class="image" style="background-image: url(http://www.disneyfoodblog.com/wp-content/uploads/2014/05/downtown-disney-west-side-starbucks-orlando-indoor-seating-2-600x400.jpg?b02ebe);"><img src="http://www.disneyfoodblog.com/wp-content/uploads/2014/05/downtown-disney-west-side-starbucks-orlando-indoor-seating-2-600x400.jpg?b02ebe"></div>
+          <div class="image" style="background-image: url(https://i.pinimg.com/originals/f9/d3/23/f9d3231b2e0596a961c72f83f2cdceb4.jpg);"><img src="https://i.pinimg.com/originals/f9/d3/23/f9d3231b2e0596a961c72f83f2cdceb4.jpg"></div>
+        </div>
+        <div class="row double">
+          <div class="image" style="background-image: url(http://images3.showcase.com/i2/RA0keVKgQrR-1ovX7AIG1MvXQ4YkoJwKGHP06ojwXBE/106/image.jpg);"><img src="http://images3.showcase.com/i2/RA0keVKgQrR-1ovX7AIG1MvXQ4YkoJwKGHP06ojwXBE/106/image.jpg"></div>
+          <div class="image" style="background-image: url(http://images2.showcase.com/i2/ts151_9sNLSzvBCo61TMsOOOi13EQBlHtViilzEeyHM/106/image.jpg);"><img src="http://images2.showcase.com/i2/ts151_9sNLSzvBCo61TMsOOOi13EQBlHtViilzEeyHM/106/image.jpg"></div>
+        </div>
+      </div>
       <div class="information">
         <h2>Freestanding Starbucks</h2>
-        <h6>10330 Curry Ford Road Orlando, FL 32825</h6>
+        <h6>10330 Curry Ford Road<br>Orlando, FL 32825</h6>
         <h6>$6,906,050</h6>
+        <p>Single-Tenant</p>
         <p>Cap Rate: 6.00%</p>
         <p>Average Cap Rate: 6.62%</p>
         <p>NOI: $414,363</p>
@@ -40,8 +54,8 @@
         <p>Lot Size: 2.78 acres</p>
         <p>Year Built: 2017</p>
         <p>Status: Available</p>
-        <div class="download" ng-click="downloadModal = !downloadModal">
-          <p>Marketing Package</p>
+        <div class="download">
+          <button class="cta" ng-click="downloadModal = !downloadModal">Marketing Package</button>
         </div>
       </div>
     </div>
@@ -73,15 +87,31 @@
     </div>
     <modal ng-show="downloadModal">
       <form>
-        <div class="field">
-          <input type="text" required placeholder="First Name *">
+        <div class="row double">
+          <div class="field">
+            <input type="text" required placeholder="First Name *">
+          </div>
+          <div class="field">
+            <input type="text" required placeholder="Last Name *">
+          </div>
         </div>
-        <div class="field">
-          <input type="text" required placeholder="Last Name *">
+        <div class="row double">
+          <div class="field">
+            <input type="tel" required placeholder="Phone Number *">
+          </div>
+          <div class="field">
+            <select>
+              <option value="" disabled selected>Select *</option>
+              <option>Principal</option>
+              <option>Broker</option>
+            </select>
+          </div>
         </div>
-        <div class="field">
-          <input type="email" required placeholder="Email Address *">
-        </div><a href="#">SUBMIT &amp; DOWNLOAD</a>
+        <div class="row"> 
+          <div class="field">
+            <input type="email" required placeholder="Email Address *">
+          </div><a class="cta" href="#">SUBMIT &amp; DOWNLOAD</a>
+        </div>
       </form>
       <div class="close" ng-click="downloadModal = !downloadModal"><span></span></div>
     </modal>
@@ -90,8 +120,7 @@
 <footer>
   <div class="container">  
     <div class="footerSection">
-      <h3>LOGO</h3>
-      <p>&copy; Copyright 2017, Molloy Kaye.</p>
+      <h3>LOGO</h3><small>&copy; Copyright 2017, Molloy Kaye.</small>
     </div>
   </div>
 </footer>

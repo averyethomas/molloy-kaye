@@ -15,7 +15,7 @@
         <div class="logo"><a href="index.html">Logo</a></div>
         <div class="mobileMenu" ng-click="navToggle = ! navToggle" ng-class="{'navOpen' : navToggle}"><span></span></div>
         <ul ng-class="{'navOpen' : navToggle}">
-          <li><a href="single.html">About</a></li>
+          <li><a href="single.html">About Us</a></li>
           <li><a href="single-hero.html">Services</a></li>
           <li><a href="listings.html">Listings</a></li>
           <li><a href="press.html">Press</a></li>
@@ -28,6 +28,17 @@
 <div class="page listings">
   <div class="container">
     <h1>Listings</h1>
+    <div class="filters">
+      <div class="filter active">
+        <h6>All</h6>
+      </div>
+      <div class="filter">
+        <h6>Multi-Tenant</h6>
+      </div>
+      <div class="filter">
+        <h6>Single-Tenant</h6>
+      </div>
+    </div>
     <div class="listings-container">
       <div class="listing available">
         <div class="image" style="background-image: url(https://api.crexi.com/tn/a2abc54c8d144f7096b69f4b6ba720cc_1306x734.jpg);">
@@ -37,7 +48,7 @@
         <h6>$5,000,000</h6>
         <p>10330 Curry Ford Road Orlando, FL 32825</p>
         <p><b>Cap. Rate:</b> 4.75%</p>
-        <p><b>Avg. Cap. Rate:</b> 5%</p><a href="listing.html">Learn More</a>
+        <p><b>Avg. Cap. Rate:</b> 5%</p><a class="learn-more" href="listing.html">Learn More</a>
       </div>
       <div class="listing">
         <div class="image" style="background-image: url(https://api.crexi.com/tn/a2abc54c8d144f7096b69f4b6ba720cc_1306x734.jpg);">
@@ -47,7 +58,7 @@
         <h6>$5,000,000</h6>
         <p>10330 Curry Ford Road Orlando, FL 32825</p>
         <p><b>Cap. Rate:</b> 4.75%</p>
-        <p><b>Avg. Cap. Rate:</b> 5%</p><a href="listing.html">Learn More</a>
+        <p><b>Avg. Cap. Rate:</b> 5%</p><a class="learn-more" href="listing.html">Learn More</a>
       </div>
       <div class="listing available">
         <div class="image" style="background-image: url(https://api.crexi.com/tn/a2abc54c8d144f7096b69f4b6ba720cc_1306x734.jpg);">
@@ -57,7 +68,7 @@
         <h6>$5,000,000</h6>
         <p>10330 Curry Ford Road Orlando, FL 32825</p>
         <p><b>Cap. Rate:</b> 4.75%</p>
-        <p><b>Avg. Cap. Rate:</b> 5%</p><a href="listing.html">Learn More</a>
+        <p><b>Avg. Cap. Rate:</b> 5%</p><a class="learn-more" href="listing.html">Learn More</a>
       </div>
       <div class="listing available">
         <div class="image" style="background-image: url(https://api.crexi.com/tn/a2abc54c8d144f7096b69f4b6ba720cc_1306x734.jpg);">
@@ -67,7 +78,7 @@
         <h6>$5,000,000</h6>
         <p>10330 Curry Ford Road Orlando, FL 32825</p>
         <p><b>Cap. Rate:</b> 4.75%</p>
-        <p><b>Avg. Cap. Rate:</b> 5%</p><a href="listing.html">Learn More</a>
+        <p><b>Avg. Cap. Rate:</b> 5%</p><a class="learn-more" href="listing.html">Learn More</a>
       </div>
     </div>
   </div>
@@ -75,8 +86,7 @@
 <footer>
   <div class="container">  
     <div class="footerSection">
-      <h3>LOGO</h3>
-      <p>&copy; Copyright 2017, Molloy Kaye.</p>
+      <h3>LOGO</h3><small>&copy; Copyright 2017, Molloy Kaye.</small>
     </div>
   </div>
 </footer>

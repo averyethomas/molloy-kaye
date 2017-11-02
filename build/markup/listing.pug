@@ -3,12 +3,27 @@ include includes/header.pug
 div.page.listing
     div.container
         div.top
-            div.carousel
-                img(src="https://api.crexi.com/tn/a2abc54c8d144f7096b69f4b6ba720cc_1306x734.jpg")
+            div.gallery(ng-controller="galleryCtrl")
+              div.row.single
+                div.image(style="background-image: url(https://api.crexi.com/tn/a2abc54c8d144f7096b69f4b6ba720cc_1306x734.jpg);")
+                  img(src="https://api.crexi.com/tn/a2abc54c8d144f7096b69f4b6ba720cc_1306x734.jpg")
+              div.row.triple
+                div.image(style="background-image: url(http://images4.showcase.com/i2/3D49-Y70WKgQ_RgDaqpPViD0ttARyipCqsM2A792bBA/106/image.jpg);")
+                  img(src="http://images4.showcase.com/i2/3D49-Y70WKgQ_RgDaqpPViD0ttARyipCqsM2A792bBA/106/image.jpg")
+                div.image(style="background-image: url(http://www.disneyfoodblog.com/wp-content/uploads/2014/05/downtown-disney-west-side-starbucks-orlando-indoor-seating-2-600x400.jpg?b02ebe);")
+                  img(src="http://www.disneyfoodblog.com/wp-content/uploads/2014/05/downtown-disney-west-side-starbucks-orlando-indoor-seating-2-600x400.jpg?b02ebe")
+                div.image(style="background-image: url(https://i.pinimg.com/originals/f9/d3/23/f9d3231b2e0596a961c72f83f2cdceb4.jpg);")
+                  img(src="https://i.pinimg.com/originals/f9/d3/23/f9d3231b2e0596a961c72f83f2cdceb4.jpg")
+              div.row.double
+                  div.image(style="background-image: url(http://images3.showcase.com/i2/RA0keVKgQrR-1ovX7AIG1MvXQ4YkoJwKGHP06ojwXBE/106/image.jpg);")
+                    img(src="http://images3.showcase.com/i2/RA0keVKgQrR-1ovX7AIG1MvXQ4YkoJwKGHP06ojwXBE/106/image.jpg")
+                  div.image(style="background-image: url(http://images2.showcase.com/i2/ts151_9sNLSzvBCo61TMsOOOi13EQBlHtViilzEeyHM/106/image.jpg);")
+                    img(src="http://images2.showcase.com/i2/ts151_9sNLSzvBCo61TMsOOOi13EQBlHtViilzEeyHM/106/image.jpg")
             div.information
                 h2 Freestanding Starbucks
-                h6 10330 Curry Ford Road Orlando, FL 32825
+                h6 10330 Curry Ford Road<br>Orlando, FL 32825
                 h6 $6,906,050
+                p Single-Tenant
                 p Cap Rate: 6.00%
                 p Average Cap Rate: 6.62%
                 p NOI: $414,363
@@ -16,8 +31,8 @@ div.page.listing
                 p Lot Size: 2.78 acres
                 p Year Built: 2017
                 p Status: Available
-                div.download(ng-click="downloadModal = !downloadModal")
-                    p Marketing Package
+                div.download
+                    button.cta(ng-click="downloadModal = !downloadModal") Marketing Package
         div.highlights
           h6 Investment Highlights
           ul
@@ -37,13 +52,23 @@ div.page.listing
               p Located in the Heart of Atlanta's Affluent North Fulton County - Featuring Over 17 Million Square-Feet of Class A Office Space within Minutes of the Location
         modal(ng-show="downloadModal")
             form
+              div.row.double
                 div.field
                     input(type="text" required placeholder="First Name *")
                 div.field
                     input(type="text" required placeholder="Last Name *")
+              div.row.double
                 div.field
-                    input(type="email" required placeholder="Email Address *")
-                a(href="#") SUBMIT &amp; DOWNLOAD
+                    input(type="tel" required placeholder="Phone Number *")
+                div.field
+                  select
+                    option(value="" disabled selected) Select *
+                    option Principal
+                    option Broker
+              div.row  
+                div.field
+                    input(type="email" required placeholder="Email Address *")    
+                a.cta(href="#") SUBMIT &amp; DOWNLOAD
             div.close(ng-click="downloadModal = !downloadModal")
                 span
 include includes/footer.pug

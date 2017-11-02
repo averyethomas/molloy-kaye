@@ -3,6 +3,13 @@ include includes/header.pug
 div.page.listings
   div.container
     h1 Listings
+    div.filters
+      div.filter.active
+        h6 All
+      div.filter
+        h6 Multi-Tenant
+      div.filter
+        h6 Single-Tenant
     div.listings-container
       div.listing.available
         div.image(style="background-image: url(https://api.crexi.com/tn/a2abc54c8d144f7096b69f4b6ba720cc_1306x734.jpg);")
@@ -12,7 +19,7 @@ div.page.listings
         p 10330 Curry Ford Road Orlando, FL 32825
         p <b>Cap. Rate:</b> 4.75%
         p <b>Avg. Cap. Rate:</b> 5%
-        a(href="listing.html") Learn More
+        a.learn-more(href="listing.html") Learn More
       div.listing
         div.image(style="background-image: url(https://api.crexi.com/tn/a2abc54c8d144f7096b69f4b6ba720cc_1306x734.jpg);")
           h5 Under Contract
@@ -21,7 +28,7 @@ div.page.listings
         p 10330 Curry Ford Road Orlando, FL 32825
         p <b>Cap. Rate:</b> 4.75%
         p <b>Avg. Cap. Rate:</b> 5%
-        a(href="listing.html") Learn More
+        a.learn-more(href="listing.html") Learn More
       div.listing.available
         div.image(style="background-image: url(https://api.crexi.com/tn/a2abc54c8d144f7096b69f4b6ba720cc_1306x734.jpg);")
           h5 Available
@@ -30,7 +37,7 @@ div.page.listings
         p 10330 Curry Ford Road Orlando, FL 32825
         p <b>Cap. Rate:</b> 4.75%
         p <b>Avg. Cap. Rate:</b> 5%
-        a(href="listing.html") Learn More
+        a.learn-more(href="listing.html") Learn More
       div.listing.available
         div.image(style="background-image: url(https://api.crexi.com/tn/a2abc54c8d144f7096b69f4b6ba720cc_1306x734.jpg);")
           h5 Available
@@ -39,5 +46,5 @@ div.page.listings
         p 10330 Curry Ford Road Orlando, FL 32825
         p <b>Cap. Rate:</b> 4.75%
         p <b>Avg. Cap. Rate:</b> 5%
-        a(href="listing.html") Learn More
+        a.learn-more(href="listing.html") Learn More
 include includes/footer.pug        

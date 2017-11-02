@@ -72,33 +72,36 @@ label:focus,
   -webkit-box-sizing: border-box;
           box-sizing: border-box; }
 
-body {
-  overflow-x: hidden;
+html {
   font-size: 10px; }
+
+body {
+  overflow-x: hidden; }
 
 h1, h2, h3, h4, h5, h6, p, small {
   font-family: "Source Sans Pro", sans-serif;
   padding: 0;
   margin: .5rem 0 2rem 0;
-  color: #0c2425; }
+  color: #1a283c; }
 
 h1 {
   font-family: "Source Sans Pro", sans-serif;
-  font-size: 4rem;
+  font-size: 5rem;
   font-weight: 700;
-  line-height: 4.5rem;
-  color: #0c2425;
+  line-height: 5.5rem;
+  color: #1a283c;
   text-transform: uppercase;
-  text-align: center; }
+  text-align: center;
+  margin: .5rem 0 3rem 0; }
 
 h2 {
-  font-size: 2.7rem;
+  font-size: 3.5rem;
   letter-spacing: 0.05rem;
   text-transform: uppercase;
   font-weight: 600;
-  color: #0c2425;
+  color: #1a283c;
   padding: 0;
-  margin: 0.5rem 0 1rem;
+  margin: 0.5rem 0 3.25rem;
   position: relative; }
   h2:after {
     content: '';
@@ -110,14 +113,14 @@ h2 {
     bottom: -10px; }
 
 h3 {
-  font-size: 1.9rem;
+  font-size: 3rem;
   letter-spacing: 0.05em;
   font-weight: 600;
   padding: 5px 0;
-  margin: 0.5rem 0; }
+  margin: 0.5rem 0 1rem; }
 
 h4 {
-  font-size: 1.9rem;
+  font-size: 2.4rem;
   font-weight: 600;
   letter-spacing: 0.05rem;
   padding: 5px 0;
@@ -125,41 +128,96 @@ h4 {
 
 h5 {
   font-family: "Source Sans Pro", sans-serif;
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   font-weight: 300;
   line-height: 2rem;
   color: #000000;
   margin: 0.5rem 0; }
 
 h6 {
-  font-size: 1.6rem;
-  font-weight: 500;
-  line-height: 2rem;
+  font-size: 2rem;
+  line-height: 2.4rem;
   letter-spacing: 0.05rem;
+  font-weight: 500;
   padding: 0;
-  margin: 0.5rem 0;
+  margin: 0.5rem 0 1rem;
   text-transform: uppercase; }
 
 p {
-  font-size: 1.2rem;
-  line-height: 1.6rem;
-  font-weight: 300;
+  font-size: 1.6rem;
+  line-height: 2rem;
   letter-spacing: 0.025rem;
-  margin: 0 0 0.5rem; }
+  font-weight: 300;
+  padding: 0;
+  margin: 0 0 1rem; }
   p b {
     font-weight: 600; }
 
 a {
   font-family: "Source Sans Pro", sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   font-weight: 500;
-  line-height: 1.8rem;
+  line-height: 2.1rem;
   color: #FF850E;
   cursor: pointer;
   text-decoration: none; }
   a:hover {
     text-decoration: none;
-    color: #0c2425; }
+    color: #1a283c; }
+  a.cta {
+    font-size: 2rem;
+    line-height: 2rem;
+    text-transform: uppercase;
+    text-align: center;
+    display: block;
+    margin: 2rem auto;
+    padding: 7px 10px;
+    width: 220px;
+    color: #ffffff;
+    border: 2px solid #FF850E;
+    background: #FF850E; }
+    a.cta:hover {
+      color: #FF850E;
+      background: transparent; }
+  a.learn-more {
+    font-size: 1.8rem;
+    line-height: 2rem;
+    text-transform: uppercase;
+    text-align: center;
+    display: block;
+    margin: 2rem auto;
+    padding: 7px 10px;
+    width: 135px;
+    color: #1a283c;
+    border: 2px solid #1a283c; }
+    a.learn-more:hover {
+      color: #ffffff;
+      background: #1a283c; }
+
+button.cta {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 2rem;
+  line-height: 2rem;
+  text-transform: uppercase;
+  text-align: center;
+  display: block;
+  margin: 2rem auto;
+  padding: 7px 10px;
+  width: 220px;
+  color: #ffffff;
+  border: 2px solid #FF850E;
+  background: #FF850E;
+  cursor: pointer; }
+  button.cta:hover {
+    color: #FF850E;
+    background: transparent; }
+
+small {
+  font-size: 1rem;
+  line-height: 1.2rem;
+  font-weight: 300;
+  padding: 0;
+  margin: 0.5rem 0 1rem; }
 
 blockquote {
   font-family: "Source Sans Pro", sans-serif;
@@ -186,7 +244,7 @@ blockquote {
     overflow: visible; }
 
 nav {
-  border-bottom: 4px solid #0c2425;
+  border-bottom: 4px solid #1a283c;
   padding: 0;
   margin: 0;
   overflow: hidden;
@@ -203,7 +261,7 @@ nav {
       padding: 12px 0;
       display: block;
       font-weight: 700;
-      color: #0c2425; }
+      color: #1a283c; }
     nav .container .logo img {
       display: block;
       width: 100px; }
@@ -225,15 +283,15 @@ nav {
       right: 0;
       top: 50%;
       margin-top: -1px;
-      background: #0c2425; }
+      background: #1a283c; }
       nav .container .mobileMenu span:before {
         position: absolute;
         content: "";
         height: .3rem;
         width: 2rem;
-        top: -10px;
+        top: -.7rem;
         display: block;
-        background: #0c2425;
+        background: #1a283c;
         -webkit-transition: top 0.3s 0.3s, -webkit-transform 0.3s;
         transition: top 0.3s 0.3s, -webkit-transform 0.3s;
         transition: transform 0.3s, top 0.3s 0.3s;
@@ -243,9 +301,9 @@ nav {
         content: "";
         height: .3rem;
         width: 2rem;
-        top: 10px;
+        top: .7rem;
         display: block;
-        background: #0c2425;
+        background: #1a283c;
         -webkit-transition: top 0.3s 0.3s, -webkit-transform 0.3s;
         transition: top 0.3s 0.3s, -webkit-transform 0.3s;
         transition: transform 0.3s, top 0.3s 0.3s;
@@ -289,7 +347,7 @@ nav {
     display: none; }
     nav .container ul.navOpen {
       display: block;
-      background: rgba(12, 36, 37, 0.9); }
+      background: rgba(26, 40, 60, 0.95); }
     nav .container ul li {
       display: block;
       z-index: 20;
@@ -319,20 +377,21 @@ nav {
           nav .container ul li:last-of-type {
             padding: 10px 0 10px 10px; }
           nav .container ul li a {
-            font-size: 1.4rem;
-            color: #0c2425;
+            font-size: 2rem;
+            color: #1a283c;
             font-weight: 500; }
             nav .container ul li a:hover {
               color: #FF850E; } }
 
 .page {
-  padding: 3rem 0; }
+  padding: 3rem 0;
+  min-height: calc(100vh - 135px); }
   .page.home .hero {
     position: relative;
     top: -10px;
     height: 85vh;
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(12, 36, 37, 0.25)), to(rgba(12, 36, 37, 0.4))), url(http://www.karenatlantahomes.com/wp-content/uploads/2017/04/image1.jpeg) 50% 50% no-repeat;
-    background: linear-gradient(rgba(12, 36, 37, 0.25), rgba(12, 36, 37, 0.4)), url(http://www.karenatlantahomes.com/wp-content/uploads/2017/04/image1.jpeg) 50% 50% no-repeat;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(26, 40, 60, 0.25)), to(rgba(26, 40, 60, 0.4))), url(http://www.karenatlantahomes.com/wp-content/uploads/2017/04/image1.jpeg) 50% 50% no-repeat;
+    background: linear-gradient(rgba(26, 40, 60, 0.25), rgba(26, 40, 60, 0.4)), url(http://www.karenatlantahomes.com/wp-content/uploads/2017/04/image1.jpeg) 50% 50% no-repeat;
     background-size: cover; }
     .page.home .hero .text {
       color: #ffffff;
@@ -350,7 +409,7 @@ nav {
     position: relative;
     top: -10px;
     padding: 2rem 0;
-    background: #0c2425;
+    background: #1a283c;
     margin: 0 0 2rem; }
     .page.home .intro h1 {
       color: #ffffff;
@@ -363,7 +422,8 @@ nav {
   .page.home .listings {
     text-align: center; }
     .page.home .listings h2 {
-      text-align: center; }
+      text-align: center;
+      margin: 2.5rem 0 4rem; }
       .page.home .listings h2:after {
         display: none; }
     .page.home .listings .listing {
@@ -374,8 +434,27 @@ nav {
       text-align: left;
       position: relative;
       vertical-align: top; }
+      @media all and (min-width: 768px) {
+        .page.home .listings .listing {
+          display: inline-block;
+          width: calc((100%/3) - 32px);
+          margin: 0 0 30px; }
+          .page.home .listings .listing:nth-of-type(3n + 1) {
+            margin: 0 30px 30px 0; }
+          .page.home .listings .listing:nth-of-type(3n + 3) {
+            margin: 0 0 30px 30px; } }
+      @media all and (min-width: 992px) {
+        .page.home .listings .listing {
+          display: inline-block;
+          width: calc((100%/3) - 23px);
+          vertical-align: top;
+          margin: 0 0 30px; }
+          .page.home .listings .listing:nth-of-type(3n + 1) {
+            margin: 0 30px 30px 0; }
+          .page.home .listings .listing:nth-of-type(3n + 3) {
+            margin: 0 0 30px 30px; } }
       .page.home .listings .listing.available .image h5 {
-        background-color: rgba(255, 113, 14, 0.8); }
+        background-color: rgba(255, 133, 14, 0.8); }
       .page.home .listings .listing .image {
         width: 100%;
         height: 200px;
@@ -390,43 +469,45 @@ nav {
           color: #fff;
           background: rgba(12, 36, 37, 0.8); }
       .page.home .listings .listing h4 {
-        border-bottom: 3px solid #0c2425; }
+        border-bottom: 3px solid #1a283c; }
       .page.home .listings .listing a {
-        border: 2px solid #0c2425;
+        border: 2px solid #1a283c;
         padding: 3px 10px;
-        color: #0c2425;
+        background-color: transparent;
+        color: #1a283c;
         margin: 1.2rem 0;
         text-transform: uppercase;
         display: block;
-        width: 130px;
+        width: 135px;
         -webkit-transition: all 0.25s ease-in;
         transition: all 0.25s ease-in; }
         .page.home .listings .listing a:hover {
           color: #fff;
-          background-color: #0c2425; }
-      @media all and (min-width: 768px) {
-        .page.home .listings .listing {
-          display: inline-block;
-          margin: 20px; } }
+          background-color: #1a283c; }
   .page.has-hero {
     padding: 0 0 3rem; }
   .page.single .hero {
     position: relative;
     top: -10px;
     min-height: 200px;
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(12, 36, 37, 0.25)), to(rgba(12, 36, 37, 0.4))), url(http://www.karenatlantahomes.com/wp-content/uploads/2017/04/image1.jpeg) 50% 50% no-repeat;
-    background: linear-gradient(rgba(12, 36, 37, 0.25), rgba(12, 36, 37, 0.4)), url(http://www.karenatlantahomes.com/wp-content/uploads/2017/04/image1.jpeg) 50% 50% no-repeat;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(26, 40, 60, 0.25)), to(rgba(26, 40, 60, 0.4))), url(http://www.karenatlantahomes.com/wp-content/uploads/2017/04/image1.jpeg) 50% 50% no-repeat;
+    background: linear-gradient(rgba(26, 40, 60, 0.25), rgba(26, 40, 60, 0.4)), url(http://www.karenatlantahomes.com/wp-content/uploads/2017/04/image1.jpeg) 50% 50% no-repeat;
     background-size: cover;
     margin: 0 0 2rem; }
     .page.single .hero .container h1 {
       color: #ffffff;
-      padding: 4rem 0 0;
-      margin: 0; }
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%); }
     @media all and (min-width: 768px) {
       .page.single .hero {
         min-height: 350px; }
         .page.single .hero .container h1 {
-          padding: 8rem 0 0;
+          padding: 0;
           margin: 0; } }
   .page.single .team-container {
     padding: 3rem 0 0; }
@@ -457,9 +538,9 @@ nav {
           .page.single .team-container .team-member:nth-of-type(3n + 3) {
             margin: 0 0 2rem 1rem; } }
       .page.single .team-container .team-member .photo {
-        width: 200px;
-        height: 200px;
-        border-radius: 150px;
+        width: 175px;
+        height: 175px;
+        border-radius: 175px;
         background-color: #cecece;
         margin: 0 auto; }
       .page.single .team-container .team-member a {
@@ -470,10 +551,8 @@ nav {
         text-align: left; }
   .page.press .container .category {
     padding: 0 0 2.5rem; }
-    .page.press .container .category h2 {
-      margin: 0.5rem 0 2.5rem; }
     .page.press .container .category .post {
-      border: 1px solid #0c2425;
+      border: 1px solid #1a283c;
       margin: 0 auto 1.5rem;
       max-width: 300px; }
       .page.press .container .category .post img {
@@ -483,7 +562,7 @@ nav {
       @media all and (min-width: 768px) {
         .page.press .container .category .post {
           display: inline-block;
-          width: calc((100%/3) - 25px);
+          width: calc((100%/3) - 15px);
           vertical-align: top;
           margin: 0 1rem 1rem;
           max-width: 500px; }
@@ -491,26 +570,39 @@ nav {
             margin: 0 1rem 1rem 0; }
           .page.press .container .category .post:nth-of-type(3n + 3) {
             margin: 0 0 1rem 1rem; } }
-    .page.press .container .category .load-more {
-      width: 200px;
+  .page.listings .filters {
+    text-align: center;
+    padding: 0 0 3rem; }
+    .page.listings .filters .filter {
       border: 2px solid #FF850E;
-      background: #FF850E;
-      text-align: center;
-      margin: 2.5rem auto;
-      padding: 5px 0;
-      -webkit-transition: all 0.25s ease;
-      transition: all 0.25s ease; }
-      .page.press .container .category .load-more h6 {
-        margin: 0;
-        color: #ffffff; }
-      .page.press .container .category .load-more:hover {
-        border: 2px solid #FF850E;
-        background: #ffffff;
+      padding: 3px 10px;
+      display: block;
+      margin: 0 auto 1rem;
+      max-width: 200px;
+      -webkit-transition: all 0.25s ease-in;
+      transition: all 0.25s ease-in; }
+      @media all and (min-width: 768px) {
+        .page.listings .filters .filter {
+          display: inline-block;
+          margin: 0 0.5rem; } }
+      .page.listings .filters .filter:hover {
+        background-color: #FF850E;
         cursor: pointer; }
-        .page.press .container .category .load-more:hover h6 {
-          color: #FF850E; }
+        .page.listings .filters .filter:hover h6 {
+          color: #ffffff; }
+      .page.listings .filters .filter.active {
+        background-color: #FF850E; }
+        .page.listings .filters .filter.active h6 {
+          color: #ffffff; }
+      .page.listings .filters .filter h6 {
+        line-height: auto;
+        margin: 0;
+        color: #FF850E; }
   .page.listings .listings-container {
     text-align: center; }
+    @media all and (min-width: 992px) {
+      .page.listings .listings-container {
+        text-align: left; } }
     .page.listings .listings-container .listing {
       width: 100%;
       max-width: 350px;
@@ -519,8 +611,23 @@ nav {
       text-align: left;
       position: relative;
       vertical-align: top; }
+      @media all and (min-width: 768px) {
+        .page.listings .listings-container .listing {
+          display: inline-block;
+          margin: 0 15px 30px;
+          width: calc((100%/2) - 32px); } }
+      @media all and (min-width: 992px) {
+        .page.listings .listings-container .listing {
+          display: inline-block;
+          width: calc((100%/3) - 23px);
+          vertical-align: top;
+          margin: 0 0 30px; }
+          .page.listings .listings-container .listing:nth-of-type(3n + 1) {
+            margin: 0 30px 30px 0; }
+          .page.listings .listings-container .listing:nth-of-type(3n + 3) {
+            margin: 0 0 30px 30px; } }
       .page.listings .listings-container .listing.available .image h5 {
-        background-color: rgba(255, 113, 14, 0.8); }
+        background-color: rgba(255, 133, 14, 0.8); }
       .page.listings .listings-container .listing .image {
         width: 100%;
         height: 200px;
@@ -533,76 +640,75 @@ nav {
           padding: 5px 10px;
           margin: 0;
           color: #fff;
-          background: rgba(12, 36, 37, 0.8); }
+          background: rgba(26, 40, 60, 0.8); }
       .page.listings .listings-container .listing h4 {
-        border-bottom: 3px solid #0c2425; }
+        border-bottom: 3px solid #1a283c; }
       .page.listings .listings-container .listing a {
-        border: 2px solid #0c2425;
+        border: 2px solid #1a283c;
         padding: 3px 10px;
-        color: #0c2425;
+        color: #1a283c;
         margin: 1.2rem 0;
         text-transform: uppercase;
         display: block;
-        width: 130px;
+        width: 135px;
         -webkit-transition: all 0.25s ease-in;
         transition: all 0.25s ease-in; }
         .page.listings .listings-container .listing a:hover {
           color: #fff;
-          background-color: #0c2425; }
-      @media all and (min-width: 768px) {
-        .page.listings .listings-container .listing {
-          display: inline-block;
-          margin: 20px; } }
-  .page.listing .top {
+          background-color: #1a283c; }
+  .page.listing .container .top {
     overflow: hidden;
     margin: 0 0 2.5rem;
     display: block; }
-    .page.listing .top .carousel img {
-      width: 100%;
-      display: block; }
     @media all and (min-width: 992px) {
-      .page.listing .top .carousel {
+      .page.listing .container .top .gallery {
         width: 55%;
         display: inline-block;
         float: right; } }
-    .page.listing .top .information {
+    .page.listing .container .top .gallery .row {
+      margin: 0 0 0.5rem; }
+      .page.listing .container .top .gallery .row .image {
+        display: block;
+        background: no-repeat 50% 50%;
+        background-size: cover;
+        position: relative; }
+        .page.listing .container .top .gallery .row .image img {
+          display: none; }
+      .page.listing .container .top .gallery .row.single .image {
+        width: 100%;
+        padding: 0 0 56.25%; }
+      .page.listing .container .top .gallery .row.double .image {
+        display: inline-block;
+        width: calc(50% - 4px);
+        padding: 0 0 28.125%; }
+        .page.listing .container .top .gallery .row.double .image:nth-of-type(1) {
+          margin: 0 0.5rem 0 0; }
+        .page.listing .container .top .gallery .row.double .image:nth-of-type(2) {
+          margin: 0; }
+      .page.listing .container .top .gallery .row.triple .image {
+        display: inline-block;
+        width: calc((100%/3) - 5px);
+        padding: 0 0 18.75%; }
+        .page.listing .container .top .gallery .row.triple .image:nth-of-type(1) {
+          margin: 0 0.5rem 0 0; }
+        .page.listing .container .top .gallery .row.triple .image:nth-of-type(3) {
+          margin: 0 0 0 0.5rem; }
+    .page.listing .container .top .information {
       margin: 20px 0 0; }
+      .page.listing .container .top .information .download button.cta {
+        margin: 2rem 0; }
       @media all and (min-width: 992px) {
-        .page.listing .top .information {
+        .page.listing .container .top .information {
           width: 40%;
           display: inline-block;
           float: left;
           margin: 0; } }
-      .page.listing .top .information h2 {
-        font-size: 2.5rem;
-        position: relative;
-        display: block;
-        margin: 0 0 15px; }
-      .page.listing .top .information .download {
-        border: 2px solid #FF850E;
-        background-color: #FF850E;
-        text-transform: uppercase;
-        padding: 3px 10px;
-        margin: 10px 0;
-        display: block;
-        width: 210px;
-        cursor: pointer;
-        -webkit-transition: all 0.25s ease-in;
-        transition: all 0.25s ease-in; }
-        .page.listing .top .information .download p {
-          color: #ffffff;
-          margin: 0;
-          font-weight: 500; }
-        .page.listing .top .information .download:hover {
-          background-color: #fff; }
-          .page.listing .top .information .download:hover p {
-            color: #FF850E; }
-  .page.listing .highlights {
+  .page.listing .container .highlights {
     clear: both;
     display: block; }
-    .page.listing .highlights ul {
+    .page.listing .container .highlights ul {
       padding: 0 0 0 1.5rem; }
-  .page.listing modal {
+  .page.listing .container modal {
     position: fixed;
     top: 10vh;
     left: 0;
@@ -611,72 +717,112 @@ nav {
     width: 85%;
     max-width: 700px;
     background: rgba(12, 36, 37, 0.95);
-    padding: 3rem 2rem 1rem;
-    -webkit-box-shadow: 0 4px 10px 4px rgba(12, 36, 37, 0.3);
-            box-shadow: 0 4px 10px 4px rgba(12, 36, 37, 0.3); }
+    padding: 4rem 2rem 2rem;
+    -webkit-box-shadow: 0 4px 10px 4px rgba(26, 40, 60, 0.3);
+            box-shadow: 0 4px 10px 4px rgba(26, 40, 60, 0.3); }
     @media all and (min-width: 768px) {
-      .page.listing modal {
+      .page.listing .container modal {
         padding: 4rem 3rem 3rem; } }
-    @media all and (min-width: 768px) {
-      .page.listing modal form .field:nth-of-type(1) {
-        display: inline-block;
-        width: calc(50% - 18px);
-        margin: 0 1rem 0 0; }
-      .page.listing modal form .field:nth-of-type(2) {
-        display: inline-block;
-        width: calc(50% - 18px);
-        margin: 0 0 0 1rem; } }
-    .page.listing modal form .field input {
-      position: relative;
-      border: 1px solid #ffffff;
-      padding: 7px 10px;
-      margin: 0 0 1rem;
-      width: 100%;
-      background: transparent;
-      color: #ffffff; }
-      .page.listing modal form .field input:active, .page.listing modal form .field input:focus {
-        border: 1px solid #FF850E; }
-        .page.listing modal form .field input:active::-webkit-input-placeholder, .page.listing modal form .field input:focus::-webkit-input-placeholder {
-          visibility: hidden; }
-        .page.listing modal form .field input:active:-ms-input-placeholder, .page.listing modal form .field input:focus:-ms-input-placeholder {
-          visibility: hidden; }
-        .page.listing modal form .field input:active::-ms-input-placeholder, .page.listing modal form .field input:focus::-ms-input-placeholder {
-          visibility: hidden; }
-        .page.listing modal form .field input:active::placeholder, .page.listing modal form .field input:focus::placeholder {
-          visibility: hidden; }
-      .page.listing modal form .field input::-webkit-input-placeholder {
-        color: #ffffff;
-        font-size: 0.8rem; }
-      .page.listing modal form .field input:-ms-input-placeholder {
-        color: #ffffff;
-        font-size: 0.8rem; }
-      .page.listing modal form .field input::-ms-input-placeholder {
-        color: #ffffff;
-        font-size: 0.8rem; }
-      .page.listing modal form .field input::placeholder {
-        color: #ffffff;
-        font-size: 0.8rem; }
-    .page.listing modal form a {
+    .page.listing .container modal form .row {
+      margin: 0 0 1rem; }
+      @media all and (min-width: 768px) {
+        .page.listing .container modal form .row.double .field:nth-of-type(1) {
+          display: inline-block;
+          width: calc(50% - 4px);
+          margin: 0 0.5rem 0 0; }
+        .page.listing .container modal form .row.double .field:nth-of-type(2) {
+          display: inline-block;
+          width: calc(50% - 9px);
+          margin: 0 0 0 0.5rem; } }
+      .page.listing .container modal form .row .field {
+        margin: 0 auto 1rem; }
+        @media all and (min-width: 768px) {
+          .page.listing .container modal form .row .field {
+            margin: 0; } }
+        .page.listing .container modal form .row .field select {
+          position: relative;
+          border: 1px solid #ffffff;
+          padding: 7px 10px;
+          width: 100%;
+          background: transparent;
+          color: #ffffff;
+          border-radius: 0;
+          font-size: 1rem;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='200' fill='#ffffff'><polygon points='50,0 0,85 100,85;' /><polygon points='50,200 0,115 100,115' /></svg>") no-repeat 97% 50%;
+          background-size: 0.5rem; }
+          .page.listing .container modal form .row .field select:active, .page.listing .container modal form .row .field select:focus {
+            border: 1px solid #FF850E;
+            outline: none; }
+            .page.listing .container modal form .row .field select:active::-webkit-input-placeholder, .page.listing .container modal form .row .field select:focus::-webkit-input-placeholder {
+              visibility: hidden; }
+            .page.listing .container modal form .row .field select:active:-ms-input-placeholder, .page.listing .container modal form .row .field select:focus:-ms-input-placeholder {
+              visibility: hidden; }
+            .page.listing .container modal form .row .field select:active::-ms-input-placeholder, .page.listing .container modal form .row .field select:focus::-ms-input-placeholder {
+              visibility: hidden; }
+            .page.listing .container modal form .row .field select:active::placeholder, .page.listing .container modal form .row .field select:focus::placeholder {
+              visibility: hidden; }
+        .page.listing .container modal form .row .field input {
+          position: relative;
+          border: 1px solid #ffffff;
+          padding: 7px 10px;
+          width: 100%;
+          background: transparent;
+          color: #ffffff;
+          font-size: 1rem; }
+          .page.listing .container modal form .row .field input:after {
+            content: '< >';
+            display: block;
+            position: absolute;
+            border: 1px solid red;
+            top: 0;
+            right: 0; }
+          .page.listing .container modal form .row .field input:active, .page.listing .container modal form .row .field input:focus {
+            border: 1px solid #FF850E; }
+            .page.listing .container modal form .row .field input:active::-webkit-input-placeholder, .page.listing .container modal form .row .field input:focus::-webkit-input-placeholder {
+              visibility: hidden; }
+            .page.listing .container modal form .row .field input:active:-ms-input-placeholder, .page.listing .container modal form .row .field input:focus:-ms-input-placeholder {
+              visibility: hidden; }
+            .page.listing .container modal form .row .field input:active::-ms-input-placeholder, .page.listing .container modal form .row .field input:focus::-ms-input-placeholder {
+              visibility: hidden; }
+            .page.listing .container modal form .row .field input:active::placeholder, .page.listing .container modal form .row .field input:focus::placeholder {
+              visibility: hidden; }
+          .page.listing .container modal form .row .field input::-webkit-input-placeholder {
+            color: #ffffff;
+            font-size: 1rem; }
+          .page.listing .container modal form .row .field input:-ms-input-placeholder {
+            color: #ffffff;
+            font-size: 1rem; }
+          .page.listing .container modal form .row .field input::-ms-input-placeholder {
+            color: #ffffff;
+            font-size: 1rem; }
+          .page.listing .container modal form .row .field input::placeholder {
+            color: #ffffff;
+            font-size: 1rem; }
+    .page.listing .container modal form a {
       border: 2px solid #FF850E;
       color: #ffffff;
-      width: 200px;
+      width: 220px;
       display: block;
       margin: 1rem auto 0;
       background: #FF850E;
       text-align: center;
       padding: 3px; }
-      .page.listing modal form a:hover {
-        background: transparent; }
-    .page.listing modal .close {
+      .page.listing .container modal form a:hover {
+        background: transparent;
+        color: #FF850E; }
+    .page.listing .container modal .close {
       width: 35px;
       height: 35px;
       position: absolute;
-      top: 10px;
-      right: 10px; }
-      .page.listing modal .close span {
+      top: 5px;
+      right: 5px; }
+      .page.listing .container modal .close span {
         display: block;
         position: relative; }
-        .page.listing modal .close span:before, .page.listing modal .close span:after {
+        .page.listing .container modal .close span:before, .page.listing .container modal .close span:after {
           position: absolute;
           top: 15px;
           right: 6px;
@@ -685,13 +831,13 @@ nav {
           width: 1.5rem;
           display: block;
           background: #ffffff; }
-        .page.listing modal .close span:before {
+        .page.listing .container modal .close span:before {
           -webkit-transform: rotate(45deg);
                   transform: rotate(45deg); }
-        .page.listing modal .close span:after {
+        .page.listing .container modal .close span:after {
           -webkit-transform: rotate(-45deg);
                   transform: rotate(-45deg); }
-      .page.listing modal .close:hover span:before, .page.listing modal .close:hover span:after {
+      .page.listing .container modal .close:hover span:before, .page.listing .container modal .close:hover span:after {
         background: #FF850E; }
   .page.contact .contact-container {
     width: 100%;
@@ -708,23 +854,24 @@ nav {
           float: left;
           height: 100%; } }
     .page.contact .contact-container .contact-form {
-      background: #0c2425;
+      background: #1a283c;
       width: 100%;
       padding: 1rem; }
       @media all and (min-width: 768px) {
         .page.contact .contact-container .contact-form {
           width: 50%;
-          float: right; } }
+          float: right;
+          padding: 2rem; } }
       .page.contact .contact-container .contact-form form .field {
         margin: 0; }
         @media all and (min-width: 768px) {
           .page.contact .contact-container .contact-form form .field:nth-of-type(1) {
             display: inline-block;
-            width: calc(50% - 18px);
+            width: calc(50% - 12px);
             margin: 0 1rem 0 0; }
           .page.contact .contact-container .contact-form form .field:nth-of-type(2) {
             display: inline-block;
-            width: calc(50% - 18px);
+            width: calc(50% - 12px);
             margin: 0 0 0 1rem; } }
         .page.contact .contact-container .contact-form form .field input, .page.contact .contact-container .contact-form form .field textarea {
           position: relative;
@@ -746,67 +893,25 @@ nav {
               visibility: hidden; }
           .page.contact .contact-container .contact-form form .field input::-webkit-input-placeholder, .page.contact .contact-container .contact-form form .field textarea::-webkit-input-placeholder {
             color: #ffffff;
-            font-size: 0.8rem; }
+            font-size: 1.2rem; }
           .page.contact .contact-container .contact-form form .field input:-ms-input-placeholder, .page.contact .contact-container .contact-form form .field textarea:-ms-input-placeholder {
             color: #ffffff;
-            font-size: 0.8rem; }
+            font-size: 1.2rem; }
           .page.contact .contact-container .contact-form form .field input::-ms-input-placeholder, .page.contact .contact-container .contact-form form .field textarea::-ms-input-placeholder {
             color: #ffffff;
-            font-size: 0.8rem; }
+            font-size: 1.2rem; }
           .page.contact .contact-container .contact-form form .field input::placeholder, .page.contact .contact-container .contact-form form .field textarea::placeholder {
             color: #ffffff;
-            font-size: 0.8rem; }
-      .page.contact .contact-container .contact-form form button {
-        font-family: "Source Sans Pro", sans-serif;
-        display: block;
-        border: 2px solid #FF850E;
-        color: #ffffff;
-        width: 200px;
-        display: block;
-        margin: 1rem auto 0;
-        background: #FF850E;
-        text-align: center;
-        padding: 3px;
-        font-size: 1.2rem;
-        font-weight: 500;
-        cursor: pointer; }
-        .page.contact .contact-container .contact-form form button:hover {
-          background: transparent; }
+            font-size: 1.2rem; }
 
 footer {
   padding: 1rem 0;
-  background-color: #0c2425;
+  background-color: #1a283c;
   text-align: center; }
   footer .footerSection {
     text-align: center;
-    margin: 0 auto;
-    /*    @media all and (min-width: 768px){
-      display: inline-block;
-      width: calc(100%/4);
-    }
-    &:nth-of-type(1){
-      @media all and (min-width: 768px){
-        text-align: left;
-        float: left;
-      }
-    }
-    &:nth-of-type(2){
-      @media all and (min-width: 768px){
-        text-align: right;
-        float: right;
-      }
-    }*/ }
+    margin: 0 auto; }
     footer .footerSection h3 {
       color: #ffffff; }
-    footer .footerSection p {
-      color: #ffffff;
-      font-size: 0.8rem;
-      line-height: 1rem; }
-    footer .footerSection a {
-      font-size: 0.8rem;
-      line-height: 1rem;
-      color: #ffffff;
-      display: block;
-      margin: 0 0 0.5rem; }
-      footer .footerSection a:hover {
-        color: #FF850E; }
+    footer .footerSection small {
+      color: #ffffff; }
