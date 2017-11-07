@@ -1,24 +1,11 @@
 include includes/header.pug
   
-div.page.listing
+div.page.listing(ng-controller="galleryCtrl" ng-init="galleryOpen = false" ng-class='{galleryOpen: galleryOpen == true}')
     div.container
         div.top
-            div.gallery(ng-controller="galleryCtrl")
-              div.row.single
-                div.image(style="background-image: url(https://api.crexi.com/tn/a2abc54c8d144f7096b69f4b6ba720cc_1306x734.jpg);")
-                  img(src="https://api.crexi.com/tn/a2abc54c8d144f7096b69f4b6ba720cc_1306x734.jpg")
-              div.row.triple
-                div.image(style="background-image: url(http://images4.showcase.com/i2/3D49-Y70WKgQ_RgDaqpPViD0ttARyipCqsM2A792bBA/106/image.jpg);")
-                  img(src="http://images4.showcase.com/i2/3D49-Y70WKgQ_RgDaqpPViD0ttARyipCqsM2A792bBA/106/image.jpg")
-                div.image(style="background-image: url(http://www.disneyfoodblog.com/wp-content/uploads/2014/05/downtown-disney-west-side-starbucks-orlando-indoor-seating-2-600x400.jpg?b02ebe);")
-                  img(src="http://www.disneyfoodblog.com/wp-content/uploads/2014/05/downtown-disney-west-side-starbucks-orlando-indoor-seating-2-600x400.jpg?b02ebe")
-                div.image(style="background-image: url(https://i.pinimg.com/originals/f9/d3/23/f9d3231b2e0596a961c72f83f2cdceb4.jpg);")
-                  img(src="https://i.pinimg.com/originals/f9/d3/23/f9d3231b2e0596a961c72f83f2cdceb4.jpg")
-              div.row.double
-                  div.image(style="background-image: url(http://images3.showcase.com/i2/RA0keVKgQrR-1ovX7AIG1MvXQ4YkoJwKGHP06ojwXBE/106/image.jpg);")
-                    img(src="http://images3.showcase.com/i2/RA0keVKgQrR-1ovX7AIG1MvXQ4YkoJwKGHP06ojwXBE/106/image.jpg")
-                  div.image(style="background-image: url(http://images2.showcase.com/i2/ts151_9sNLSzvBCo61TMsOOOi13EQBlHtViilzEeyHM/106/image.jpg);")
-                    img(src="http://images2.showcase.com/i2/ts151_9sNLSzvBCo61TMsOOOi13EQBlHtViilzEeyHM/106/image.jpg")
+            div.gallery
+              div.row
+                div.image(ng-repeat='item in galleryItems' ng-style="{'background-image':'url({{ item.src }})'}" ng-click='openGallery($index)')
             div.information
                 h2 Freestanding Starbucks
                 h6 10330 Curry Ford Road<br>Orlando, FL 32825
@@ -71,4 +58,15 @@ div.page.listing
                 a.cta(href="#") SUBMIT &amp; DOWNLOAD
             div.close(ng-click="downloadModal = !downloadModal")
                 span
+    modal.galleryModal
+      div.container
+        div.close(ng-click='galleryOpen = !galleryOpen')
+          span
+        div.image
+          img(src="{{galleryItems[selectedIndex].src}}")
+        div.arrows
+          button#next(ng-click='change(1)')
+            <i class="fa fa-angle-right" aria-hidden="true"></i>
+          button#prev(ng-click='change(-1)')
+            <i class="fa fa-angle-left" aria-hidden="true"></i>                
 include includes/footer.pug

@@ -186,7 +186,7 @@ nav{
       position: relative;
       top: -10px;
       height: 85vh;
-      background: linear-gradient(rgba($blue, 0.25), rgba($blue, 0.4)), url(http://www.karenatlantahomes.com/wp-content/uploads/2017/04/image1.jpeg) 50% 50% no-repeat;
+      background: linear-gradient(rgba($blue, 0.25), rgba($blue, 0.6)), url(http://www.karenatlantahomes.com/wp-content/uploads/2017/04/image1.jpeg) 50% 50% no-repeat;
       background-size: cover;
       
       .text{
@@ -200,8 +200,9 @@ nav{
         h1{
           color: $white;
         }
-        h3{
+        h2{
           color: $white;
+          text-transform: none;
         }
       }
     }
@@ -228,9 +229,10 @@ nav{
     
     .listings{
       text-align: center;
-      h2{
+      h3{
         text-align: center;
         margin: 2.5rem 0 4rem;
+        text-transform: uppercase;
         
         &:after{
           display: none;
@@ -615,48 +617,36 @@ nav{
               background: no-repeat 50% 50%;
               background-size: cover;
               position: relative;
+              margin: 0 0 1rem;
+              vertical-align: top;
+              padding: 0 0 56.25%;
               
-              img{
-                display: none;
-              }
-            }
-            
-            &.single{
-              .image{
-                width: 100%;
-                padding: 0 0 56.25%;
-              }
-            }
-            
-            &.double{
-              .image{
+              &:nth-of-type(2), &:nth-of-type(3), &:nth-of-type(4){
                 display: inline-block;
-                width: calc(50% - 4px);
-                padding: 0 0 28.125%;
-                
-                &:nth-of-type(1){
-                  margin: 0 0.5rem 0 0;
-                }
-                
-                &:nth-of-type(2){
-                  margin: 0;
-                }
-              }
-            }
-            
-            &.triple{
-              .image{
-                display: inline-block;
-                width: calc((100%/3) - 5px);
+                width: calc((100%/3) - 0.7rem);
                 padding: 0 0 18.75%;
-  
-                
-                &:nth-of-type(1){
-                  margin: 0 0.5rem 0 0;
-                }
-                &:nth-of-type(3){
-                  margin: 0 0 0 0.5rem;
-                }
+              }
+              
+              &:nth-of-type(3){
+                margin: 0 1rem 1rem;
+              }
+              
+              &:nth-of-type(5){
+                display: inline-block;
+                width: calc((100%/2) - 0.5rem);
+                margin: 0 1rem 1rem 0;
+                padding: 0 0 28.125%;
+              }
+              
+              &:nth-of-type(6){;
+                display: inline-block;
+                width: calc((100%/2) - 0.5rem);
+                margin: 0 0 1rem 0;
+                padding: 0 0 28.125%;
+              }
+              
+              &:hover{
+                cursor: pointer;
               }
             }
           }
@@ -696,7 +686,7 @@ nav{
         margin: 0 auto;
         width: 85%;
         max-width: 700px;
-        background: rgba(12,36,37, 0.95);
+        background: rgba($blue, 0.95);
         padding: 4rem 2rem 2rem;
         box-shadow:0 4px 10px 4px rgba($blue, .3);
         
@@ -754,6 +744,10 @@ nav{
                   &::placeholder{
                     visibility: hidden;
                   }
+                }
+                
+                option{
+                  color: $blue;
                 }
               }
               
@@ -846,6 +840,135 @@ nav{
         }
       }
     }
+    modal.galleryModal{
+      display: none;
+    }
+    &.galleryOpen{
+      background: rgba($blue, 0.95);
+      overflow-y: hidden;
+      
+      modal.galleryModal{
+        z-index: 100;
+        display: block;
+        top: 0;
+        bottom: 0;
+        height: 100vh;
+        width: 100vw;
+        background: rgba($blue, 0.95);
+        position: fixed;
+        filter: blur(0);
+        .container{
+          max-width: 992px;
+          position: relative;
+          margin: 0 auto;
+          height: 100vh;
+          text-align: center;
+        }
+        .image{
+          display: block;
+          left: 0;
+          right: 0;
+          margin: 0 4rem;
+          max-height: 80vh;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          img{
+            display: block;
+            max-width: 100%;
+            max-height: 80vh;
+            margin: 0 auto;
+          }
+        }
+        .arrows{
+          button{
+            display: block;
+            background: transparent;
+            border: none;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            
+            &:disabled{
+              opacity: 0.3;
+              
+              .fa{
+                &:hover{
+                  color: $white;
+                }
+              }
+            }
+            
+            &:focus{
+              outline: none;
+              .fa{
+                color: $orange;
+              }
+            }
+            
+            .fa{
+              font-size: 3rem;
+              color: #fff;
+             
+              &:hover{
+                color: $orange;
+                cursor: pointer;
+              }
+            }
+            
+            &#prev{
+              left: 10px;
+            }
+  
+            &#next{
+              right: 10px;
+            }
+          }
+         }
+        .close{
+          position: absolute;
+          right: 20px;
+          top: 20px;
+          display: block;
+          
+          &:hover{
+            cursor: pointer;
+          }
+          
+          span{
+            position: absolute;
+            height: .3rem;
+            width: 2rem;
+            right: 0;
+            top: 50%;
+            margin-top: -1px;
+            background: transparent;
+            
+            &:before{
+              position: absolute;
+              content:"";
+              height: .3rem;
+              width: 2rem;
+              top: 0;
+              display: block;
+              background: $white;
+              transform: rotate(45deg);
+            }
+
+            &:after{
+              position: absolute;
+              content:"";
+              height: .3rem;
+              width: 2rem;
+              top: 0;
+              display: block;
+              background: $white;
+              transform: rotate(-45deg);
+            }
+          }
+        }
+      }
+    }
   }
 
   &.contact{
@@ -853,6 +976,76 @@ nav{
       width: 100%;
       overflow: hidden;
       background: #cecece;
+      
+      .contact-info{
+        padding: 1rem;
+        background-color: $orange;
+        
+        .section{
+          border-bottom: 1px solid $white;
+          padding: 1.25rem;
+          
+          &:last-of-type{
+            border: none;
+          }
+          
+          @media all and (min-width: 768px){
+            width: calc((100%/3) - 2px);
+            display: inline-block;
+            border-bottom: none;
+            border-right: 1px solid $white;
+            vertical-align: top;
+            min-height: 50px;
+            
+            &:last-of-type{
+              border: none;
+            }
+          }
+          
+          .icon{
+            width: 25%;
+            margin: 0 auto 1rem;
+            text-align: center;
+            
+            @media all and (min-width: 768px){
+              float: left;
+              margin: 0;
+            }
+            
+            small{
+              color: $white;
+              text-transform: uppercase;
+            }
+            
+            .fa{
+              display: block;
+              font-size: 2rem;
+              margin: 0 0 1rem;
+              color: $white;
+            }
+          }
+          
+          .links{
+            text-align: center;
+            
+            @media all and (min-width: 768px){
+              width: 75%;
+              float: right;
+            }
+            
+            a{
+              color: $white;
+              font-size: 1.2rem;
+              font-weight: 300;
+              display: block;
+            
+              &:hover{
+                color: $blue;
+              }
+            }
+          }
+        }
+      }
       
       .map{
         min-height: 200px;
@@ -912,6 +1105,15 @@ nav{
               &::placeholder{
                 color: $white;
                 font-size: 1.2rem;
+              }
+            }
+          }
+          button{
+            &.cta{
+              margin: 1rem auto 0;
+              
+              @media all and (min-width: 768px){
+                margin: 2rem auto 0;
               }
             }
           }

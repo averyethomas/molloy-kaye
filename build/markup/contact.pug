@@ -4,6 +4,27 @@ div.page.contact
     div.container
         h1 Contact
         div.contact-container
+          div.contact-info
+            div.section
+              div.icon
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                small Address
+              div.links
+                a(href="#") 1100 Abernathy Road, N.E.<br>Bldg. 500, Suite 600 Atlanta, GA 30328
+            div.section
+              div.icon
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                small Phone
+              div.links
+                a(href="tel:6788032763") Sonny Molloy: (678) 803-2763
+                a(href="tel:6788082821") Jared Kaye: (678) 808-2821
+            div.section
+              div.icon
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                small Email
+              div.links  
+                a(href="mailto:sonny.molloy@marcusmillichap.com") sonny.molloy@marcusmillichap.com
+                a(href="mailto:jared.kaye@marcusmillichap.com") jared.kaye@marcusmillichap.com
           div.map
           div.contact-form
             form
@@ -17,6 +38,6 @@ div.page.contact
                 input(type="tel" required placeholder="Phone Number *")
               div.field
                 textarea(required placeholder="Your Message Here*" rows="7")
-              button.cta SUBMIT  
-       
+              button.cta SUBMIT
+
 include includes/footer.pug

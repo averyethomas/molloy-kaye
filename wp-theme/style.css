@@ -390,8 +390,8 @@ nav {
     position: relative;
     top: -10px;
     height: 85vh;
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(26, 40, 60, 0.25)), to(rgba(26, 40, 60, 0.4))), url(http://www.karenatlantahomes.com/wp-content/uploads/2017/04/image1.jpeg) 50% 50% no-repeat;
-    background: linear-gradient(rgba(26, 40, 60, 0.25), rgba(26, 40, 60, 0.4)), url(http://www.karenatlantahomes.com/wp-content/uploads/2017/04/image1.jpeg) 50% 50% no-repeat;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(26, 40, 60, 0.25)), to(rgba(26, 40, 60, 0.6))), url(http://www.karenatlantahomes.com/wp-content/uploads/2017/04/image1.jpeg) 50% 50% no-repeat;
+    background: linear-gradient(rgba(26, 40, 60, 0.25), rgba(26, 40, 60, 0.6)), url(http://www.karenatlantahomes.com/wp-content/uploads/2017/04/image1.jpeg) 50% 50% no-repeat;
     background-size: cover; }
     .page.home .hero .text {
       color: #ffffff;
@@ -403,8 +403,9 @@ nav {
               transform: translate(-50%, -50%); }
       .page.home .hero .text h1 {
         color: #ffffff; }
-      .page.home .hero .text h3 {
-        color: #ffffff; }
+      .page.home .hero .text h2 {
+        color: #ffffff;
+        text-transform: none; }
   .page.home .intro {
     position: relative;
     top: -10px;
@@ -421,10 +422,11 @@ nav {
       font-weight: 300; }
   .page.home .listings {
     text-align: center; }
-    .page.home .listings h2 {
+    .page.home .listings h3 {
       text-align: center;
-      margin: 2.5rem 0 4rem; }
-      .page.home .listings h2:after {
+      margin: 2.5rem 0 4rem;
+      text-transform: uppercase; }
+      .page.home .listings h3:after {
         display: none; }
     .page.home .listings .listing {
       width: 100%;
@@ -671,28 +673,28 @@ nav {
         display: block;
         background: no-repeat 50% 50%;
         background-size: cover;
-        position: relative; }
-        .page.listing .container .top .gallery .row .image img {
-          display: none; }
-      .page.listing .container .top .gallery .row.single .image {
-        width: 100%;
+        position: relative;
+        margin: 0 0 1rem;
+        vertical-align: top;
         padding: 0 0 56.25%; }
-      .page.listing .container .top .gallery .row.double .image {
-        display: inline-block;
-        width: calc(50% - 4px);
-        padding: 0 0 28.125%; }
-        .page.listing .container .top .gallery .row.double .image:nth-of-type(1) {
-          margin: 0 0.5rem 0 0; }
-        .page.listing .container .top .gallery .row.double .image:nth-of-type(2) {
-          margin: 0; }
-      .page.listing .container .top .gallery .row.triple .image {
-        display: inline-block;
-        width: calc((100%/3) - 5px);
-        padding: 0 0 18.75%; }
-        .page.listing .container .top .gallery .row.triple .image:nth-of-type(1) {
-          margin: 0 0.5rem 0 0; }
-        .page.listing .container .top .gallery .row.triple .image:nth-of-type(3) {
-          margin: 0 0 0 0.5rem; }
+        .page.listing .container .top .gallery .row .image:nth-of-type(2), .page.listing .container .top .gallery .row .image:nth-of-type(3), .page.listing .container .top .gallery .row .image:nth-of-type(4) {
+          display: inline-block;
+          width: calc((100%/3) - 0.7rem);
+          padding: 0 0 18.75%; }
+        .page.listing .container .top .gallery .row .image:nth-of-type(3) {
+          margin: 0 1rem 1rem; }
+        .page.listing .container .top .gallery .row .image:nth-of-type(5) {
+          display: inline-block;
+          width: calc((100%/2) - 0.5rem);
+          margin: 0 1rem 1rem 0;
+          padding: 0 0 28.125%; }
+        .page.listing .container .top .gallery .row .image:nth-of-type(6) {
+          display: inline-block;
+          width: calc((100%/2) - 0.5rem);
+          margin: 0 0 1rem 0;
+          padding: 0 0 28.125%; }
+        .page.listing .container .top .gallery .row .image:hover {
+          cursor: pointer; }
     .page.listing .container .top .information {
       margin: 20px 0 0; }
       .page.listing .container .top .information .download button.cta {
@@ -716,7 +718,7 @@ nav {
     margin: 0 auto;
     width: 85%;
     max-width: 700px;
-    background: rgba(12, 36, 37, 0.95);
+    background: rgba(26, 40, 60, 0.95);
     padding: 4rem 2rem 2rem;
     -webkit-box-shadow: 0 4px 10px 4px rgba(26, 40, 60, 0.3);
             box-shadow: 0 4px 10px 4px rgba(26, 40, 60, 0.3); }
@@ -764,6 +766,8 @@ nav {
               visibility: hidden; }
             .page.listing .container modal form .row .field select:active::placeholder, .page.listing .container modal form .row .field select:focus::placeholder {
               visibility: hidden; }
+          .page.listing .container modal form .row .field select option {
+            color: #1a283c; }
         .page.listing .container modal form .row .field input {
           position: relative;
           border: 1px solid #ffffff;
@@ -839,10 +843,155 @@ nav {
                   transform: rotate(-45deg); }
       .page.listing .container modal .close:hover span:before, .page.listing .container modal .close:hover span:after {
         background: #FF850E; }
+  .page.listing modal.galleryModal {
+    display: none; }
+  .page.listing.galleryOpen {
+    background: rgba(26, 40, 60, 0.95);
+    overflow-y: hidden; }
+    .page.listing.galleryOpen modal.galleryModal {
+      z-index: 100;
+      display: block;
+      top: 0;
+      bottom: 0;
+      height: 100vh;
+      width: 100vw;
+      background: rgba(26, 40, 60, 0.95);
+      position: fixed;
+      -webkit-filter: blur(0);
+              filter: blur(0); }
+      .page.listing.galleryOpen modal.galleryModal .container {
+        max-width: 992px;
+        position: relative;
+        margin: 0 auto;
+        height: 100vh;
+        text-align: center; }
+      .page.listing.galleryOpen modal.galleryModal .image {
+        display: block;
+        left: 0;
+        right: 0;
+        margin: 0 4rem;
+        max-height: 80vh;
+        position: absolute;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+                transform: translateY(-50%); }
+        .page.listing.galleryOpen modal.galleryModal .image img {
+          display: block;
+          max-width: 100%;
+          max-height: 80vh;
+          margin: 0 auto; }
+      .page.listing.galleryOpen modal.galleryModal .arrows button {
+        display: block;
+        background: transparent;
+        border: none;
+        position: absolute;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+                transform: translateY(-50%); }
+        .page.listing.galleryOpen modal.galleryModal .arrows button:disabled {
+          opacity: 0.3; }
+          .page.listing.galleryOpen modal.galleryModal .arrows button:disabled .fa:hover {
+            color: #ffffff; }
+        .page.listing.galleryOpen modal.galleryModal .arrows button:focus {
+          outline: none; }
+          .page.listing.galleryOpen modal.galleryModal .arrows button:focus .fa {
+            color: #FF850E; }
+        .page.listing.galleryOpen modal.galleryModal .arrows button .fa {
+          font-size: 3rem;
+          color: #fff; }
+          .page.listing.galleryOpen modal.galleryModal .arrows button .fa:hover {
+            color: #FF850E;
+            cursor: pointer; }
+        .page.listing.galleryOpen modal.galleryModal .arrows button#prev {
+          left: 10px; }
+        .page.listing.galleryOpen modal.galleryModal .arrows button#next {
+          right: 10px; }
+      .page.listing.galleryOpen modal.galleryModal .close {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        display: block; }
+        .page.listing.galleryOpen modal.galleryModal .close:hover {
+          cursor: pointer; }
+        .page.listing.galleryOpen modal.galleryModal .close span {
+          position: absolute;
+          height: .3rem;
+          width: 2rem;
+          right: 0;
+          top: 50%;
+          margin-top: -1px;
+          background: transparent; }
+          .page.listing.galleryOpen modal.galleryModal .close span:before {
+            position: absolute;
+            content: "";
+            height: .3rem;
+            width: 2rem;
+            top: 0;
+            display: block;
+            background: #ffffff;
+            -webkit-transform: rotate(45deg);
+                    transform: rotate(45deg); }
+          .page.listing.galleryOpen modal.galleryModal .close span:after {
+            position: absolute;
+            content: "";
+            height: .3rem;
+            width: 2rem;
+            top: 0;
+            display: block;
+            background: #ffffff;
+            -webkit-transform: rotate(-45deg);
+                    transform: rotate(-45deg); }
   .page.contact .contact-container {
     width: 100%;
     overflow: hidden;
     background: #cecece; }
+    .page.contact .contact-container .contact-info {
+      padding: 1rem;
+      background-color: #FF850E; }
+      .page.contact .contact-container .contact-info .section {
+        border-bottom: 1px solid #ffffff;
+        padding: 1.25rem; }
+        .page.contact .contact-container .contact-info .section:last-of-type {
+          border: none; }
+        @media all and (min-width: 768px) {
+          .page.contact .contact-container .contact-info .section {
+            width: calc((100%/3) - 2px);
+            display: inline-block;
+            border-bottom: none;
+            border-right: 1px solid #ffffff;
+            vertical-align: top;
+            min-height: 50px; }
+            .page.contact .contact-container .contact-info .section:last-of-type {
+              border: none; } }
+        .page.contact .contact-container .contact-info .section .icon {
+          width: 25%;
+          margin: 0 auto 1rem;
+          text-align: center; }
+          @media all and (min-width: 768px) {
+            .page.contact .contact-container .contact-info .section .icon {
+              float: left;
+              margin: 0; } }
+          .page.contact .contact-container .contact-info .section .icon small {
+            color: #ffffff;
+            text-transform: uppercase; }
+          .page.contact .contact-container .contact-info .section .icon .fa {
+            display: block;
+            font-size: 2rem;
+            margin: 0 0 1rem;
+            color: #ffffff; }
+        .page.contact .contact-container .contact-info .section .links {
+          text-align: center; }
+          @media all and (min-width: 768px) {
+            .page.contact .contact-container .contact-info .section .links {
+              width: 75%;
+              float: right; } }
+          .page.contact .contact-container .contact-info .section .links a {
+            color: #ffffff;
+            font-size: 1.2rem;
+            font-weight: 300;
+            display: block; }
+            .page.contact .contact-container .contact-info .section .links a:hover {
+              color: #1a283c; }
     .page.contact .contact-container .map {
       min-height: 200px;
       width: 100%;
@@ -903,6 +1052,11 @@ nav {
           .page.contact .contact-container .contact-form form .field input::placeholder, .page.contact .contact-container .contact-form form .field textarea::placeholder {
             color: #ffffff;
             font-size: 1.2rem; }
+      .page.contact .contact-container .contact-form form button.cta {
+        margin: 1rem auto 0; }
+        @media all and (min-width: 768px) {
+          .page.contact .contact-container .contact-form form button.cta {
+            margin: 2rem auto 0; } }
 
 footer {
   padding: 1rem 0;
