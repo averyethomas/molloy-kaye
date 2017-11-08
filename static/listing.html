@@ -31,8 +31,11 @@
   <div class="container">
     <div class="top">
       <div class="gallery">
+        <div class="row first">
+          <div class="image" ng-click="openGallery(0)" ng-style="{'background-image': 'url(' + primaryImage.src + ')'}"></div>
+        </div>
         <div class="row">
-          <div class="image" ng-repeat="item in galleryItems" ng-style="{'background-image':'url({{ item.src }})'}" ng-click="openGallery($index)"></div>
+          <div class="image" ng-repeat="item in galleryItems" ng-if="$index &gt; 0" ng-style="{'background-image':'url({{ item.src }})'}" ng-click="openGallery($index)" ng-mouseover="changePrimary($index)" ng-mouseleave="changePrimary(0)"></div>
         </div>
       </div>
       <div class="information">

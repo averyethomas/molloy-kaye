@@ -19,6 +19,15 @@ app.controller('galleryCtrl', ['$scope', function($scope){
         {src:'http://adventures.averyethomas.com/wp-content/uploads/2017/07/kilmahog-02.jpg'}    
     ]
     
+    $scope.primaryId = 0;
+   
+    $scope.primaryImage = $scope.galleryItems[$scope.primaryId];
+   
+    $scope.changePrimary = function(id){
+       $scope.primaryId = id;
+       $scope.primaryImage = $scope.galleryItems[$scope.primaryId];
+    }
+    
    $scope.selectedIndex = 0;
    
    $scope.selectedItem = $scope.galleryItems[$scope.selectedIndex];
