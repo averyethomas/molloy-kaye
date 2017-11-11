@@ -393,6 +393,13 @@ nav {
     background: -webkit-gradient(linear, left top, left bottom, from(rgba(26, 40, 60, 0.25)), to(rgba(26, 40, 60, 0.6))), url(http://www.karenatlantahomes.com/wp-content/uploads/2017/04/image1.jpeg) 50% 50% no-repeat;
     background: linear-gradient(rgba(26, 40, 60, 0.25), rgba(26, 40, 60, 0.6)), url(http://www.karenatlantahomes.com/wp-content/uploads/2017/04/image1.jpeg) 50% 50% no-repeat;
     background-size: cover; }
+    .page.home .hero .overlay {
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: -webkit-gradient(linear, left top, left bottom, from(rgba(26, 40, 60, 0.25)), to(rgba(26, 40, 60, 0.4)));
+      background: linear-gradient(rgba(26, 40, 60, 0.25), rgba(26, 40, 60, 0.4)); }
     .page.home .hero .text {
       color: #ffffff;
       text-align: center;
@@ -406,6 +413,8 @@ nav {
       .page.home .hero .text h2 {
         color: #ffffff;
         text-transform: none; }
+        .page.home .hero .text h2::after {
+          display: none; }
   .page.home .intro {
     position: relative;
     top: -10px;
@@ -492,10 +501,16 @@ nav {
     position: relative;
     top: -10px;
     min-height: 200px;
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(26, 40, 60, 0.25)), to(rgba(26, 40, 60, 0.4))), url(http://www.karenatlantahomes.com/wp-content/uploads/2017/04/image1.jpeg) 50% 50% no-repeat;
-    background: linear-gradient(rgba(26, 40, 60, 0.25), rgba(26, 40, 60, 0.4)), url(http://www.karenatlantahomes.com/wp-content/uploads/2017/04/image1.jpeg) 50% 50% no-repeat;
+    background: no-repeat 50% 50%;
     background-size: cover;
     margin: 0 0 2rem; }
+    .page.single .hero .overlay {
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: -webkit-gradient(linear, left top, left bottom, from(rgba(26, 40, 60, 0.25)), to(rgba(26, 40, 60, 0.4)));
+      background: linear-gradient(rgba(26, 40, 60, 0.25), rgba(26, 40, 60, 0.4)); }
     .page.single .hero .container h1 {
       color: #ffffff;
       margin: 0;
@@ -728,86 +743,6 @@ nav {
     @media all and (min-width: 768px) {
       .page.listing .container modal {
         padding: 4rem 3rem 3rem; } }
-    .page.listing .container modal form .row {
-      margin: 0 0 1rem; }
-      @media all and (min-width: 768px) {
-        .page.listing .container modal form .row.double .field:nth-of-type(1) {
-          display: inline-block;
-          width: calc(50% - 4px);
-          margin: 0 0.5rem 0 0; }
-        .page.listing .container modal form .row.double .field:nth-of-type(2) {
-          display: inline-block;
-          width: calc(50% - 9px);
-          margin: 0 0 0 0.5rem; } }
-      .page.listing .container modal form .row .field {
-        margin: 0 auto 1rem; }
-        @media all and (min-width: 768px) {
-          .page.listing .container modal form .row .field {
-            margin: 0; } }
-        .page.listing .container modal form .row .field select {
-          position: relative;
-          border: 1px solid #ffffff;
-          padding: 7px 10px;
-          width: 100%;
-          background: transparent;
-          color: #ffffff;
-          border-radius: 0;
-          font-size: 1rem;
-          -webkit-appearance: none;
-          -moz-appearance: none;
-          appearance: none;
-          background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='200' fill='#ffffff'><polygon points='50,0 0,85 100,85;' /><polygon points='50,200 0,115 100,115' /></svg>") no-repeat 97% 50%;
-          background-size: 0.5rem; }
-          .page.listing .container modal form .row .field select:active, .page.listing .container modal form .row .field select:focus {
-            border: 1px solid #FF850E;
-            outline: none; }
-            .page.listing .container modal form .row .field select:active::-webkit-input-placeholder, .page.listing .container modal form .row .field select:focus::-webkit-input-placeholder {
-              visibility: hidden; }
-            .page.listing .container modal form .row .field select:active:-ms-input-placeholder, .page.listing .container modal form .row .field select:focus:-ms-input-placeholder {
-              visibility: hidden; }
-            .page.listing .container modal form .row .field select:active::-ms-input-placeholder, .page.listing .container modal form .row .field select:focus::-ms-input-placeholder {
-              visibility: hidden; }
-            .page.listing .container modal form .row .field select:active::placeholder, .page.listing .container modal form .row .field select:focus::placeholder {
-              visibility: hidden; }
-          .page.listing .container modal form .row .field select option {
-            color: #1a283c; }
-        .page.listing .container modal form .row .field input {
-          position: relative;
-          border: 1px solid #ffffff;
-          padding: 7px 10px;
-          width: 100%;
-          background: transparent;
-          color: #ffffff;
-          font-size: 1rem; }
-          .page.listing .container modal form .row .field input:after {
-            content: '< >';
-            display: block;
-            position: absolute;
-            border: 1px solid red;
-            top: 0;
-            right: 0; }
-          .page.listing .container modal form .row .field input:active, .page.listing .container modal form .row .field input:focus {
-            border: 1px solid #FF850E; }
-            .page.listing .container modal form .row .field input:active::-webkit-input-placeholder, .page.listing .container modal form .row .field input:focus::-webkit-input-placeholder {
-              visibility: hidden; }
-            .page.listing .container modal form .row .field input:active:-ms-input-placeholder, .page.listing .container modal form .row .field input:focus:-ms-input-placeholder {
-              visibility: hidden; }
-            .page.listing .container modal form .row .field input:active::-ms-input-placeholder, .page.listing .container modal form .row .field input:focus::-ms-input-placeholder {
-              visibility: hidden; }
-            .page.listing .container modal form .row .field input:active::placeholder, .page.listing .container modal form .row .field input:focus::placeholder {
-              visibility: hidden; }
-          .page.listing .container modal form .row .field input::-webkit-input-placeholder {
-            color: #ffffff;
-            font-size: 1rem; }
-          .page.listing .container modal form .row .field input:-ms-input-placeholder {
-            color: #ffffff;
-            font-size: 1rem; }
-          .page.listing .container modal form .row .field input::-ms-input-placeholder {
-            color: #ffffff;
-            font-size: 1rem; }
-          .page.listing .container modal form .row .field input::placeholder {
-            color: #ffffff;
-            font-size: 1rem; }
     .page.listing .container modal form a {
       border: 2px solid #FF850E;
       color: #ffffff;
@@ -953,7 +888,7 @@ nav {
       background-color: #FF850E; }
       .page.contact .contact-container .contact-info .section {
         border-bottom: 1px solid #ffffff;
-        padding: 1.25rem; }
+        padding: 1rem; }
         .page.contact .contact-container .contact-info .section:last-of-type {
           border: none; }
         @media all and (min-width: 768px) {
@@ -967,7 +902,7 @@ nav {
             .page.contact .contact-container .contact-info .section:last-of-type {
               border: none; } }
         .page.contact .contact-container .contact-info .section .icon {
-          width: 25%;
+          width: 18%;
           margin: 0 auto 1rem;
           text-align: center; }
           @media all and (min-width: 768px) {
@@ -979,14 +914,14 @@ nav {
             text-transform: uppercase; }
           .page.contact .contact-container .contact-info .section .icon .fa {
             display: block;
-            font-size: 2rem;
+            font-size: 2.5rem;
             margin: 0 0 1rem;
             color: #ffffff; }
         .page.contact .contact-container .contact-info .section .links {
           text-align: center; }
           @media all and (min-width: 768px) {
             .page.contact .contact-container .contact-info .section .links {
-              width: 75%;
+              width: 80%;
               float: right; } }
           .page.contact .contact-container .contact-info .section .links a {
             color: #ffffff;
@@ -995,6 +930,9 @@ nav {
             display: block; }
             .page.contact .contact-container .contact-info .section .links a:hover {
               color: #1a283c; }
+            @media all and (min-width: 1200px) {
+              .page.contact .contact-container .contact-info .section .links a {
+                font-size: 1.3rem; } }
     .page.contact .contact-container .map {
       min-height: 200px;
       width: 100%;
@@ -1014,52 +952,120 @@ nav {
           width: 50%;
           float: right;
           padding: 2rem; } }
-      .page.contact .contact-container .contact-form form .field {
-        margin: 0; }
-        @media all and (min-width: 768px) {
-          .page.contact .contact-container .contact-form form .field:nth-of-type(1) {
-            display: inline-block;
-            width: calc(50% - 12px);
-            margin: 0 1rem 0 0; }
-          .page.contact .contact-container .contact-form form .field:nth-of-type(2) {
-            display: inline-block;
-            width: calc(50% - 12px);
-            margin: 0 0 0 1rem; } }
-        .page.contact .contact-container .contact-form form .field input, .page.contact .contact-container .contact-form form .field textarea {
-          position: relative;
-          border: 1px solid #ffffff;
-          padding: 7px 10px;
-          margin: 0 0 1rem;
-          width: 100%;
-          background: transparent;
-          color: #ffffff; }
-          .page.contact .contact-container .contact-form form .field input:active, .page.contact .contact-container .contact-form form .field input:focus, .page.contact .contact-container .contact-form form .field textarea:active, .page.contact .contact-container .contact-form form .field textarea:focus {
-            border: 1px solid #FF850E; }
-            .page.contact .contact-container .contact-form form .field input:active::-webkit-input-placeholder, .page.contact .contact-container .contact-form form .field input:focus::-webkit-input-placeholder, .page.contact .contact-container .contact-form form .field textarea:active::-webkit-input-placeholder, .page.contact .contact-container .contact-form form .field textarea:focus::-webkit-input-placeholder {
-              visibility: hidden; }
-            .page.contact .contact-container .contact-form form .field input:active:-ms-input-placeholder, .page.contact .contact-container .contact-form form .field input:focus:-ms-input-placeholder, .page.contact .contact-container .contact-form form .field textarea:active:-ms-input-placeholder, .page.contact .contact-container .contact-form form .field textarea:focus:-ms-input-placeholder {
-              visibility: hidden; }
-            .page.contact .contact-container .contact-form form .field input:active::-ms-input-placeholder, .page.contact .contact-container .contact-form form .field input:focus::-ms-input-placeholder, .page.contact .contact-container .contact-form form .field textarea:active::-ms-input-placeholder, .page.contact .contact-container .contact-form form .field textarea:focus::-ms-input-placeholder {
-              visibility: hidden; }
-            .page.contact .contact-container .contact-form form .field input:active::placeholder, .page.contact .contact-container .contact-form form .field input:focus::placeholder, .page.contact .contact-container .contact-form form .field textarea:active::placeholder, .page.contact .contact-container .contact-form form .field textarea:focus::placeholder {
-              visibility: hidden; }
-          .page.contact .contact-container .contact-form form .field input::-webkit-input-placeholder, .page.contact .contact-container .contact-form form .field textarea::-webkit-input-placeholder {
-            color: #ffffff;
-            font-size: 1.2rem; }
-          .page.contact .contact-container .contact-form form .field input:-ms-input-placeholder, .page.contact .contact-container .contact-form form .field textarea:-ms-input-placeholder {
-            color: #ffffff;
-            font-size: 1.2rem; }
-          .page.contact .contact-container .contact-form form .field input::-ms-input-placeholder, .page.contact .contact-container .contact-form form .field textarea::-ms-input-placeholder {
-            color: #ffffff;
-            font-size: 1.2rem; }
-          .page.contact .contact-container .contact-form form .field input::placeholder, .page.contact .contact-container .contact-form form .field textarea::placeholder {
-            color: #ffffff;
-            font-size: 1.2rem; }
-      .page.contact .contact-container .contact-form form button.cta {
-        margin: 1rem auto 0; }
-        @media all and (min-width: 768px) {
-          .page.contact .contact-container .contact-form form button.cta {
-            margin: 2rem auto 0; } }
+  .page form .row {
+    margin: 0 0 1rem; }
+    @media all and (min-width: 768px) {
+      .page form .row.double .field:nth-of-type(1) {
+        display: inline-block;
+        width: calc(50% - 4px);
+        margin: 0 0.5rem 0 0; }
+      .page form .row.double .field:nth-of-type(2) {
+        display: inline-block;
+        width: calc(50% - 9px);
+        margin: 0 0 0 0.5rem; } }
+    .page form .row .field {
+      margin: 0 auto 1rem; }
+      @media all and (min-width: 768px) {
+        .page form .row .field {
+          margin: 0; } }
+      .page form .row .field span.wpcf7-form-control-wrap select {
+        position: relative;
+        border: 1px solid #ffffff;
+        padding: 7px 10px;
+        width: 100%;
+        background: transparent;
+        color: #ffffff;
+        border-radius: 0;
+        font-size: 1rem;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='200' fill='#ffffff'><polygon points='50,0 0,85 100,85;' /><polygon points='50,200 0,115 100,115' /></svg>") no-repeat 97% 50%;
+        background-size: 0.5rem; }
+        .page form .row .field span.wpcf7-form-control-wrap select:active, .page form .row .field span.wpcf7-form-control-wrap select:focus {
+          border: 1px solid #FF850E;
+          outline: none; }
+          .page form .row .field span.wpcf7-form-control-wrap select:active::-webkit-input-placeholder, .page form .row .field span.wpcf7-form-control-wrap select:focus::-webkit-input-placeholder {
+            visibility: hidden; }
+          .page form .row .field span.wpcf7-form-control-wrap select:active:-ms-input-placeholder, .page form .row .field span.wpcf7-form-control-wrap select:focus:-ms-input-placeholder {
+            visibility: hidden; }
+          .page form .row .field span.wpcf7-form-control-wrap select:active::-ms-input-placeholder, .page form .row .field span.wpcf7-form-control-wrap select:focus::-ms-input-placeholder {
+            visibility: hidden; }
+          .page form .row .field span.wpcf7-form-control-wrap select:active::placeholder, .page form .row .field span.wpcf7-form-control-wrap select:focus::placeholder {
+            visibility: hidden; }
+        .page form .row .field span.wpcf7-form-control-wrap select option {
+          color: #1a283c; }
+      .page form .row .field input, .page form .row .field textarea {
+        position: relative;
+        border: 1px solid #ffffff;
+        padding: 7px 10px;
+        width: 100%;
+        background: transparent;
+        color: #ffffff;
+        font-size: 1rem; }
+        .page form .row .field input:after, .page form .row .field textarea:after {
+          content: '< >';
+          display: block;
+          position: absolute;
+          border: 1px solid red;
+          top: 0;
+          right: 0; }
+        .page form .row .field input:active, .page form .row .field input:focus, .page form .row .field textarea:active, .page form .row .field textarea:focus {
+          border: 1px solid #FF850E; }
+          .page form .row .field input:active::-webkit-input-placeholder, .page form .row .field input:focus::-webkit-input-placeholder, .page form .row .field textarea:active::-webkit-input-placeholder, .page form .row .field textarea:focus::-webkit-input-placeholder {
+            visibility: hidden; }
+          .page form .row .field input:active:-ms-input-placeholder, .page form .row .field input:focus:-ms-input-placeholder, .page form .row .field textarea:active:-ms-input-placeholder, .page form .row .field textarea:focus:-ms-input-placeholder {
+            visibility: hidden; }
+          .page form .row .field input:active::-ms-input-placeholder, .page form .row .field input:focus::-ms-input-placeholder, .page form .row .field textarea:active::-ms-input-placeholder, .page form .row .field textarea:focus::-ms-input-placeholder {
+            visibility: hidden; }
+          .page form .row .field input:active::placeholder, .page form .row .field input:focus::placeholder, .page form .row .field textarea:active::placeholder, .page form .row .field textarea:focus::placeholder {
+            visibility: hidden; }
+        .page form .row .field input::-webkit-input-placeholder, .page form .row .field textarea::-webkit-input-placeholder {
+          color: #ffffff;
+          font-size: 1rem; }
+        .page form .row .field input:-ms-input-placeholder, .page form .row .field textarea:-ms-input-placeholder {
+          color: #ffffff;
+          font-size: 1rem; }
+        .page form .row .field input::-ms-input-placeholder, .page form .row .field textarea::-ms-input-placeholder {
+          color: #ffffff;
+          font-size: 1rem; }
+        .page form .row .field input::placeholder, .page form .row .field textarea::placeholder {
+          color: #ffffff;
+          font-size: 1rem; }
+  .page form span.wpcf7-not-valid-tip {
+    font-family: "Source Sans Pro", sans-serif;
+    margin: 0.5rem 0; }
+  .page form input[type="submit"] {
+    font-size: 2rem;
+    line-height: 2rem;
+    padding: 7px 10px;
+    width: 220px;
+    margin: 1rem auto 0;
+    border-radius: 0px;
+    border: 2px solid #FF850E;
+    background-color: #FF850E;
+    color: #ffffff;
+    margin: 1.2rem 0;
+    text-transform: uppercase;
+    display: block;
+    -webkit-transition: all 0.25s ease-in;
+    transition: all 0.25s ease-in; }
+    .page form input[type="submit"]:hover {
+      background-color: transparent;
+      color: #FF850E; }
+    @media all and (min-width: 768px) {
+      .page form input[type="submit"] {
+        margin: 2rem auto 0; } }
+  .page form .wpcf7-response-output {
+    color: #ffffff;
+    font-family: "Source Sans Pro", sans-serif;
+    margin: 2rem auto 1rem;
+    display: block;
+    text-align: center; }
+    .page form .wpcf7-response-output.wpcf7-validation-errors {
+      border: none; }
+    .page form .wpcf7-response-output.wpcf7-mail-sent-ok {
+      border: none; }
 
 footer {
   padding: 1rem 0;
