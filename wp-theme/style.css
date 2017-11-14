@@ -130,7 +130,7 @@ h5 {
   font-family: "Source Sans Pro", sans-serif;
   font-size: 2.2rem;
   font-weight: 300;
-  line-height: 2rem;
+  line-height: 2.6rem;
   color: #000000;
   margin: 0.5rem 0; }
 
@@ -151,6 +151,17 @@ p {
   padding: 0;
   margin: 0 0 1rem; }
   p b {
+    font-weight: 600; }
+
+ul li {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  letter-spacing: 0.025rem;
+  font-weight: 300;
+  padding: 0;
+  margin: 0 0 1rem 0.5rem; }
+  ul li b {
     font-weight: 600; }
 
 a {
@@ -357,6 +368,8 @@ nav {
         font-size: 2rem;
         font-weight: 500;
         text-transform: uppercase; }
+      nav .container ul li.current_page_item a, nav .container ul li.current-menu-item a {
+        color: #FF850E; }
     @media all and (min-width: 768px) {
       nav .container ul {
         float: right;
@@ -381,7 +394,9 @@ nav {
             color: #1a283c;
             font-weight: 500; }
             nav .container ul li a:hover {
-              color: #FF850E; } }
+              color: #FF850E; }
+          nav .container ul li.current_page_item a, nav .container ul li.current-menu-item a {
+            color: #FF850E; } }
 
 .page {
   padding: 3rem 0;
@@ -437,64 +452,6 @@ nav {
       text-transform: uppercase; }
       .page.home .listings h3:after {
         display: none; }
-    .page.home .listings .listing {
-      width: 100%;
-      max-width: 350px;
-      display: block;
-      margin: 0 auto 20px;
-      text-align: left;
-      position: relative;
-      vertical-align: top; }
-      @media all and (min-width: 768px) {
-        .page.home .listings .listing {
-          display: inline-block;
-          width: calc((100%/3) - 32px);
-          margin: 0 0 30px; }
-          .page.home .listings .listing:nth-of-type(3n + 1) {
-            margin: 0 30px 30px 0; }
-          .page.home .listings .listing:nth-of-type(3n + 3) {
-            margin: 0 0 30px 30px; } }
-      @media all and (min-width: 992px) {
-        .page.home .listings .listing {
-          display: inline-block;
-          width: calc((100%/3) - 23px);
-          vertical-align: top;
-          margin: 0 0 30px; }
-          .page.home .listings .listing:nth-of-type(3n + 1) {
-            margin: 0 30px 30px 0; }
-          .page.home .listings .listing:nth-of-type(3n + 3) {
-            margin: 0 0 30px 30px; } }
-      .page.home .listings .listing.available .image h5 {
-        background-color: rgba(255, 133, 14, 0.8); }
-      .page.home .listings .listing .image {
-        width: 100%;
-        height: 200px;
-        background: no-repeat 50% 50%;
-        background-size: cover;
-        position: relative; }
-        .page.home .listings .listing .image h5 {
-          position: absolute;
-          bottom: 0;
-          padding: 5px 10px;
-          margin: 0;
-          color: #fff;
-          background: rgba(12, 36, 37, 0.8); }
-      .page.home .listings .listing h4 {
-        border-bottom: 3px solid #1a283c; }
-      .page.home .listings .listing a {
-        border: 2px solid #1a283c;
-        padding: 3px 10px;
-        background-color: transparent;
-        color: #1a283c;
-        margin: 1.2rem 0;
-        text-transform: uppercase;
-        display: block;
-        width: 135px;
-        -webkit-transition: all 0.25s ease-in;
-        transition: all 0.25s ease-in; }
-        .page.home .listings .listing a:hover {
-          color: #fff;
-          background-color: #1a283c; }
   .page.has-hero {
     padding: 0 0 3rem; }
   .page.single .hero {
@@ -526,6 +483,10 @@ nav {
         .page.single .hero .container h1 {
           padding: 0;
           margin: 0; } }
+  .page.single .listings-container h2 {
+    text-align: center; }
+    .page.single .listings-container h2::after {
+      display: none; }
   .page.single .team-container {
     padding: 3rem 0 0; }
     .page.single .team-container h2 {
@@ -558,6 +519,8 @@ nav {
         width: 175px;
         height: 175px;
         border-radius: 175px;
+        background: no-repeat 50% 20%;
+        background-size: cover;
         background-color: #cecece;
         margin: 0 auto; }
       .page.single .team-container .team-member a {
@@ -615,64 +578,6 @@ nav {
         line-height: auto;
         margin: 0;
         color: #FF850E; }
-  .page.listings .listings-container {
-    text-align: center; }
-    @media all and (min-width: 992px) {
-      .page.listings .listings-container {
-        text-align: left; } }
-    .page.listings .listings-container .listing {
-      width: 100%;
-      max-width: 350px;
-      display: block;
-      margin: 0 auto 20px;
-      text-align: left;
-      position: relative;
-      vertical-align: top; }
-      @media all and (min-width: 768px) {
-        .page.listings .listings-container .listing {
-          display: inline-block;
-          margin: 0 15px 30px;
-          width: calc((100%/2) - 32px); } }
-      @media all and (min-width: 992px) {
-        .page.listings .listings-container .listing {
-          display: inline-block;
-          width: calc((100%/3) - 23px);
-          vertical-align: top;
-          margin: 0 0 30px; }
-          .page.listings .listings-container .listing:nth-of-type(3n + 1) {
-            margin: 0 30px 30px 0; }
-          .page.listings .listings-container .listing:nth-of-type(3n + 3) {
-            margin: 0 0 30px 30px; } }
-      .page.listings .listings-container .listing.available .image h5 {
-        background-color: rgba(255, 133, 14, 0.8); }
-      .page.listings .listings-container .listing .image {
-        width: 100%;
-        height: 200px;
-        background: no-repeat 50% 50%;
-        background-size: cover;
-        position: relative; }
-        .page.listings .listings-container .listing .image h5 {
-          position: absolute;
-          bottom: 0;
-          padding: 5px 10px;
-          margin: 0;
-          color: #fff;
-          background: rgba(26, 40, 60, 0.8); }
-      .page.listings .listings-container .listing h4 {
-        border-bottom: 3px solid #1a283c; }
-      .page.listings .listings-container .listing a {
-        border: 2px solid #1a283c;
-        padding: 3px 10px;
-        color: #1a283c;
-        margin: 1.2rem 0;
-        text-transform: uppercase;
-        display: block;
-        width: 135px;
-        -webkit-transition: all 0.25s ease-in;
-        transition: all 0.25s ease-in; }
-        .page.listings .listings-container .listing a:hover {
-          color: #fff;
-          background-color: #1a283c; }
   .page.listing .container .top {
     overflow: hidden;
     margin: 0 0 2.5rem;
@@ -683,36 +588,45 @@ nav {
         display: inline-block;
         float: right; } }
     .page.listing .container .top .gallery .row {
-      margin: 0 0 0.5rem; }
-      .page.listing .container .top .gallery .row.first .image:nth-of-type(1) {
-        padding: 0 0 56.25%;
-        width: 100%; }
-      .page.listing .container .top .gallery .row .image {
+      margin: 0 0 1rem; }
+      .page.listing .container .top .gallery .row.single .image {
         display: block;
+        width: 100%;
+        padding-bottom: 56.25%;
         background: no-repeat 50% 50%;
-        background-size: cover;
-        position: relative;
-        margin: 0 0 1rem;
-        vertical-align: top;
-        padding: 0 0 56.25%; }
-        .page.listing .container .top .gallery .row .image:nth-of-type(1), .page.listing .container .top .gallery .row .image:nth-of-type(2), .page.listing .container .top .gallery .row .image:nth-of-type(3) {
-          display: inline-block;
-          width: calc((100%/3) - 0.7rem);
-          padding: 0 0 18.75%; }
-        .page.listing .container .top .gallery .row .image:nth-of-type(2) {
-          margin: 0 1rem 1rem; }
-        .page.listing .container .top .gallery .row .image:nth-of-type(4) {
-          display: inline-block;
-          width: calc((100%/2) - 0.5rem);
-          margin: 0 1rem 1rem 0;
-          padding: 0 0 28.125%; }
-        .page.listing .container .top .gallery .row .image:nth-of-type(5) {
-          display: inline-block;
-          width: calc((100%/2) - 0.5rem);
-          margin: 0 0 1rem 0;
-          padding: 0 0 28.125%; }
-        .page.listing .container .top .gallery .row .image:hover {
+        background-size: cover; }
+        .page.listing .container .top .gallery .row.single .image:hover {
           cursor: pointer; }
+        .page.listing .container .top .gallery .row.single .image img {
+          display: none; }
+      .page.listing .container .top .gallery .row.double .image {
+        display: inline-block;
+        width: calc((100%/2) - 0.65rem);
+        padding-bottom: 28.125%;
+        background: no-repeat 50% 50%;
+        background-size: cover; }
+        .page.listing .container .top .gallery .row.double .image:first-of-type {
+          margin: 0 0.5rem 0 0; }
+        .page.listing .container .top .gallery .row.double .image:last-of-type {
+          margin: 0 0 0 0.5rem; }
+        .page.listing .container .top .gallery .row.double .image:hover {
+          cursor: pointer; }
+        .page.listing .container .top .gallery .row.double .image img {
+          display: none; }
+      .page.listing .container .top .gallery .row.triple .image {
+        display: inline-block;
+        width: calc((100%/3) - 0.85rem);
+        padding-bottom: 18%;
+        background: no-repeat 50% 50%;
+        background-size: cover; }
+        .page.listing .container .top .gallery .row.triple .image:first-of-type {
+          margin: 0 1rem 0 0; }
+        .page.listing .container .top .gallery .row.triple .image:last-of-type {
+          margin: 0 0 0 1rem; }
+        .page.listing .container .top .gallery .row.triple .image:hover {
+          cursor: pointer; }
+        .page.listing .container .top .gallery .row.triple .image img {
+          display: none; }
     .page.listing .container .top .information {
       margin: 20px 0 0; }
       .page.listing .container .top .information .download button.cta {
@@ -728,7 +642,7 @@ nav {
     display: block; }
     .page.listing .container .highlights ul {
       padding: 0 0 0 1.5rem; }
-  .page.listing .container modal {
+  .page.listing .modal#form-modal {
     position: fixed;
     top: 10vh;
     left: 0;
@@ -737,155 +651,109 @@ nav {
     width: 85%;
     max-width: 700px;
     background: rgba(26, 40, 60, 0.95);
-    padding: 4rem 2rem 2rem;
+    padding: 4rem 2rem 0;
     -webkit-box-shadow: 0 4px 10px 4px rgba(26, 40, 60, 0.3);
-            box-shadow: 0 4px 10px 4px rgba(26, 40, 60, 0.3); }
+            box-shadow: 0 4px 10px 4px rgba(26, 40, 60, 0.3);
+    z-index: 100; }
     @media all and (min-width: 768px) {
-      .page.listing .container modal {
+      .page.listing .modal#form-modal {
         padding: 4rem 3rem 3rem; } }
-    .page.listing .container modal form a {
-      border: 2px solid #FF850E;
-      color: #ffffff;
-      width: 220px;
+  .page.listing .modal#gallery-modal {
+    z-index: 100;
+    display: block;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(26, 40, 60, 0.95);
+    position: fixed;
+    -webkit-filter: blur(0);
+            filter: blur(0); }
+    .page.listing .modal#gallery-modal .container {
+      max-width: 992px;
+      position: relative;
+      margin: 0 auto;
+      height: 100vh;
+      text-align: center; }
+    .page.listing .modal#gallery-modal .image {
       display: block;
-      margin: 1rem auto 0;
-      background: #FF850E;
-      text-align: center;
-      padding: 3px; }
-      .page.listing .container modal form a:hover {
-        background: transparent;
-        color: #FF850E; }
-    .page.listing .container modal .close {
-      width: 35px;
-      height: 35px;
+      left: 0;
+      right: 0;
+      margin: 0 4rem;
+      max-height: 80vh;
       position: absolute;
-      top: 5px;
-      right: 5px; }
-      .page.listing .container modal .close span {
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+              transform: translateY(-50%); }
+      .page.listing .modal#gallery-modal .image img {
         display: block;
-        position: relative; }
-        .page.listing .container modal .close span:before, .page.listing .container modal .close span:after {
-          position: absolute;
-          top: 15px;
-          right: 6px;
-          content: "";
-          height: .2rem;
-          width: 1.5rem;
-          display: block;
-          background: #ffffff; }
-        .page.listing .container modal .close span:before {
-          -webkit-transform: rotate(45deg);
-                  transform: rotate(45deg); }
-        .page.listing .container modal .close span:after {
-          -webkit-transform: rotate(-45deg);
-                  transform: rotate(-45deg); }
-      .page.listing .container modal .close:hover span:before, .page.listing .container modal .close:hover span:after {
+        max-width: 100%;
+        max-height: 80vh;
+        margin: 0 auto; }
+    .page.listing .modal#gallery-modal .arrows button {
+      display: block;
+      background: transparent;
+      border: none;
+      position: absolute;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+              transform: translateY(-50%); }
+      .page.listing .modal#gallery-modal .arrows button:disabled {
+        opacity: 0.3; }
+        .page.listing .modal#gallery-modal .arrows button:disabled .fa:hover {
+          color: #ffffff; }
+      .page.listing .modal#gallery-modal .arrows button:focus {
+        outline: none; }
+        .page.listing .modal#gallery-modal .arrows button:focus .fa {
+          color: #FF850E; }
+      .page.listing .modal#gallery-modal .arrows button .fa {
+        font-size: 3rem;
+        color: #fff; }
+        .page.listing .modal#gallery-modal .arrows button .fa:hover {
+          color: #FF850E;
+          cursor: pointer; }
+      .page.listing .modal#gallery-modal .arrows button#prev {
+        left: 10px; }
+      .page.listing .modal#gallery-modal .arrows button#next {
+        right: 10px; }
+  .page.listing .modal .close {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    top: 5px;
+    right: 5px; }
+    .page.listing .modal .close span {
+      display: block;
+      position: relative; }
+      .page.listing .modal .close span:before, .page.listing .modal .close span:after {
+        position: absolute;
+        top: 15px;
+        right: 6px;
+        content: "";
+        height: .2rem;
+        width: 1.5rem;
+        display: block;
+        background: #ffffff; }
+      .page.listing .modal .close span:before {
+        -webkit-transform: rotate(45deg);
+                transform: rotate(45deg); }
+      .page.listing .modal .close span:after {
+        -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg); }
+    .page.listing .modal .close:hover {
+      cursor: pointer; }
+      .page.listing .modal .close:hover span:before, .page.listing .modal .close:hover span:after {
         background: #FF850E; }
-  .page.listing modal.galleryModal {
-    display: none; }
   .page.listing.galleryOpen {
     background: rgba(26, 40, 60, 0.95);
     overflow-y: hidden; }
-    .page.listing.galleryOpen modal.galleryModal {
-      z-index: 100;
-      display: block;
-      top: 0;
-      bottom: 0;
-      height: 100vh;
-      width: 100vw;
-      background: rgba(26, 40, 60, 0.95);
-      position: fixed;
-      -webkit-filter: blur(0);
-              filter: blur(0); }
-      .page.listing.galleryOpen modal.galleryModal .container {
-        max-width: 992px;
-        position: relative;
-        margin: 0 auto;
-        height: 100vh;
-        text-align: center; }
-      .page.listing.galleryOpen modal.galleryModal .image {
-        display: block;
-        left: 0;
-        right: 0;
-        margin: 0 4rem;
-        max-height: 80vh;
-        position: absolute;
-        top: 50%;
-        -webkit-transform: translateY(-50%);
-                transform: translateY(-50%); }
-        .page.listing.galleryOpen modal.galleryModal .image img {
-          display: block;
-          max-width: 100%;
-          max-height: 80vh;
-          margin: 0 auto; }
-      .page.listing.galleryOpen modal.galleryModal .arrows button {
-        display: block;
-        background: transparent;
-        border: none;
-        position: absolute;
-        top: 50%;
-        -webkit-transform: translateY(-50%);
-                transform: translateY(-50%); }
-        .page.listing.galleryOpen modal.galleryModal .arrows button:disabled {
-          opacity: 0.3; }
-          .page.listing.galleryOpen modal.galleryModal .arrows button:disabled .fa:hover {
-            color: #ffffff; }
-        .page.listing.galleryOpen modal.galleryModal .arrows button:focus {
-          outline: none; }
-          .page.listing.galleryOpen modal.galleryModal .arrows button:focus .fa {
-            color: #FF850E; }
-        .page.listing.galleryOpen modal.galleryModal .arrows button .fa {
-          font-size: 3rem;
-          color: #fff; }
-          .page.listing.galleryOpen modal.galleryModal .arrows button .fa:hover {
-            color: #FF850E;
-            cursor: pointer; }
-        .page.listing.galleryOpen modal.galleryModal .arrows button#prev {
-          left: 10px; }
-        .page.listing.galleryOpen modal.galleryModal .arrows button#next {
-          right: 10px; }
-      .page.listing.galleryOpen modal.galleryModal .close {
-        position: absolute;
-        right: 20px;
-        top: 20px;
-        display: block; }
-        .page.listing.galleryOpen modal.galleryModal .close:hover {
-          cursor: pointer; }
-        .page.listing.galleryOpen modal.galleryModal .close span {
-          position: absolute;
-          height: .3rem;
-          width: 2rem;
-          right: 0;
-          top: 50%;
-          margin-top: -1px;
-          background: transparent; }
-          .page.listing.galleryOpen modal.galleryModal .close span:before {
-            position: absolute;
-            content: "";
-            height: .3rem;
-            width: 2rem;
-            top: 0;
-            display: block;
-            background: #ffffff;
-            -webkit-transform: rotate(45deg);
-                    transform: rotate(45deg); }
-          .page.listing.galleryOpen modal.galleryModal .close span:after {
-            position: absolute;
-            content: "";
-            height: .3rem;
-            width: 2rem;
-            top: 0;
-            display: block;
-            background: #ffffff;
-            -webkit-transform: rotate(-45deg);
-                    transform: rotate(-45deg); }
   .page.contact .contact-container {
     width: 100%;
     overflow: hidden;
     background: #cecece; }
     .page.contact .contact-container .contact-info {
       padding: 1rem;
-      background-color: #FF850E; }
+      background-color: rgba(26, 40, 60, 0.65); }
       .page.contact .contact-container .contact-info .section {
         border-bottom: 1px solid #ffffff;
         padding: 1rem; }
@@ -929,7 +797,7 @@ nav {
             font-weight: 300;
             display: block; }
             .page.contact .contact-container .contact-info .section .links a:hover {
-              color: #1a283c; }
+              color: #FF850E; }
             @media all and (min-width: 1200px) {
               .page.contact .contact-container .contact-info .section .links a {
                 font-size: 1.3rem; } }
@@ -952,6 +820,66 @@ nav {
           width: 50%;
           float: right;
           padding: 2rem; } }
+  .page .listings-container {
+    text-align: center; }
+    @media all and (min-width: 992px) {
+      .page .listings-container {
+        text-align: left; } }
+    .page .listings-container .listing {
+      width: 100%;
+      max-width: 350px;
+      display: block;
+      margin: 0 auto 20px;
+      text-align: left;
+      position: relative;
+      vertical-align: top; }
+      @media all and (min-width: 768px) {
+        .page .listings-container .listing {
+          display: inline-block;
+          margin: 0 15px 30px;
+          width: calc((100%/2) - 32px); } }
+      @media all and (min-width: 992px) {
+        .page .listings-container .listing {
+          display: inline-block;
+          width: calc((100%/3) - 23px);
+          vertical-align: top;
+          margin: 0 0 30px; }
+          .page .listings-container .listing:nth-of-type(3n + 1) {
+            margin: 0 30px 30px 0; }
+          .page .listings-container .listing:nth-of-type(3n + 3) {
+            margin: 0 0 30px 30px; } }
+      .page .listings-container .listing.available .image h5 {
+        background-color: rgba(255, 133, 14, 0.8); }
+      .page .listings-container .listing a {
+        display: block; }
+      .page .listings-container .listing .image {
+        width: 100%;
+        height: 200px;
+        background: no-repeat 50% 50%;
+        background-size: cover;
+        position: relative; }
+        .page .listings-container .listing .image h5 {
+          position: absolute;
+          bottom: 0;
+          padding: 5px 10px;
+          margin: 0;
+          color: #fff;
+          background: rgba(26, 40, 60, 0.8); }
+      .page .listings-container .listing h4 {
+        border-bottom: 3px solid #1a283c; }
+      .page .listings-container .listing a.learn-more {
+        border: 2px solid #1a283c;
+        padding: 3px 10px;
+        color: #1a283c;
+        margin: 1.2rem 0;
+        text-transform: uppercase;
+        display: block;
+        width: 135px;
+        -webkit-transition: all 0.25s ease-in;
+        transition: all 0.25s ease-in; }
+        .page .listings-container .listing a.learn-more:hover {
+          color: #fff;
+          background-color: #1a283c; }
   .page form .row {
     margin: 0 0 1rem; }
     @media all and (min-width: 768px) {
@@ -1045,14 +973,14 @@ nav {
     border: 2px solid #FF850E;
     background-color: #FF850E;
     color: #ffffff;
-    margin: 1.2rem 0;
     text-transform: uppercase;
     display: block;
     -webkit-transition: all 0.25s ease-in;
     transition: all 0.25s ease-in; }
     .page form input[type="submit"]:hover {
       background-color: transparent;
-      color: #FF850E; }
+      color: #FF850E;
+      cursor: pointer; }
     @media all and (min-width: 768px) {
       .page form input[type="submit"] {
         margin: 2rem auto 0; } }

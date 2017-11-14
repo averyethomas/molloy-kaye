@@ -13,7 +13,10 @@
     <nav>
         <div class="container">
             <div class="logo">
-                <a href="/molloy-kaye-wordpress/">Logo</a>
+                <a href="/molloy-kaye-wordpress/">
+                    LOGO
+                    <!--img src="<?php echo get_theme_mods( 'dark_logo' ); ?>" -->
+                </a>
             </div>
             <div class="mobileMenu" ng-click="navToggle = ! navToggle" ng-class="{'navOpen' : navToggle}">
                 <span></span>

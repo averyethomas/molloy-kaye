@@ -137,6 +137,12 @@ nav{
           font-weight: 500;
           text-transform: uppercase;
         }
+        
+        &.current_page_item, &.current-menu-item{
+          a{
+            color: $orange;
+          }
+        }
       }
 
       @media all and (min-width: 768px){
@@ -171,6 +177,12 @@ nav{
               color: $orange;
             }
           }
+          
+          &.current_page_item, &.current-menu-item{
+            a{
+              color: $orange;
+            }
+          }
         }
       }
     }
@@ -180,7 +192,6 @@ nav{
 .page{
   padding: 3rem 0;
   min-height: calc(100vh - 135px);
-  
   &.home{
     .hero{
       position: relative;
@@ -250,95 +261,6 @@ nav{
           display: none;
         }
       }
-      
-      .listing{
-          width: 100%;
-          max-width: 350px;
-          display: block;
-          margin: 0 auto 20px;
-          text-align: left;
-          position: relative;
-          vertical-align: top;
-          
-          @media all and (min-width: 768px){
-            display: inline-block;
-            width: calc((100%/3) - 32px);
-            margin: 0 0 30px;
-
-            
-            &:nth-of-type(3n + 1){
-              margin: 0 30px 30px 0;
-            }
-            
-            &:nth-of-type(3n + 3){
-              margin: 0 0 30px 30px;
-            }
-
-          }
-          
-          @media all and (min-width: 992px){
-            display: inline-block;
-            width: calc((100%/3) - 23px);
-            vertical-align: top;
-            margin: 0 0 30px;
-
-            
-            &:nth-of-type(3n + 1){
-              margin: 0 30px 30px 0;
-            }
-            
-            &:nth-of-type(3n + 3){
-              margin: 0 0 30px 30px;
-            }
-          }
-          
-          
-          &.available{
-            .image{
-              h5{
-                background-color: rgba($orange,0.8);
-              }
-            }
-          }
-          
-          .image{
-            width: 100%;
-            height: 200px;
-            background: no-repeat 50% 50%;
-            background-size: cover;
-            position: relative;
-            
-            h5{
-              position: absolute;
-              bottom: 0;
-              padding: 5px 10px;
-              margin: 0;
-              color: #fff;
-              background: rgba(12,36,37,0.8);
-            }
-          }
-            
-          h4{
-            border-bottom: 3px solid $blue;
-          }
-          
-          a{
-            border: 2px solid $blue;
-            padding: 3px 10px;
-            background-color: transparent;
-            color: $blue;
-            margin: 1.2rem 0;
-            text-transform: uppercase;
-            display: block;
-            width: 135px;
-            transition: all 0.25s ease-in;
-              
-            &:hover{
-              color: #fff;
-              background-color: $blue;
-            }
-          }
-      }
     }
   }
   
@@ -388,6 +310,15 @@ nav{
       
       
     }
+    .listings-container{
+      h2{
+        text-align: center;
+        
+        &::after{
+          display: none;
+        }
+      }
+    }
     
     .team-container{
       padding: 3rem 0 0;
@@ -430,6 +361,8 @@ nav{
           width: 175px;
           height: 175px;
           border-radius: 175px;
+          background: no-repeat 50% 20%;
+          background-size: cover;
           background-color: #cecece;
           margin: 0 auto;
         }
@@ -528,91 +461,6 @@ nav{
         }
       }
     }
-    
-    .listings-container{
-      text-align: center;
-        
-        @media all and (min-width: 992px){
-          text-align: left;
-        }
-        .listing{
-          width: 100%;
-          max-width: 350px;
-          display: block;
-          margin: 0 auto 20px;
-          text-align: left;
-          position: relative;
-          vertical-align: top;
-          
-          @media all and (min-width: 768px){
-            display: inline-block;
-            margin: 0 15px 30px;
-            width: calc((100%/2) - 32px);
-
-          }
-          
-          @media all and (min-width: 992px){
-            display: inline-block;
-            width: calc((100%/3) - 23px);
-            vertical-align: top;
-            margin: 0 0 30px;
-
-            
-            &:nth-of-type(3n + 1){
-              margin: 0 30px 30px 0;
-            }
-            
-            &:nth-of-type(3n + 3){
-              margin: 0 0 30px 30px;
-            }
-          }
-          
-          &.available{
-            .image{
-              h5{
-                background-color: rgba($orange,0.8);
-              }
-            }
-          }
-          
-          .image{
-            width: 100%;
-            height: 200px;
-            background: no-repeat 50% 50%;
-            background-size: cover;
-            position: relative;
-            
-            h5{
-              position: absolute;
-              bottom: 0;
-              padding: 5px 10px;
-              margin: 0;
-              color: #fff;
-              background: rgba($blue,0.8);
-            }
-          }
-            
-          h4{
-            border-bottom: 3px solid $blue;
-          }
-          
-          a{
-            border: 2px solid $blue;
-            padding: 3px 10px;
-            color: $blue;
-            margin: 1.2rem 0;
-            text-transform: uppercase;
-            display: block;
-            width: 135px;
-            transition: all 0.25s ease-in;
-              
-            &:hover{
-              color: #fff;
-              background-color: $blue;
-            }
-          }
-        }
-      }
   }
 
   &.listing{
@@ -630,52 +478,75 @@ nav{
           }
           
           .row{
-            margin: 0 0 0.5rem;
+            margin: 0 0 1rem;
             
-            &.first{
+            &.single{
               .image{
-                &:nth-of-type(1){
-                  padding: 0 0 56.25%;
-                  width: 100%;
+                display: block;
+                width: 100%;
+                padding-bottom: 56.25%;
+                background: no-repeat 50% 50%;
+                background-size: cover;
+                
+                &:hover{
+                  cursor: pointer;
+                }
+                
+                img{
+                  display: none;
                 }
               }
             }
             
-            .image{
-              display: block;
-              background: no-repeat 50% 50%;
-              background-size: cover;
-              position: relative;
-              margin: 0 0 1rem;
-              vertical-align: top;
-              padding: 0 0 56.25%;
-              
-              &:nth-of-type(1), &:nth-of-type(2), &:nth-of-type(3){
+            &.double{
+              .image{
                 display: inline-block;
-                width: calc((100%/3) - 0.7rem);
-                padding: 0 0 18.75%;
+                width: calc((100%/2) - 0.65rem);
+                padding-bottom: 28.125%;
+                background: no-repeat 50% 50%;
+                background-size: cover;
+                
+                &:first-of-type{
+                  margin: 0 0.5rem 0 0;
+                }
+                
+                &:last-of-type{
+                  margin: 0 0 0 0.5rem;
+                }
+                
+                &:hover{
+                  cursor: pointer;
+                }
+                
+                img{
+                  display: none;
+                }
               }
-              
-              &:nth-of-type(2){
-                margin: 0 1rem 1rem;
-              }
-              
-              &:nth-of-type(4){
+            }
+            
+            &.triple{
+              .image{
                 display: inline-block;
-                width: calc((100%/2) - 0.5rem);
-                margin: 0 1rem 1rem 0;
-                padding: 0 0 28.125%;
-              }
-              
-              &:nth-of-type(5){;
-                display: inline-block;
-                width: calc((100%/2) - 0.5rem);
-                margin: 0 0 1rem 0;
-                padding: 0 0 28.125%;
-              }
-              
-              &:hover{
-                cursor: pointer;
+                width: calc((100%/3) - 0.85rem);
+                padding-bottom: 18%;
+                background: no-repeat 50% 50%;
+                background-size: cover;
+                
+                &:first-of-type{
+                  margin: 0 1rem 0 0;
+                }
+                
+                &:last-of-type{
+                  margin: 0 0 0 1rem;
+                }
+                
+                &:hover{
+                  cursor: pointer;
+                }
+                
+                img{
+                  display: none;
+                }
               }
             }
           }
@@ -707,7 +578,11 @@ nav{
         }
       }
       
-      modal{
+      
+      
+    }
+    .modal{
+      &#form-modal{
         position: fixed;
         top: 10vh;
         left: 0;
@@ -716,79 +591,15 @@ nav{
         width: 85%;
         max-width: 700px;
         background: rgba($blue, 0.95);
-        padding: 4rem 2rem 2rem;
+        padding: 4rem 2rem 0;
         box-shadow:0 4px 10px 4px rgba($blue, .3);
+        z-index: 100;
         
         @media all and (min-width: 768px){
           padding: 4rem 3rem 3rem;
         }
-      
-        form{
-          
-          
-          a{
-            border: 2px solid $orange;
-            color: $white;
-            width: 220px;
-            display: block;
-            margin: 1rem auto 0;
-            background: $orange;
-            text-align: center;
-            padding: 3px;
-            
-            &:hover{
-              background: transparent;
-              color: $orange;
-            }
-          }
-        }
-        .close{
-          width: 35px;
-          height: 35px;
-          position: absolute;
-          top: 5px;
-          right: 5px;
-            
-          span{
-            display: block;
-            position: relative;
-              
-            &:before, &:after{
-              position: absolute;
-              top:15px;
-              right: 6px;
-              content:"";
-              height: .2rem;
-              width: 1.5rem;
-              display: block;
-              background: $white; 
-            }
-            &:before{
-              transform: rotate(45deg);
-            }
-            &:after{
-              transform: rotate(-45deg);
-            }
-          }
-          
-          &:hover{
-            span{
-              &:before, &:after{
-                background: $orange;
-              }
-            }
-          }
-        }
       }
-    }
-    modal.galleryModal{
-      display: none;
-    }
-    &.galleryOpen{
-      background: rgba($blue, 0.95);
-      overflow-y: hidden;
-      
-      modal.galleryModal{
+      &#gallery-modal{
         z-index: 100;
         display: block;
         top: 0;
@@ -865,50 +676,51 @@ nav{
               right: 10px;
             }
           }
-         }
-        .close{
-          position: absolute;
-          right: 20px;
-          top: 20px;
-          display: block;
+        }
+      }
+      .close{
+        width: 35px;
+        height: 35px;
+        position: absolute;
+        top: 5px;
+        right: 5px;
           
-          &:hover{
-            cursor: pointer;
+        span{
+          display: block;
+          position: relative;
+            
+          &:before, &:after{
+            position: absolute;
+            top:15px;
+            right: 6px;
+            content:"";
+            height: .2rem;
+            width: 1.5rem;
+            display: block;
+            background: $white; 
           }
+          &:before{
+            transform: rotate(45deg);
+          }
+          &:after{
+            transform: rotate(-45deg);
+          }
+        }
+        
+        &:hover{
+          cursor: pointer;
           
           span{
-            position: absolute;
-            height: .3rem;
-            width: 2rem;
-            right: 0;
-            top: 50%;
-            margin-top: -1px;
-            background: transparent;
-            
-            &:before{
-              position: absolute;
-              content:"";
-              height: .3rem;
-              width: 2rem;
-              top: 0;
-              display: block;
-              background: $white;
-              transform: rotate(45deg);
-            }
-
-            &:after{
-              position: absolute;
-              content:"";
-              height: .3rem;
-              width: 2rem;
-              top: 0;
-              display: block;
-              background: $white;
-              transform: rotate(-45deg);
+            &:before, &:after{
+              background: $orange;
             }
           }
         }
       }
+    }
+    &.galleryOpen{
+      background: rgba($blue, 0.95);
+      overflow-y: hidden;
     }
   }
 
@@ -920,7 +732,7 @@ nav{
       
       .contact-info{
         padding: 1rem;
-        background-color: $orange;
+        background-color: rgba($blue, 0.65);
         
         .section{
           border-bottom: 1px solid $white;
@@ -981,7 +793,7 @@ nav{
               display: block;
             
               &:hover{
-                color: $blue;
+                color: $orange;
               }
               
               @media all and (min-width: 1200px){
@@ -1013,6 +825,94 @@ nav{
           width: 50%;
           float: right;
           padding: 2rem;
+        }
+      }
+    }
+  }
+  .listings-container{
+    text-align: center;
+    
+    @media all and (min-width: 992px){
+      text-align: left;
+    }
+    .listing{
+      width: 100%;
+      max-width: 350px;
+      display: block;
+      margin: 0 auto 20px;
+      text-align: left;
+      position: relative;
+      vertical-align: top;
+      
+      @media all and (min-width: 768px){
+        display: inline-block;
+        margin: 0 15px 30px;
+        width: calc((100%/2) - 32px);
+
+      }
+      
+      @media all and (min-width: 992px){
+        display: inline-block;
+        width: calc((100%/3) - 23px);
+        vertical-align: top;
+        margin: 0 0 30px;
+
+        
+        &:nth-of-type(3n + 1){
+          margin: 0 30px 30px 0;
+        }
+        
+        &:nth-of-type(3n + 3){
+          margin: 0 0 30px 30px;
+        }
+      }
+      
+      &.available{
+        .image{
+          h5{
+            background-color: rgba($orange,0.8);
+          }
+        }
+      }
+      
+      a{
+        display: block;
+      }
+      
+      .image{
+        width: 100%;
+        height: 200px;
+        background: no-repeat 50% 50%;
+        background-size: cover;
+        position: relative;
+        
+        h5{
+          position: absolute;
+          bottom: 0;
+          padding: 5px 10px;
+          margin: 0;
+          color: #fff;
+          background: rgba($blue,0.8);
+        }
+      }
+        
+      h4{
+        border-bottom: 3px solid $blue;
+      }
+      
+      a.learn-more{
+        border: 2px solid $blue;
+        padding: 3px 10px;
+        color: $blue;
+        margin: 1.2rem 0;
+        text-transform: uppercase;
+        display: block;
+        width: 135px;
+        transition: all 0.25s ease-in;
+          
+        &:hover{
+          color: #fff;
+          background-color: $blue;
         }
       }
     }
@@ -1122,7 +1022,6 @@ nav{
       border: 2px solid $orange;
       background-color: $orange;
       color: $white;
-      margin: 1.2rem 0;
       text-transform: uppercase;
       display: block;
       transition: all 0.25s ease-in;
@@ -1130,6 +1029,7 @@ nav{
       &:hover{
         background-color: transparent;
         color: $orange;
+        cursor: pointer;
       }
         
       @media all and (min-width: 768px){
