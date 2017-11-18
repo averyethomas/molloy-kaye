@@ -32,7 +32,7 @@
                                     
                                         if( get_row_layout() == 'image'):
                                         
-                                            $image = get_sub_field('photo'); ?>
+                                            $image = get_sub_field('single_photo'); ?>
                                             
                                             <div class="image" data-ng-click="openGallery(<?php echo $i++; ?>);" data-ng-mouseover="changePrimary(<?php echo $j++; ?>)" data-ng-mouseleave="changePrimary(0)" style="background-image: url(<?php echo $image['url']; ?>);">
                                                 <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
@@ -99,12 +99,14 @@
                 <h2><?php echo the_title(); ?></h2>
                 <h6><?php the_field('street_address'); ?><br><?php the_field('city_state'); ?></h6>
                 <h6><?php the_field('price'); ?></h6>
-                <p>Single-Tenant</p>
+                <p><?php the_field('tenant_type'); ?></p>
                 <p>Cap Rate: <?php the_field('cap_rate'); ?></p>
-                <p>NOI: $414,363</p>
-                <p>Building Size: 16,900 sq. ft.</p>
-                <p>Lot Size: 2.78 acres</p>
+                <p>Building Size: <?php the_field('gla'); ?></p>
+                <p>Lot Size: <?php the_field('lot_size'); ?></p>
                 <p>Year Built: <?php the_field('year_built'); ?></p>
+                <p>Type of Ownership: <?php the_field('type_of_ownership'); ?></p>
+                <p>Lease Term: <?php the_field('lease_term'); ?></p>
+                <p>Lease Type: <?php the_field('lease_type'); ?></p>
                 <p>Status: <?php echo $status; ?></p>
                 <div class="download">
                     <button class="cta" data-ng-click="downloadModal = !downloadModal">Marketing Package</button>

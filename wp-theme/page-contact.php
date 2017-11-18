@@ -16,28 +16,38 @@
             <div class="section">
                 <div class="icon"><i class="fa fa-phone" aria-hidden="true"></i><small>Phone</small></div>
                 <div class="links">
+                    
                     <?php while(have_rows('contact_person')) : the_row(); ?>
                     
-                    <a href="tel:<?php the_sub_field('phone_number'); ?>"><?php the_sub_field('name'); ?>: <?php the_sub_field('phone_number'); ?></a>
+                        <a href="tel:<?php the_sub_field('phone_number'); ?>"><?php the_sub_field('name'); ?>: <?php the_sub_field('phone_number'); ?></a>
                     
                     <?php endwhile; ?>
+                    <?php if( get_field('fax') ): ?>
+                        <a href='tel:<?php the_field('fax'); ?>'>Fax: <?php the_field('fax'); ?></a>
+                    <?php endif; ?> 
                 </div>
             </div>
             <div class="section">
                 <div class="icon"><i class="fa fa-envelope" aria-hidden="true"></i><small>Email</small></div>
                 <div class="links">
+                    
                     <?php while(have_rows('contact_person')) : the_row(); ?>
                     
-                    <a href="mailto:<?php the_sub_field('email'); ?>"><?php the_sub_field('email'); ?></a>
+                        <a href="mailto:<?php the_sub_field('email'); ?>"><?php the_sub_field('email'); ?></a>
                     
                     <?php endwhile; ?>
+                    
                 </div>
             </div>
-        </div>        
-      <div class="map"></div>
-      <div class="contact-form">
-        <?php the_field('form_shortcode'); ?>
-      </div>
+        </div>
+    </div>
+    <div class="contact-container">
+        <div class="map">
+            <iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBw-A1LiSCgIeQE9k44YM7g-56TzjNIffg&q=<?php the_field('address'); ?>" allowfullscreen></iframe>
+        </div>
+        <div class="contact-form">
+            <?php echo do_shortcode( '[contact-form-7 id="45" title="Contact Page Form"]' ); ?>
+        </div>
     </div>
   </div>
 </div>

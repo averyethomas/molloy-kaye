@@ -14,8 +14,11 @@
         <div class="container">
             <div class="logo">
                 <a href="/molloy-kaye-wordpress/">
-                    LOGO
-                    <!--img src="<?php echo get_theme_mods( 'dark_logo' ); ?>" -->
+                    <?php if ( get_theme_mod( 'dark_logo' ) ) : ?>
+ 
+                        <img src="<?php echo get_theme_mod( 'dark_logo' ); ?>" />
+   
+                    <?php endif; ?>
                 </a>
             </div>
             <div class="mobileMenu" ng-click="navToggle = ! navToggle" ng-class="{'navOpen' : navToggle}">

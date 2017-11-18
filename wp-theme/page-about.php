@@ -35,11 +35,11 @@
                     $photo = get_field('photo');
 
             ?>
-                    <div class="team-member">
+                    <a href='<?php echo the_permalink(); ?>' class="team-member">
                         <div class="photo" style="background-image: url(<?php echo $photo['url']; ?>);"></div>
                         <h4><?php echo the_title(); ?></h4>
                         <h5><?php the_field('title'); ?></h5>
-                    </div>
+                    </a>
             <?php
                 endwhile;
                 wp_reset_postdata();
@@ -48,7 +48,7 @@
         </div>
         <?php endif; ?>
         <div class="listings-container" id="closed">
-            <h2>Recently Closed Listings</h2>
+            <h2>Recently Closed</h2>
             <?php
                 $args = array(
                     'post_type'      => 'listings',
@@ -76,9 +76,6 @@
                         </div>
                         <h4><?php echo the_title(); ?></h4>
                         <p><?php the_field('street_address'); ?><br><?php the_field('city_state'); ?></p>
-                        <p><b>Year Built:</b> <?php the_field('year_built'); ?></p>
-                        <p><b>GLA:</b> <?php the_field('gla'); ?></p>
-                        <!--a class="learn-more" href="<?php the_permalink() ?>">Learn More</a-->
                     </div>
                 <?php
                     endwhile;
@@ -91,6 +88,7 @@
                   endif;
                   
               ?>
+            <a class="cta" href="/molloy-kaye-wordpress/about-us/#closed">View All Closed Listings</a>
         </div>
     </div>
 </div>

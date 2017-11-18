@@ -7,6 +7,7 @@
     $args = array(
         'post_type'   => 'listings',
         'post_status' => 'publish',
+        'posts_per_page' => -1,
         'meta_query'  => array(
            
             array(
@@ -53,9 +54,11 @@
                     </div> 
                 </a>
                 <h4><?php echo the_title(); ?></h4>
-                <h6><?php the_field('price'); ?></h6>
+                <div class="text-row">
+                    <h6><?php the_field('price'); ?></h6>
+                    <p><b>Cap. Rate:</b> <?php the_field('cap_rate'); ?></p>
+                </div>
                 <p><?php the_field('street_address'); ?><br><?php the_field('city_state'); ?></p>
-                <p><b>Cap. Rate:</b> <?php the_field('cap_rate'); ?></p>
                 <a class="learn-more" href="<?php the_permalink() ?>">Learn More</a>
             </div>
             <?php
