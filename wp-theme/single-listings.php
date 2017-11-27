@@ -101,7 +101,7 @@
                 <h6><?php the_field('price'); ?></h6>
                 <p><?php the_field('tenant_type'); ?></p>
                 <p>Cap Rate: <?php the_field('cap_rate'); ?></p>
-                <p>Building Size: <?php the_field('gla'); ?></p>
+                <p>GLA: <?php the_field('gla'); ?></p>
                 <p>Lot Size: <?php the_field('lot_size'); ?></p>
                 <p>Year Built: <?php the_field('year_built'); ?></p>
                 <p>Type of Ownership: <?php the_field('type_of_ownership'); ?></p>
@@ -124,11 +124,11 @@
     <div class="modal" id="gallery-modal" data-ng-show="galleryOpen">
         <div class="container">
             <div class="close" data-ng-click="galleryOpen = false"><span></span></div>
-            <div class="image"><img data-ng-src="{{ selectedItem }}"/></div>
             <div class="arrows">
               <button id="next" data-ng-click="change(1)"><i class="fa fa-angle-right" aria-hidden="true"></i></button>
               <button id="prev" data-ng-click="change(-1)"><i class="fa fa-angle-left" aria-hidden="true"></i>                </button>
             </div>
+            <div class="image"><img data-ng-src="{{ selectedItem }}"/></div>
         </div>
     </div>
 </div>

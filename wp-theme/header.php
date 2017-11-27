@@ -14,9 +14,9 @@
         <div class="container">
             <div class="logo">
                 <a href="/molloy-kaye-wordpress/">
-                    <?php if ( get_theme_mod( 'dark_logo' ) ) : ?>
+                    <?php if ( get_theme_mod( 'light_logo' ) ) : ?>
  
-                        <img src="<?php echo get_theme_mod( 'dark_logo' ); ?>" />
+                        <img src="<?php echo get_theme_mod( 'light_logo' ); ?>" />
    
                     <?php endif; ?>
                 </a>

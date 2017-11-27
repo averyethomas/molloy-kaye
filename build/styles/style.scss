@@ -14,8 +14,9 @@ nav{
   margin: 0;
   overflow: hidden;
   position: relative;
-  background: $white;
+  background: $blue;
   z-index: 100;
+  
   
   .container{
  
@@ -35,6 +36,10 @@ nav{
       img{
         display: block;
         width: 50px;
+        
+        @media all and (min-width: 768px){
+          width: 65px;
+        }
       }
     }
   
@@ -58,7 +63,7 @@ nav{
         right: 0;
         top: 50%;
         margin-top: -1px;
-        background: $blue;
+        background: $white;
 
         &:before{
           position: absolute;
@@ -67,7 +72,7 @@ nav{
           width: 2rem;
           top: -.7rem;
           display: block;
-          background: $blue;
+          background: $white;
           transition: transform 0.3s, top 0.3s 0.3s;
         }
 
@@ -78,7 +83,7 @@ nav{
           width: 2rem;
           top: .7rem;
           display: block;
-          background: $blue;
+          background: $white;
           transition: transform 0.3s, top 0.3s 0.3s;
         }
       }
@@ -154,8 +159,9 @@ nav{
         height: auto;
         width: auto;
         transition: none;
-        background: transparent;
+        background: $blue;
         top: 0;
+        margin: 1.6rem 0 0;
 
         &.navOpen{
           background: transparent;
@@ -171,7 +177,7 @@ nav{
 
           a{
             font-size: 2rem;
-            color: $blue;
+            color: $white;
             font-weight: 500;
             margin: 0;
 
@@ -315,6 +321,7 @@ nav{
       
     }
     .listings-container{
+      padding: 5rem 0 0;
       h2{
         text-align: center;
         
@@ -325,10 +332,10 @@ nav{
     }
     
     .team-container{
-      padding: 3rem 0 0;
+      padding: 5rem 0 0;
       h2{
         text-align: center;
-        margin: 0 0 3rem;
+        margin: 0 0 5rem;
         &:after{
           display: none;
         }
@@ -342,25 +349,16 @@ nav{
         
         @media all and (min-width: 768px){
           display: inline-block;
-          margin: 0 1rem 2rem 0;
-          width: calc((100%/2) - 20px);
+          margin: 0 0 2rem;
+          width: calc((100%/3) - 20px);
           vertical-align: top;
           max-width: 500px;
           
-          &:nth-of-type(2n + 2){
-            margin: 0 0 2rem 1rem;
-          }          
-        }
-        
-        @media all and (min-width: 992px){
-          width: calc((100%/3) - 23px);
-            
           &:nth-of-type(3n + 2){
             margin: 0 1rem 2rem;
-          }
-          &:nth-of-type(3n + 3){
-            margin: 0 0 2rem 1rem;
-          }
+            border-left: 2px solid $orange;
+            border-right: 2px solid $orange;
+          }          
         }
         
         &:hover{
@@ -812,7 +810,7 @@ nav{
             
             a{
               color: $white;
-              font-size: 1.4rem;
+              font-size: 1.5rem;
               font-weight: 300;
               display: block;
             
@@ -866,13 +864,13 @@ nav{
     .right{
       @media all and (min-width: 768px){
         display: inline-block;
-        width: calc(40% - 7px);
+        width: calc(40% - 10px);
         vertical-align: top;
         margin: 0 0.75rem 0 0;
       }
        @media all and (min-width: 992px){
         display: inline-block;
-        width: calc(35% - 7px);
+        width: calc(35% - 10px);
         vertical-align: top;
         margin: 0 0.5rem 0 0;
       }
@@ -886,17 +884,25 @@ nav{
           margin: 0 0 1rem;
         }
       }
+      
+      p{
+        i{
+          &.fa{
+            margin: 0 0.5rem 0 0;
+          }
+        }
+      }
     }
     .left{
       @media all and (min-width: 768px){
         display: inline-block;
-        width: calc(60% - 7px);
+        width: calc(60% - 10px);
         vertical-align: top;
         margin: 0 0 0 0.5rem;
       }
       @media all and (min-width: 992px){
         display: inline-block;
-        width: calc(65% - 7px);
+        width: calc(65% - 10px);
         vertical-align: top;
         margin: 0 0 0 0.5rem;
       }
@@ -990,14 +996,17 @@ nav{
       }
       .text-row{
         margin: 1rem 0;
-        h6, p{
+        h6{
           display: inline-block;
-          width: calc(50% - 2px);
+          width: calc(40% - 2px);
           vertical-align: middle;
           margin: 0;
-        }
-        p{
-          text-align: right;
+          text-transform: none;
+          
+          &.cap-rate{
+            text-align: right;
+            width: calc(60% - 1px);
+          }
         }
       }
     }
