@@ -496,8 +496,23 @@ nav{
           .row{
             margin: 0 0 1rem;
             
+            .item{
+              &.video{
+                height: 0;
+                position: relative;
+                
+                .video-inner{
+                  iframe{
+                    position: absolute;
+                    height: 100%;
+                    width: 100%;
+                  }
+                }
+              }
+            }
+            
             &.single{
-              .image{
+              .item{
                 display: block;
                 width: 100%;
                 padding-bottom: 56.25%;
@@ -516,7 +531,7 @@ nav{
             }
             
             &.double{
-              .image{
+              .item{
                 display: inline-block;
                 width: calc((100%/2) - 0.65rem);
                 padding-bottom: 28.125%;
@@ -542,7 +557,7 @@ nav{
             }
             
             &.triple{
-              .image{
+              .item{
                 display: inline-block;
                 width: calc((100%/3) - 0.85rem);
                 padding-bottom: 18%;
@@ -656,57 +671,58 @@ nav{
             max-width: 100%;
             max-height: 80vh;
             margin: 0 auto;
+            position: relative;
+            z-index: 100;
           }
         }
-        .arrows{
-          height: 100%;
+        .close-layer{
           width: 100%;
+          height: 100%;
           position: absolute;
           top: 0;
-          right: 0;
+          left: 0;
+        }
+        button.arrow{
+          display: block;
+          background: transparent;
+          border: none;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
           
-          button{
-            display: block;
-            background: transparent;
-            border: none;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            
-            &:disabled{
-              opacity: 0.3;
-              
-              .fa{
-                &:hover{
-                  color: $white;
-                }
-              }
-            }
-            
-            &:focus{
-              outline: none;
-              .fa{
-                color: $orange;
-              }
-            }
+          &:disabled{
+            opacity: 0.3;
             
             .fa{
-              font-size: 3rem;
-              color: #fff;
-             
               &:hover{
-                color: $orange;
-                cursor: pointer;
+                color: $white;
               }
             }
-            
-            &#prev{
-              left: 10px;
+          }
+          
+          &:focus{
+            outline: none;
+            .fa{
+              color: $orange;
             }
-  
-            &#next{
-              right: 10px;
+          }
+          
+          .fa{
+            font-size: 3rem;
+            color: #fff;
+           
+            &:hover{
+              color: $orange;
+              cursor: pointer;
             }
+          }
+          
+          &#prev{
+            left: 10px;
+          }
+
+          &#next{
+            right: 10px;
           }
         }
       }

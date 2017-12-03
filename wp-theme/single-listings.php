@@ -14,7 +14,7 @@
             <div class="gallery">
                 <div class="row single">
                     <?php $primImage = get_field('primary_photo'); ?>
-                    <div class="image" data-ng-style="{'background-image': 'url(' + primaryImage + ')'}" data-ng-click="openGallery(<?php echo $i++; ?>);">
+                    <div class="item image" data-ng-style="{'background-image': 'url(' + primaryImage + ')'}" data-ng-click="openGallery(<?php echo $i++; ?>);">
                         <img src="<?php echo $primImage['url']; ?>" alt="<?php echo $primImage['alt']; ?>" />
                     </div>
                 </div>
@@ -34,12 +34,33 @@
                                         
                                             $image = get_sub_field('single_photo'); ?>
                                             
-                                            <div class="image" data-ng-click="openGallery(<?php echo $i++; ?>);" data-ng-mouseover="changePrimary(<?php echo $j++; ?>)" data-ng-mouseleave="changePrimary(0)" style="background-image: url(<?php echo $image['url']; ?>);">
+                                            <div class="item image" data-ng-click="openGallery(<?php echo $i++; ?>);" data-ng-mouseover="changePrimary(<?php echo $j++; ?>)" data-ng-mouseleave="changePrimary(0)" style="background-image: url(<?php echo $image['url']; ?>);">
                                                 <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
                                             </div>
                                         
-                                            
+                                        <?php elseif( get_row_layout() == 'video' ): ?>
+                
+                                            <div class="item video">
+                                                
+                                                <div class="video-inner">
+                                                
+                                                    <?php $source = get_sub_field('video_source');
+                                                    
+                                                    if($source == 'Vimeo'): ?>
+                                                    
+                                                        <iframe src="https://player.vimeo.com/video/<?php the_sub_field('video_id'); ?>" width="640" height="360" frameborder="0"></iframe>
+                                                    
+                                                    <?php elseif( $source == 'YouTube'): ?>
+                                                    
+                                                        <iframe src="https://www.youtube.com/embed/<?php the_sub_field('video_id'); ?>" width="640" height="360" frameborder="0"></iframe>
+                                                    
+                                                    <?php endif; ?>
+                                                
+                                                </div>
+                                                
+                                            </div>        
                                         <?php endif; ?>
+                            
                                     
                                     <?php endwhile; ?> 
                                     
@@ -55,10 +76,31 @@
                                         
                                             $image = get_sub_field('photo'); ?>
                                             
-                                            <div class="image" data-ng-click="openGallery(<?php echo $i++; ?>);" data-ng-mouseover="changePrimary(<?php echo $j++; ?>)" data-ng-mouseleave="changePrimary(0)" style="background-image: url(<?php echo $image['url']; ?>);">
+                                            <div class="item image" data-ng-click="openGallery(<?php echo $i++; ?>);" data-ng-mouseover="changePrimary(<?php echo $j++; ?>)" data-ng-mouseleave="changePrimary(0)" style="background-image: url(<?php echo $image['url']; ?>);">
                                                 <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
                                             </div>
-                                        
+                                
+                                        <?php elseif( get_row_layout() == 'video' ): ?>
+                
+                                            <div class="item video">
+                                                
+                                                <div class="video-inner">
+                                                
+                                                    <?php $source = get_sub_field('video_source');
+                                                    
+                                                    if($source == 'Vimeo'): ?>
+                                                    
+                                                        <iframe src="https://player.vimeo.com/video/<?php the_sub_field('video_id'); ?>" width="640" height="360" frameborder="0"></iframe>
+                                                    
+                                                    <?php elseif( $source == 'YouTube'): ?>
+                                                    
+                                                        <iframe src="https://www.youtube.com/embed/<?php the_sub_field('video_id'); ?>" width="640" height="360" frameborder="0"></iframe>
+                                                    
+                                                    <?php endif; ?>
+                                                
+                                                </div>
+                                                
+                                            </div>
                                             
                                         <?php endif; ?>
                                     
@@ -66,7 +108,7 @@
                                     
                                 </div>
                             
-                    <?php    elseif( get_row_layout() == 'triple' ): ?>
+                            <?php elseif( get_row_layout() == 'triple' ): ?>
                     
                                 <div class="row triple">
                                     
@@ -76,10 +118,31 @@
                                         
                                             $image = get_sub_field('photo'); ?>
                                             
-                                            <div class="image" data-ng-click="openGallery(<?php echo $i++; ?>);" data-ng-mouseover="changePrimary(<?php echo $j++; ?>)" data-ng-mouseleave="changePrimary(0)" style="background-image: url(<?php echo $image['url']; ?>);">
+                                            <div class="item image" data-ng-click="openGallery(<?php echo $i++; ?>);" data-ng-mouseover="changePrimary(<?php echo $j++; ?>)" data-ng-mouseleave="changePrimary(0)" style="background-image: url(<?php echo $image['url']; ?>);">
                                                 <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
                                             </div>
-                                        
+                                
+                                        <?php elseif( get_row_layout() == 'video' ): ?>
+                
+                                            <div class="item video">
+                                                
+                                                <div class="video-inner">
+                                                
+                                                    <?php $source = get_sub_field('video_source');
+                                                    
+                                                    if($source == 'Vimeo'): ?>
+                                                    
+                                                        <iframe src="https://player.vimeo.com/video/<?php the_sub_field('video_id'); ?>" width="640" height="360" frameborder="0"></iframe>
+                                                    
+                                                    <?php elseif( $source == 'YouTube'): ?>
+                                                    
+                                                        <iframe src="https://www.youtube.com/embed/<?php the_sub_field('video_id'); ?>" width="640" height="360" frameborder="0"></iframe>
+                                                    
+                                                    <?php endif; ?>
+                                                
+                                                </div>
+                                                
+                                            </div>
                                             
                                         <?php endif; ?>
                                     
@@ -133,13 +196,16 @@
         </div>
     </div>
     <div class="modal" id="gallery-modal" data-ng-show="galleryOpen">
+        <div class="close-layer" data-ng-click="galleryOpen = !galleryOpen"></div>
         <div class="container">
-            <div class="close" data-ng-click="galleryOpen = false"><span></span></div>
-            <div class="arrows">
-              <button id="next" data-ng-click="change(1)"><i class="fa fa-angle-right" aria-hidden="true"></i></button>
-              <button id="prev" data-ng-click="change(-1)"><i class="fa fa-angle-left" aria-hidden="true"></i>                </button>
+            <div class="close-layer" data-ng-click="galleryOpen = !galleryOpen"></div>
+            <button class="arrow" id="next" data-ng-click="change(1)"><i class="fa fa-angle-right" aria-hidden="true"></i></button>
+            <button class="arrow" id="prev" data-ng-click="change(-1)"><i class="fa fa-angle-left" aria-hidden="true"></i>                </button>
+            <div class="close" data-ng-click="galleryOpen = !galleryOpen"><span></span></div>
+            <div class="image">
+                <div class="close-layer" data-ng-click="galleryOpen = !galleryOpen"></div>
+                <img data-ng-src="{{ selectedItem }}" />
             </div>
-            <div class="image"><img data-ng-src="{{ selectedItem }}"/></div>
         </div>
     </div>
 </div>

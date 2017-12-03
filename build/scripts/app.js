@@ -222,13 +222,15 @@ app.controller('galleryCtrl', ['$scope', function($scope){
             document.getElementById('next').disabled = false;
             document.getElementById('prev').disabled = false;
         }
-   }
+   };
    
-   // $(document).keydown(function (e){
-    //  if(e.keyCode == 39 ){       
-      //  document.getElementById('next').click();
-   //   } else if(e.keyCode == 37 ){        
-   //     document.getElementById('prev').click();
-    //  }
-   // });
+   (function($){
+        $(document).keydown(function (e){
+            if(e.keyCode == 39 ){       
+                document.getElementById('next').click();
+            } else if(e.keyCode == 37 ){        
+                document.getElementById('prev').click();
+            }
+        });
+    }(jQuery));
 }])
