@@ -99,7 +99,6 @@
                 <h2><?php echo the_title(); ?></h2>
                 <h6><?php the_field('street_address'); ?><br><?php the_field('city_state'); ?></h6>
                 <h6><?php the_field('price'); ?></h6>
-                <p><?php the_field('tenant_type'); ?></p>
                 <p>Cap Rate: <?php the_field('cap_rate'); ?></p>
                 <?php if( get_field('gla') ): ?>
                     <p>GLA: <?php the_field('gla'); ?></p> 

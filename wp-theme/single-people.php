@@ -41,7 +41,7 @@
                 <p><i class="fa fa-linkedin-square" aria-hidden="true"></i><a target='_blank' href='<?php the_field('linkedin'); ?>'>LinkedIn Profile</a></p>
             <?php endif; ?>
             <?php if( get_field('vcard') ): ?>
-                <p><i class="fa fa-address-card-o" aria-hidden="true"></i><a target='_blank' href='<?php the_field('vcard'); ?>'>V Card</a></p>
+                <p><i class="fa fa-address-card-o" aria-hidden="true"></i><a target='_blank' href='<?php the_field('vcard'); ?>'>Download vCard</a></p>
             <?php endif; ?>
             <?php if( have_rows('licenses') ): ?>
             
