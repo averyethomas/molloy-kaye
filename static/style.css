@@ -274,147 +274,149 @@ nav {
   position: relative;
   background: #1a283c;
   z-index: 100; }
-  nav .container .logo {
-    display: inline-block;
-    padding: 5px 0; }
-    nav .container .logo a {
-      font-size: 2rem;
-      text-transform: uppercase;
-      margin: 0;
-      padding: 0;
-      display: block;
-      font-weight: 700;
-      color: #1a283c; }
-    nav .container .logo img {
-      display: block;
-      width: 50px; }
-      @media all and (min-width: 768px) {
-        nav .container .logo img {
-          width: 65px; } }
-  nav .container .mobileMenu {
-    display: inline-block;
-    width: 35px;
-    height: 35px;
-    float: right;
-    z-index: 1000;
-    position: relative;
-    top: 10px; }
-    @media all and (min-width: 768px) {
-      nav .container .mobileMenu {
-        display: none; } }
-    nav .container .mobileMenu span {
-      position: absolute;
-      height: .3rem;
-      width: 2rem;
-      right: 0;
-      top: 50%;
-      margin-top: -1px;
-      background: #ffffff; }
-      nav .container .mobileMenu span:before {
-        position: absolute;
-        content: "";
-        height: .3rem;
-        width: 2rem;
-        top: -.7rem;
-        display: block;
-        background: #ffffff;
-        -webkit-transition: top 0.3s 0.3s, -webkit-transform 0.3s;
-        transition: top 0.3s 0.3s, -webkit-transform 0.3s;
-        transition: transform 0.3s, top 0.3s 0.3s;
-        transition: transform 0.3s, top 0.3s 0.3s, -webkit-transform 0.3s; }
-      nav .container .mobileMenu span:after {
-        position: absolute;
-        content: "";
-        height: .3rem;
-        width: 2rem;
-        top: .7rem;
-        display: block;
-        background: #ffffff;
-        -webkit-transition: top 0.3s 0.3s, -webkit-transform 0.3s;
-        transition: top 0.3s 0.3s, -webkit-transform 0.3s;
-        transition: transform 0.3s, top 0.3s 0.3s;
-        transition: transform 0.3s, top 0.3s 0.3s, -webkit-transform 0.3s; }
-    nav .container .mobileMenu.navOpen span {
-      background: transparent; }
-      nav .container .mobileMenu.navOpen span:before {
-        top: 0;
-        background: #ffffff;
-        height: .3rem;
-        -webkit-transform: rotate(45deg);
-                transform: rotate(45deg);
-        -webkit-transition: top 0.3s, -webkit-transform 0.3s 0.3s;
-        transition: top 0.3s, -webkit-transform 0.3s 0.3s;
-        transition: top 0.3s, transform 0.3s 0.3s;
-        transition: top 0.3s, transform 0.3s 0.3s, -webkit-transform 0.3s 0.3s; }
-      nav .container .mobileMenu.navOpen span:after {
-        top: 0;
-        background: #ffffff;
-        height: .3rem;
-        -webkit-transform: rotate(-45deg);
-                transform: rotate(-45deg);
-        -webkit-transition: top 0.3s, -webkit-transform 0.3s 0.3s;
-        transition: top 0.3s, -webkit-transform 0.3s 0.3s;
-        transition: top 0.3s, transform 0.3s 0.3s;
-        transition: top 0.3s, transform 0.3s 0.3s, -webkit-transform 0.3s 0.3s; }
-  nav .container ul {
-    background: transparent;
-    position: absolute;
-    top: -20px;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    height: calc(100vh + 20px);
-    z-index: 500;
-    text-align: center;
-    padding: 3.25rem 0 0 0;
-    -webkit-transition: background 0.3s ease-in;
-    transition: background 0.3s ease-in;
-    display: none;
-    margin: 1rem 0 0; }
-    nav .container ul.navOpen {
-      display: block;
-      background: rgba(26, 40, 60, 0.95); }
-    nav .container ul li {
-      display: block;
-      z-index: 20;
-      padding: 1rem 0; }
-      nav .container ul li a {
-        color: #ffffff;
+  nav .container {
+    max-width: 100%; }
+    nav .container .logo {
+      display: inline-block;
+      padding: 5px 0; }
+      nav .container .logo a {
         font-size: 2rem;
-        font-weight: 500;
-        text-transform: uppercase; }
-      nav .container ul li.current_page_item a, nav .container ul li.current-menu-item a {
-        color: #FF850E; }
-    @media all and (min-width: 768px) {
-      nav .container ul {
-        float: right;
-        display: inline-block;
-        position: relative;
+        text-transform: uppercase;
+        margin: 0;
         padding: 0;
-        height: auto;
-        width: auto;
-        -webkit-transition: none;
-        transition: none;
-        background: #1a283c;
-        top: 0;
-        margin: 1.6rem 0 0; }
-        nav .container ul.navOpen {
-          background: transparent; }
-        nav .container ul li {
+        display: block;
+        font-weight: 700;
+        color: #1a283c; }
+      nav .container .logo img {
+        display: block;
+        width: 50px; }
+        @media all and (min-width: 768px) {
+          nav .container .logo img {
+            width: 65px; } }
+    nav .container .mobileMenu {
+      display: inline-block;
+      width: 35px;
+      height: 35px;
+      float: right;
+      z-index: 1000;
+      position: relative;
+      top: 10px; }
+      @media all and (min-width: 768px) {
+        nav .container .mobileMenu {
+          display: none; } }
+      nav .container .mobileMenu span {
+        position: absolute;
+        height: .3rem;
+        width: 2rem;
+        right: 0;
+        top: 50%;
+        margin-top: -1px;
+        background: #ffffff; }
+        nav .container .mobileMenu span:before {
+          position: absolute;
+          content: "";
+          height: .3rem;
+          width: 2rem;
+          top: -.7rem;
+          display: block;
+          background: #ffffff;
+          -webkit-transition: top 0.3s 0.3s, -webkit-transform 0.3s;
+          transition: top 0.3s 0.3s, -webkit-transform 0.3s;
+          transition: transform 0.3s, top 0.3s 0.3s;
+          transition: transform 0.3s, top 0.3s 0.3s, -webkit-transform 0.3s; }
+        nav .container .mobileMenu span:after {
+          position: absolute;
+          content: "";
+          height: .3rem;
+          width: 2rem;
+          top: .7rem;
+          display: block;
+          background: #ffffff;
+          -webkit-transition: top 0.3s 0.3s, -webkit-transform 0.3s;
+          transition: top 0.3s 0.3s, -webkit-transform 0.3s;
+          transition: transform 0.3s, top 0.3s 0.3s;
+          transition: transform 0.3s, top 0.3s 0.3s, -webkit-transform 0.3s; }
+      nav .container .mobileMenu.navOpen span {
+        background: transparent; }
+        nav .container .mobileMenu.navOpen span:before {
+          top: 0;
+          background: #ffffff;
+          height: .3rem;
+          -webkit-transform: rotate(45deg);
+                  transform: rotate(45deg);
+          -webkit-transition: top 0.3s, -webkit-transform 0.3s 0.3s;
+          transition: top 0.3s, -webkit-transform 0.3s 0.3s;
+          transition: top 0.3s, transform 0.3s 0.3s;
+          transition: top 0.3s, transform 0.3s 0.3s, -webkit-transform 0.3s 0.3s; }
+        nav .container .mobileMenu.navOpen span:after {
+          top: 0;
+          background: #ffffff;
+          height: .3rem;
+          -webkit-transform: rotate(-45deg);
+                  transform: rotate(-45deg);
+          -webkit-transition: top 0.3s, -webkit-transform 0.3s 0.3s;
+          transition: top 0.3s, -webkit-transform 0.3s 0.3s;
+          transition: top 0.3s, transform 0.3s 0.3s;
+          transition: top 0.3s, transform 0.3s 0.3s, -webkit-transform 0.3s 0.3s; }
+    nav .container ul {
+      background: transparent;
+      position: absolute;
+      top: -20px;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: calc(100vh + 20px);
+      z-index: 500;
+      text-align: center;
+      padding: 3.25rem 0 0 0;
+      -webkit-transition: background 0.3s ease-in;
+      transition: background 0.3s ease-in;
+      display: none;
+      margin: 1rem 0 0; }
+      nav .container ul.navOpen {
+        display: block;
+        background: rgba(26, 40, 60, 0.95); }
+      nav .container ul li {
+        display: block;
+        z-index: 20;
+        padding: 1rem 0; }
+        nav .container ul li a {
+          color: #ffffff;
+          font-size: 2rem;
+          font-weight: 500;
+          text-transform: uppercase; }
+        nav .container ul li.current_page_item a, nav .container ul li.current-menu-item a {
+          color: #FF850E; }
+      @media all and (min-width: 768px) {
+        nav .container ul {
+          float: right;
           display: inline-block;
-          padding: 10px; }
-          nav .container ul li:last-of-type {
-            padding: 10px 0 10px 10px; }
-          nav .container ul li a {
-            font-size: 2rem;
-            color: #ffffff;
-            font-weight: 500;
-            margin: 0; }
-            nav .container ul li a:hover {
-              color: #FF850E; }
-          nav .container ul li.current_page_item a, nav .container ul li.current-menu-item a {
-            color: #FF850E; } }
+          position: relative;
+          padding: 0;
+          height: auto;
+          width: auto;
+          -webkit-transition: none;
+          transition: none;
+          background: #1a283c;
+          top: 0;
+          margin: 1.6rem 0 0; }
+          nav .container ul.navOpen {
+            background: transparent; }
+          nav .container ul li {
+            display: inline-block;
+            padding: 10px; }
+            nav .container ul li:last-of-type {
+              padding: 10px 0 10px 10px; }
+            nav .container ul li a {
+              font-size: 2rem;
+              color: #ffffff;
+              font-weight: 500;
+              margin: 0; }
+              nav .container ul li a:hover {
+                color: #FF850E; }
+            nav .container ul li.current_page_item a, nav .container ul li.current-menu-item a {
+              color: #FF850E; } }
 
 .page {
   padding: 3rem 0;
@@ -651,8 +653,10 @@ nav {
           display: none; }
     .page.listing .container .top .information {
       margin: 20px 0 0; }
-      .page.listing .container .top .information .download button.cta {
-        margin: 2rem 0; }
+      .page.listing .container .top .information .download button {
+        border-radius: 0; }
+        .page.listing .container .top .information .download button.cta {
+          margin: 2rem 0; }
       @media all and (min-width: 768px) {
         .page.listing .container .top .information {
           width: 40%;
@@ -857,7 +861,7 @@ nav {
           float: right;
           padding: 2rem; } }
   .page.people h2 {
-    margin: 0.5rem 0 1.25rem; }
+    margin: 0.5rem 0 2rem; }
   @media all and (min-width: 768px) {
     .page.people .right {
       display: inline-block;
@@ -878,8 +882,13 @@ nav {
     @media all and (min-width: 768px) {
       .page.people .right img {
         margin: 0 0 1rem; } }
+  .page.people .right h4 {
+    padding: 0;
+    margin: 0 0 0.7rem;
+    line-height: 2.6rem; }
   .page.people .right p i.fa {
-    margin: 0 0.5rem 0 0; }
+    margin: 0 0.5rem 0 0;
+    min-width: 20px; }
   @media all and (min-width: 768px) {
     .page.people .left {
       display: inline-block;
@@ -922,6 +931,8 @@ nav {
             margin: 0 0 30px 30px; } }
       .page .listings-container .listing.available .image h5 {
         background-color: rgba(255, 133, 14, 0.8); }
+      .page .listings-container .listing.closed .image h5 {
+        background-color: rgba(49, 99, 61, 0.8); }
       .page .listings-container .listing a {
         display: block; }
       .page .listings-container .listing .image {

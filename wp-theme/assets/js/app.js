@@ -5,6 +5,174 @@ app.controller('mainCtrl', ['$scope', function ($scope) {
     
 }]);
 
+app.controller('mapCtrl',['$scope', '$window', function($scope, $window){
+    
+    $window.initMap = function(){
+        console.log('test');
+        var place = {lat: -25.363, lng: 131.044};
+        var map = new google.maps.Map(document.getElementById('contactMap'), {
+            zoom: 4,
+            center: place,
+            styles: [
+              {
+                "featureType": "administrative",
+                "elementType": "geometry",
+                "stylers": [
+                  {
+                    "visibility": "off"
+                  }
+                ]
+              },
+              {
+                "featureType": "administrative.land_parcel",
+                "elementType": "labels",
+                "stylers": [
+                  {
+                    "visibility": "off"
+                  }
+                ]
+              },
+              {
+                "featureType": "poi",
+                "stylers": [
+                  {
+                    "visibility": "off"
+                  }
+                ]
+              },
+              {
+                "featureType": "poi",
+                "elementType": "labels.text",
+                "stylers": [
+                  {
+                    "visibility": "off"
+                  }
+                ]
+              },
+              {
+                "featureType": "road",
+                "elementType": "labels.icon",
+                "stylers": [
+                  {
+                    "visibility": "off"
+                  }
+                ]
+              },
+              {
+                "featureType": "road.arterial",
+                "elementType": "labels",
+                "stylers": [
+                  {
+                    "visibility": "off"
+                  }
+                ]
+              },
+              {
+                "featureType": "road.highway",
+                "elementType": "geometry",
+                "stylers": [
+                  {
+                    "saturation": -10
+                  },
+                  {
+                    "lightness": 50
+                  }
+                ]
+              },
+              {
+                "featureType": "road.highway",
+                "elementType": "geometry.fill",
+                "stylers": [
+                  {
+                    "color": "#fd6f10"
+                  },
+                  {
+                    "saturation": -30
+                  },
+                  {
+                    "lightness": 45
+                  }
+                ]
+              },
+              {
+                "featureType": "road.highway",
+                "elementType": "geometry.stroke",
+                "stylers": [
+                  {
+                    "saturation": -75
+                  },
+                  {
+                    "weight": 0.5
+                  }
+                ]
+              },
+              {
+                "featureType": "road.highway",
+                "elementType": "labels",
+                "stylers": [
+                  {
+                    "visibility": "off"
+                  }
+                ]
+              },
+              {
+                "featureType": "road.local",
+                "stylers": [
+                  {
+                    "visibility": "off"
+                  }
+                ]
+              },
+              {
+                "featureType": "road.local",
+                "elementType": "labels",
+                "stylers": [
+                  {
+                    "visibility": "off"
+                  }
+                ]
+              },
+              {
+                "featureType": "transit",
+                "stylers": [
+                  {
+                    "visibility": "off"
+                  }
+                ]
+              },
+              {
+                "featureType": "water",
+                "elementType": "geometry.fill",
+                "stylers": [
+                  {
+                    "color": "#466aa0"
+                  },
+                  {
+                    "saturation": -40
+                  },
+                  {
+                    "lightness": 30
+                  }
+                ]
+              },
+              {
+                "featureType": "water",
+                "elementType": "labels.text.fill",
+                "stylers": [
+                  {
+                    "visibility": "on"
+                  }
+                ]
+              }
+            ]
+        });
+        var marker = new google.maps.Marker({
+          position: place,
+          map: map
+        });
+    };
+}])
+
 
 app.controller('galleryCtrl', ['$scope', function($scope){
     

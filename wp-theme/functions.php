@@ -8,6 +8,7 @@ class wp_ng_theme {
 	function enqueue_scripts() {
 		wp_enqueue_script( 'jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.map', array('jquery'), '1.0', false);
 		wp_enqueue_script( 'angular-core', 'https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js', array( 'jquery' ), '1.0', false );
+		wp_enqueue_script( 'ng-resource', 'https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.0/angular-resource.min.js?ver=1.0', array( 'jquery' ), '1.0', false );
 		wp_enqueue_script( 'ngScripts', get_template_directory_uri() . '/assets/js/app.js', array( ), '1.0', false );
 		wp_localize_script( 'ngScripts', 'appInfo',
 			array(

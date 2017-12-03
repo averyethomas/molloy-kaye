@@ -101,12 +101,24 @@
                 <h6><?php the_field('price'); ?></h6>
                 <p><?php the_field('tenant_type'); ?></p>
                 <p>Cap Rate: <?php the_field('cap_rate'); ?></p>
-                <p>GLA: <?php the_field('gla'); ?></p>
-                <p>Lot Size: <?php the_field('lot_size'); ?></p>
-                <p>Year Built: <?php the_field('year_built'); ?></p>
-                <p>Type of Ownership: <?php the_field('type_of_ownership'); ?></p>
-                <p>Lease Term: <?php the_field('lease_term'); ?></p>
-                <p>Lease Type: <?php the_field('lease_type'); ?></p>
+                <?php if( get_field('gla') ): ?>
+                    <p>GLA: <?php the_field('gla'); ?></p> 
+                <?php endif; ?>
+                <?php if( get_field('lot_size') ): ?>
+                    <p>Lot Size: <?php the_field('lot_size'); ?></p>
+                <?php endif; ?>
+                <?php if( get_field('year_built') ): ?>
+                    <p>Year Built: <?php the_field('year_built'); ?></p>
+                <?php endif; ?>
+                <?php if( get_field('type_of_ownership') ): ?>
+                    <p>Type of Ownership: <?php the_field('type_of_ownership'); ?></p>
+                <?php endif; ?>
+                <?php if( get_field('lease_term') ): ?>
+                    <p>Lease Term: <?php the_field('lease_term'); ?></p>
+                <?php endif; ?>
+                <?php if( get_field('lease_type') ): ?>
+                    <p>Lease Type: <?php the_field('lease_type'); ?></p>
+                <?php endif; ?>
                 <p>Status: <?php echo $status; ?></p>
                 <div class="download">
                     <button class="cta" data-ng-click="downloadModal = !downloadModal">Marketing Package</button>
@@ -132,6 +144,12 @@
         </div>
     </div>
 </div>
+<script>
+    document.addEventListener( 'wpcf7mailsent', function( event ) {
+        console.log("<?php the_field('offering_memorandum'); ?>");
+    }, false );    
+    //    location = '<?php the_field('offering_memorandum'); ?>
+</script>
 <?php
 
         endwhile;

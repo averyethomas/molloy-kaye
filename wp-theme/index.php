@@ -67,7 +67,7 @@
                             <h4><?php echo the_title(); ?></h4>
                             <div class="text-row">
                                 <h6><?php the_field('price'); ?></h6>
-                                <p><b>Cap. Rate:</b> <?php the_field('cap_rate'); ?></p>
+                                <h6 class="cap-rate">Cap Rate: <?php the_field('cap_rate'); ?></h6>
                             </div>
                             <p><?php the_field('street_address'); ?><br><?php the_field('city_state'); ?></p>
                             <a class="learn-more" href="<?php the_permalink() ?>">Learn More</a>
@@ -82,7 +82,7 @@
                 </div>
                       
                 
-                <a class="cta" href="/molloy-kaye-wordpress/listings">View All Listings</a>
+                <a class="cta" href="/molloy-kaye-wordpress/listings">View Listings</a>
             <?php endif;?>           
             <h3>Recently Closed</h3>
             <?php
@@ -124,7 +124,7 @@
                   endif;
                   
               ?>
-          <a class="cta" href="/molloy-kaye-wordpress/about-us/#closed">View All Closed Listings</a>
+          <a class="cta" href="/molloy-kaye-wordpress/track-record">View Track Record</a>
         </div>
     </div>
 </div>

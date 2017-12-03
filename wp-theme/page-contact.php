@@ -41,10 +41,16 @@
             </div>
         </div>
     </div>
-    <div class="contact-container">
-        <div class="map">
-            <iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBw-A1LiSCgIeQE9k44YM7g-56TzjNIffg&q=<?php the_field('address'); ?>" allowfullscreen></iframe>
-        </div>
+    <?php         
+        $address = get_field('address');
+        $prepAddr = str_replace(' ','+',$address);
+        $geocode=file_get_contents('https://maps.google.com/maps/api/geocode/json?address='.$prepAddr.'&sensor=false');
+        $output= json_decode($geocode);
+        $latitude = $output->results[0]->geometry->location->lat;
+        $longitude = $output->results[0]->geometry->location->lng;
+    ?>
+    <div class="contact-container" data-ng-controller='mapCtrl'>
+        <div class="map" id="contactMap"></div>
         <div class="contact-form">
             <?php echo do_shortcode( '[contact-form-7 id="45" title="Contact Page Form"]' ); ?>
         </div>

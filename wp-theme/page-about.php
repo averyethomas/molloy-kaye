@@ -88,7 +88,7 @@
                   endif;
                   
               ?>
-            <a class="cta" href="/molloy-kaye-wordpress/about-us/#closed">View All Closed Listings</a>
+            <a class="cta" href="/molloy-kaye-wordpress/track-record">View Track Record</a>
         </div>
     </div>
 </div>
