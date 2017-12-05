@@ -480,7 +480,64 @@ nav{
   }
 
   &.listing{
+    .arrows{
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      top: 0;
+      
+      .container{
+        position: relative;
+        padding: 0;
+        height: 100%;
+      }
+      
+      button.arrow{
+        display: block;
+        background: transparent;
+        border: none;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        
+        &:disabled{
+          opacity: 0.3;
+          
+          .fa{
+            &:hover{
+              color: $blue;
+            }
+          }
+        }
+        
+        &:focus{
+          outline: none;
+          .fa{
+            color: $orange;
+          }
+        }
+        
+        .fa{
+          font-size: 5rem;
+          color: $blue;
+         
+          &:hover{
+            color: $orange;
+            cursor: pointer;
+          }
+        }
+        
+        &#prev{
+          left: 0;
+        }
+
+        &#next{
+          right: 0;
+        }
+      }
+    }
     .container{
+      padding: 0 4.25rem;
       .top{
         overflow: hidden;
         margin: 0 0 2.5rem;

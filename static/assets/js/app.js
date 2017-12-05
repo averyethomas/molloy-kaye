@@ -6,12 +6,12 @@ app.controller('mainCtrl', ['$scope', function ($scope) {
 }]);
 
 app.controller('mapCtrl',['$scope', '$window', function($scope, $window){
-    
-    $window.initMap = function(){
-        console.log('test');
-        var place = {lat: -25.363, lng: 131.044};
+        
+    $scope.initMap = function(lat, lng, themePath){
+        var place = {lat: lat, lng: lng};
+        var symbol = themePath + '/assets/images/map-marker.svg';
         var map = new google.maps.Map(document.getElementById('contactMap'), {
-            zoom: 4,
+            zoom: 10,
             center: place,
             styles: [
               {
@@ -168,7 +168,8 @@ app.controller('mapCtrl',['$scope', '$window', function($scope, $window){
         });
         var marker = new google.maps.Marker({
           position: place,
-          map: map
+          map: map,
+          icon: symbol
         });
     };
 }])

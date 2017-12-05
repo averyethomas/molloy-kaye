@@ -612,81 +612,118 @@ nav {
         line-height: auto;
         margin: 0;
         color: #FF850E; }
-  .page.listing .container .top {
-    overflow: hidden;
-    margin: 0 0 2.5rem;
-    display: block; }
-    @media all and (min-width: 768px) {
-      .page.listing .container .top .gallery {
-        width: 55%;
-        display: inline-block;
-        float: right; } }
-    .page.listing .container .top .gallery .row {
-      margin: 0 0 1rem; }
-      .page.listing .container .top .gallery .row .item.video {
-        height: 0;
-        position: relative; }
-        .page.listing .container .top .gallery .row .item.video .video-inner iframe {
-          position: absolute;
-          height: 100%;
-          width: 100%; }
-      .page.listing .container .top .gallery .row.single .item {
-        display: block;
-        width: 100%;
-        padding-bottom: 56.25%;
-        background: no-repeat 50% 50%;
-        background-size: cover;
-        -webkit-transition: background .4s ease-in;
-        transition: background .4s ease-in; }
-        .page.listing .container .top .gallery .row.single .item:hover {
+  .page.listing .arrows {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0; }
+    .page.listing .arrows .container {
+      position: relative;
+      padding: 0;
+      height: 100%; }
+    .page.listing .arrows button.arrow {
+      display: block;
+      background: transparent;
+      border: none;
+      position: absolute;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+              transform: translateY(-50%); }
+      .page.listing .arrows button.arrow:disabled {
+        opacity: 0.3; }
+        .page.listing .arrows button.arrow:disabled .fa:hover {
+          color: #1a283c; }
+      .page.listing .arrows button.arrow:focus {
+        outline: none; }
+        .page.listing .arrows button.arrow:focus .fa {
+          color: #FF850E; }
+      .page.listing .arrows button.arrow .fa {
+        font-size: 5rem;
+        color: #1a283c; }
+        .page.listing .arrows button.arrow .fa:hover {
+          color: #FF850E;
           cursor: pointer; }
-        .page.listing .container .top .gallery .row.single .item img {
-          display: none; }
-      .page.listing .container .top .gallery .row.double .item {
-        display: inline-block;
-        width: calc((100%/2) - 0.65rem);
-        padding-bottom: 28.125%;
-        background: no-repeat 50% 50%;
-        background-size: cover; }
-        .page.listing .container .top .gallery .row.double .item:first-of-type {
-          margin: 0 0.5rem 0 0; }
-        .page.listing .container .top .gallery .row.double .item:last-of-type {
-          margin: 0 0 0 0.5rem; }
-        .page.listing .container .top .gallery .row.double .item:hover {
-          cursor: pointer; }
-        .page.listing .container .top .gallery .row.double .item img {
-          display: none; }
-      .page.listing .container .top .gallery .row.triple .item {
-        display: inline-block;
-        width: calc((100%/3) - 0.85rem);
-        padding-bottom: 18%;
-        background: no-repeat 50% 50%;
-        background-size: cover; }
-        .page.listing .container .top .gallery .row.triple .item:first-of-type {
-          margin: 0 1rem 0 0; }
-        .page.listing .container .top .gallery .row.triple .item:last-of-type {
-          margin: 0 0 0 1rem; }
-        .page.listing .container .top .gallery .row.triple .item:hover {
-          cursor: pointer; }
-        .page.listing .container .top .gallery .row.triple .item img {
-          display: none; }
-    .page.listing .container .top .information {
-      margin: 20px 0 0; }
-      .page.listing .container .top .information .download button {
-        border-radius: 0; }
-        .page.listing .container .top .information .download button.cta {
-          margin: 2rem 0; }
+      .page.listing .arrows button.arrow#prev {
+        left: 0; }
+      .page.listing .arrows button.arrow#next {
+        right: 0; }
+  .page.listing .container {
+    padding: 0 4.25rem; }
+    .page.listing .container .top {
+      overflow: hidden;
+      margin: 0 0 2.5rem;
+      display: block; }
       @media all and (min-width: 768px) {
-        .page.listing .container .top .information {
-          width: 40%;
+        .page.listing .container .top .gallery {
+          width: 55%;
           display: inline-block;
-          float: left;
-          margin: 0; } }
-  .page.listing .container .highlights {
-    clear: both;
-    display: block; }
-    .page.listing .container .highlights ul {
-      padding: 0 0 0 1.5rem; }
+          float: right; } }
+      .page.listing .container .top .gallery .row {
+        margin: 0 0 1rem; }
+        .page.listing .container .top .gallery .row .item.video {
+          height: 0;
+          position: relative; }
+          .page.listing .container .top .gallery .row .item.video .video-inner iframe {
+            position: absolute;
+            height: 100%;
+            width: 100%; }
+        .page.listing .container .top .gallery .row.single .item {
+          display: block;
+          width: 100%;
+          padding-bottom: 56.25%;
+          background: no-repeat 50% 50%;
+          background-size: cover;
+          -webkit-transition: background .4s ease-in;
+          transition: background .4s ease-in; }
+          .page.listing .container .top .gallery .row.single .item:hover {
+            cursor: pointer; }
+          .page.listing .container .top .gallery .row.single .item img {
+            display: none; }
+        .page.listing .container .top .gallery .row.double .item {
+          display: inline-block;
+          width: calc((100%/2) - 0.65rem);
+          padding-bottom: 28.125%;
+          background: no-repeat 50% 50%;
+          background-size: cover; }
+          .page.listing .container .top .gallery .row.double .item:first-of-type {
+            margin: 0 0.5rem 0 0; }
+          .page.listing .container .top .gallery .row.double .item:last-of-type {
+            margin: 0 0 0 0.5rem; }
+          .page.listing .container .top .gallery .row.double .item:hover {
+            cursor: pointer; }
+          .page.listing .container .top .gallery .row.double .item img {
+            display: none; }
+        .page.listing .container .top .gallery .row.triple .item {
+          display: inline-block;
+          width: calc((100%/3) - 0.85rem);
+          padding-bottom: 18%;
+          background: no-repeat 50% 50%;
+          background-size: cover; }
+          .page.listing .container .top .gallery .row.triple .item:first-of-type {
+            margin: 0 1rem 0 0; }
+          .page.listing .container .top .gallery .row.triple .item:last-of-type {
+            margin: 0 0 0 1rem; }
+          .page.listing .container .top .gallery .row.triple .item:hover {
+            cursor: pointer; }
+          .page.listing .container .top .gallery .row.triple .item img {
+            display: none; }
+      .page.listing .container .top .information {
+        margin: 20px 0 0; }
+        .page.listing .container .top .information .download button {
+          border-radius: 0; }
+          .page.listing .container .top .information .download button.cta {
+            margin: 2rem 0; }
+        @media all and (min-width: 768px) {
+          .page.listing .container .top .information {
+            width: 40%;
+            display: inline-block;
+            float: left;
+            margin: 0; } }
+    .page.listing .container .highlights {
+      clear: both;
+      display: block; }
+      .page.listing .container .highlights ul {
+        padding: 0 0 0 1.5rem; }
   .page.listing .modal#form-modal {
     position: fixed;
     top: 10vh;

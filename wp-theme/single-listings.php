@@ -9,6 +9,12 @@
     $j = 1;
 ?>
 <div class="page listing" data-ng-controller="galleryCtrl">
+    <div class="arrows">
+        <div class="container">
+            <button class="arrow" id="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></button>
+            <button class="arrow" id="next"><i class="fa fa-angle-right" aria-hidden="true"></i></button>
+        </div>
+    </div>
     <div class="container">
         <div class="top">
             <div class="gallery">
@@ -200,7 +206,7 @@
         <div class="container">
             <div class="close-layer" data-ng-click="galleryOpen = !galleryOpen"></div>
             <button class="arrow" id="next" data-ng-click="change(1)"><i class="fa fa-angle-right" aria-hidden="true"></i></button>
-            <button class="arrow" id="prev" data-ng-click="change(-1)"><i class="fa fa-angle-left" aria-hidden="true"></i>                </button>
+            <button class="arrow" id="prev" data-ng-click="change(-1)"><i class="fa fa-angle-left" aria-hidden="true"></i></button>
             <div class="close" data-ng-click="galleryOpen = !galleryOpen"><span></span></div>
             <div class="image">
                 <div class="close-layer" data-ng-click="galleryOpen = !galleryOpen"></div>

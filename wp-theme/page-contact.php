@@ -49,7 +49,7 @@
         $latitude = $output->results[0]->geometry->location->lat;
         $longitude = $output->results[0]->geometry->location->lng;
     ?>
-    <div class="contact-container" data-ng-controller='mapCtrl'>
+    <div class="contact-container" data-ng-controller='mapCtrl' data-ng-init='initMap(<?php echo $latitude; ?>, <?php echo $longitude; ?>, "<?php echo get_template_directory_uri(); ?>")'>
         <div class="map" id="contactMap"></div>
         <div class="contact-form">
             <?php echo do_shortcode( '[contact-form-7 id="45" title="Contact Page Form"]' ); ?>

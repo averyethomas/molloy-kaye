@@ -6,10 +6,11 @@
     <!--CSS-->
     <link href="<?php bloginfo('stylesheet_url'); ?>" rel="stylesheet" type="text/css">
     <?php wp_head(); ?>
-    <!--FONT AWESOME-->
-    <script src="https://use.fontawesome.com/879fcc8444.js"></script>
     <!-- GOOGLE MAPS -->
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBzJxNeHK6j_bXKDfWTZ1zj11wAHJEAQo&callback"></script>
+    <!--FONT AWESOME-->
+    <script src="https://use.fontawesome.com/879fcc8444.js"></script>
+    
 </head>
 <body data-ng-app="angularApp" data-ng-controller="mainCtrl" data-ng-class="{'navOpen' : navToggle}">
     <nav>
