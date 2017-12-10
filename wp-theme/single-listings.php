@@ -166,28 +166,36 @@
             </div>
             <div class="information">
                 <h2><?php echo the_title(); ?></h2>
-                <h6><?php the_field('street_address'); ?><br><?php the_field('city_state'); ?></h6>
-                <h6><?php the_field('price'); ?></h6>
-                <p>Cap Rate: <?php the_field('cap_rate'); ?></p>
+                <p><?php the_field('street_address'); ?><br><?php the_field('city_state'); ?></p>
+                <p><?php the_field('price'); ?></p>
+                <h6>Cap Rate</h6>
+                <p><?php the_field('cap_rate'); ?></p>
                 <?php if( get_field('gla') ): ?>
-                    <p>GLA: <?php the_field('gla'); ?></p> 
+                    <h6>GLA</h6>
+                    <p><?php the_field('gla'); ?></p> 
                 <?php endif; ?>
                 <?php if( get_field('lot_size') ): ?>
-                    <p>Lot Size: <?php the_field('lot_size'); ?></p>
+                    <h6>Lot Size</h6>
+                    <p><?php the_field('lot_size'); ?></p>
                 <?php endif; ?>
                 <?php if( get_field('year_built') ): ?>
-                    <p>Year Built: <?php the_field('year_built'); ?></p>
+                    <h6>Year Built</h6>
+                    <p><?php the_field('year_built'); ?></p>
                 <?php endif; ?>
                 <?php if( get_field('type_of_ownership') ): ?>
-                    <p>Type of Ownership: <?php the_field('type_of_ownership'); ?></p>
+                    <h6>Type of Ownership</h6>
+                    <p><?php the_field('type_of_ownership'); ?></p>
                 <?php endif; ?>
                 <?php if( get_field('lease_term') ): ?>
-                    <p>Lease Term: <?php the_field('lease_term'); ?></p>
+                    <h6>Lease Term</h6>
+                    <p><?php the_field('lease_term'); ?></p>
                 <?php endif; ?>
                 <?php if( get_field('lease_type') ): ?>
-                    <p>Lease Type: <?php the_field('lease_type'); ?></p>
+                    <h6>Lease Type</h6>
+                    <p><?php the_field('lease_type'); ?></p>
                 <?php endif; ?>
-                <p>Status: <?php echo $status; ?></p>
+                <h6>Status</h6>
+                <p><?php echo $status; ?></p>
                 <div class="download">
                     <button class="cta" data-ng-click="downloadModal = !downloadModal">Marketing Package</button>
                 </div>

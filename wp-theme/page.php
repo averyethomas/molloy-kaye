@@ -1,10 +1,8 @@
 <?php
     get_header();
-    
     $heroImage = get_field('hero_image');
-
 ?>
-<div class="page single <?php if($heroImage){ echo 'has-hero'; } ?>">
+<div class="page single">
 
 <?php if( $heroImage ): ?>
 

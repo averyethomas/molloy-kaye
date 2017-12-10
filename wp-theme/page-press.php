@@ -7,7 +7,7 @@
 
 <div class="page press">
     <div class="container">
-        <h1>Press</h1>
+        <h1><?php echo the_title(); ?></h1>
     <?php   $categories = get_categories();
                 
             foreach ( $categories as $category ): ?>

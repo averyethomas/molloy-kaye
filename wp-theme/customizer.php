@@ -9,11 +9,11 @@ function theme_customizer ( $wp_customize ) {
         'description' => '',
         'priority' => 30,
     ) );
-    $wp_customize->add_setting( 'dark_logo' );
-    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'dark_logo', array(
-        'label'    => __( 'Dark Logo', 'Molloy Kaye' ),
+    $wp_customize->add_setting( 'long_logo' );
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'long_logo', array(
+        'label'    => __( 'Long Logo', 'Molloy Kaye' ),
         'section'  => 'logo_section',
-        'settings' => 'dark_logo',
+        'settings' => 'long_logo',
     ) ) );
     $wp_customize->add_setting( 'light_logo' );
     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'light_logo', array(

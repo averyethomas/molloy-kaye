@@ -28,7 +28,7 @@
     <div class="intro">
         <div class="container">
             <h1><?php bloginfo('name'); ?></h1>
-            <h6><?php the_field('introduction'); ?></h6>
+            <p><?php the_field('introduction'); ?></p>
         </div>
     </div>
     <div class="container">

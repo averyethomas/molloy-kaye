@@ -12,14 +12,15 @@
     <script src="https://use.fontawesome.com/879fcc8444.js"></script>
     
 </head>
-<body data-ng-app="angularApp" data-ng-controller="mainCtrl" data-ng-class="{'navOpen' : navToggle}">
+<?php $heroImage = get_field('hero_image'); ?>    
+<body data-ng-app="angularApp" data-ng-controller="mainCtrl" data-ng-class="{'navOpen' : navToggle}" class="<?php if($heroImage){ echo 'has-hero'; } ?>">
     <nav>
         <div class="container">
             <div class="logo">
                 <a href="/molloy-kaye-wordpress/">
-                    <?php if ( get_theme_mod( 'light_logo' ) ) : ?>
+                    <?php if ( get_theme_mod( 'long_logo' ) ) : ?>
  
-                        <img src="<?php echo get_theme_mod( 'light_logo' ); ?>" />
+                        <img src="<?php echo get_theme_mod( 'long_logo' ); ?>" />
    
                     <?php endif; ?>
                 </a>

@@ -1,16 +1,26 @@
-@import "base-files/_themeHead.scss";
+@import "base-files/themeHead";
+@import "base-files/tableOfContents";
 @import "base-files/reset";
 
 //COLOR PALETTE
 $black: #000000;
 $white: #ffffff;
 $blue: #1a283c;
+$light: #6a737f;
 $orange: #FF850E;
 $green: #31633D;
 
 //TYPOGRAPHY
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One');
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700');
 $sansSerif: 'Source Sans Pro', sans-serif;
+$fjalla: 'Fjalla One', 'Source Sans Pro', sans-serif;
+
+/*
+------------------------------
+02. TYPOGRAPHY
+------------------------------
+*/
 
 html{
   font-size: 10px;
@@ -20,14 +30,14 @@ body{
   overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6, p, small {
+h4, h5, h6, p, b, strong, em, i, small {
   font-family: $sansSerif;
   padding: 0;
   margin: .5rem 0 2rem 0;
   color: $blue;
 }
 h1 {
-  font-family: $sansSerif;
+  font-family: $fjalla;
   font-size: 5rem;
   font-weight: 700;
   line-height: 5.5rem;
@@ -38,6 +48,7 @@ h1 {
 }
 
 h2{
+  font-family: $fjalla;
   font-size: 3.5rem;
   letter-spacing: 0.05rem;
   text-transform: uppercase;
@@ -59,6 +70,7 @@ h2{
 }
 
 h3 {
+  font-family: $fjalla;
   font-size: 3rem;
   letter-spacing: 0.05em;
   font-weight: 600;
@@ -75,27 +87,48 @@ h4 {
 }
 
 h5{
-  font-family: $sansSerif;
-  font-size: 2.2rem;
+  font-family: $fjalla;
   font-weight: 500;
+  font-size: 2rem;
   line-height: 2.6rem;
-  color: $black;
-  margin: 0.5rem 0;
+  letter-spacing: 0.05rem;
+  margin: 0.5rem auto;
+  color: $light;
+  position: relative;
+  text-transform: uppercase;
+  
+  &.underline{
+    margin: 0.5rem auto 3.5rem;
+
+    &:after{
+      content: '';
+      height: 0.3rem;
+      width: 10rem;
+      background-color: $light;
+      display: block;
+      position: absolute;
+      margin: 0 auto;
+      left: 0;
+      bottom: -0.7rem;
+      right: 0;
+    }
+  }
 }
 
 h6{
-  font-size: 2rem;
-  line-height: 2.4rem;
+  font-family: $fjalla;
+  font-size: 1.3rem;
+  line-height: 1.2rem;
   letter-spacing: 0.05rem;
   font-weight: 500;
   padding: 0;
-  margin: 0.5rem 0 1rem;
+  margin: 0 0 0.25rem;
   text-transform: uppercase;
 }
 
 p{
   font-size: 1.6rem;
-  line-height: 2rem;
+  line-height: 2.2rem;
   letter-spacing: 0.025rem;
   font-weight: 400;
   padding: 0;
@@ -136,13 +169,13 @@ a{
   font-size: 1.6rem;
   font-weight: 500;
   line-height: 2.1rem;
-  color: $orange;
+  color: $light;
   cursor: pointer;
   text-decoration: none;
 
   &:hover {
     text-decoration: none;
-    color: $blue;
+    color: $orange;
   }
   
   &.cta{
@@ -228,6 +261,16 @@ blockquote{
     font-style: italic;
     display: block;
   }
+}
+
+/*
+------------------------------
+03.CONTAINERS
+------------------------------
+*/
+.page{
+  padding: 4.5rem 0 3rem;
+  min-height: calc(100vh - 135px);
 }
 
 .container{

@@ -40,11 +40,9 @@
                 $primImage = get_field('primary_photo');
             ?>
             <div class="listing <?php echo $statusClass ?>">
-                <a href="<?php the_permalink() ?>">
-                   <div class="image" style="background-image: url(<?php echo $primImage['url'] ?>);">
-                        <h5><?php echo $status ?></h5>
-                    </div> 
-                </a>
+                <div class="image" style="background-image: url(<?php echo $primImage['url'] ?>);">
+                    <h5><?php echo $status ?></h5>
+                </div> 
                 <h4><?php echo the_title(); ?></h4>
                 <p><?php the_field('street_address'); ?><br><?php the_field('city_state'); ?></p>
             </div>
