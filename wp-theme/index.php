@@ -66,8 +66,8 @@
                             </a>
                             <h4><?php echo the_title(); ?></h4>
                             <div class="text-row">
-                                <h6><?php the_field('price'); ?></h6>
-                                <h6 class="cap-rate">Cap Rate: <?php the_field('cap_rate'); ?></h6>
+                                <p><?php the_field('price'); ?></p>
+                                <p class="cap-rate">Cap Rate: <?php the_field('cap_rate'); ?></p>
                             </div>
                             <p><?php the_field('street_address'); ?><br><?php the_field('city_state'); ?></p>
                             <a class="learn-more" href="<?php the_permalink() ?>">Learn More</a>
@@ -83,7 +83,7 @@
                       
                 
                 <a class="cta" href="/molloy-kaye-wordpress/listings">View Listings</a>
-            <?php endif;?>           
+            <?php endif;?>
             <h3>Recently Closed</h3>
             <?php
                 $args = array(

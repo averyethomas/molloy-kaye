@@ -295,3 +295,11 @@ blockquote{
     display: none !important;
   }
 }
+
+.divider{
+  width: 75%;
+  height: 0.4rem;
+  background: $light;
+  display: block;
+  margin: 4rem auto;
+}

@@ -331,6 +331,13 @@ blockquote {
     .visible-xs {
       display: none !important; } }
 
+.divider {
+  width: 75%;
+  height: 0.4rem;
+  background: #6a737f;
+  display: block;
+  margin: 4rem auto; }
+
 /*
 ------------------------------
 04. NAVIGATION
@@ -789,7 +796,8 @@ nav {
   position: fixed;
   width: 100%;
   height: 100vh;
-  top: 0; }
+  top: 0;
+  z-index: -1; }
   .page.listing .arrows .container {
     position: relative;
     padding: 0;
@@ -1252,16 +1260,24 @@ nav {
       .page .listings-container .listing .image h5 {
         position: absolute;
         bottom: 0;
-        padding: 5px 10px;
+        padding: 2px 6px;
         margin: 0;
         color: #fff;
-        background: rgba(26, 40, 60, 0.8); }
+        background: rgba(26, 40, 60, 0.8);
+        font-family: "Source Sans Pro", sans-serif;
+        font-weight: 300;
+        font-size: 1.4rem; }
     .page .listings-container .listing h4 {
-      border-bottom: 3px solid #1a283c; }
+      font-family: "Fjalla One", "Source Sans Pro", sans-serif;
+      font-size: 2.2rem;
+      line-height: 2.7rem;
+      margin: 1rem 0;
+      padding: 0 0 0.5rem;
+      border-bottom: 2px solid #1a283c; }
     .page .listings-container .listing a.learn-more {
-      border: 2px solid #1a283c;
+      border: 2px solid #6a737f;
       padding: 3px 10px;
-      color: #1a283c;
+      color: #6a737f;
       margin: 1.2rem 0;
       text-transform: uppercase;
       display: block;
@@ -1270,16 +1286,20 @@ nav {
       transition: all 0.25s ease-in; }
       .page .listings-container .listing a.learn-more:hover {
         color: #fff;
-        background-color: #1a283c; }
+        background-color: #6a737f; }
+    .page .listings-container .listing p {
+      color: #6a737f;
+      line-height: 1.8rem; }
     .page .listings-container .listing .text-row {
       margin: 1rem 0; }
-      .page .listings-container .listing .text-row h6 {
+      .page .listings-container .listing .text-row p {
+        color: #6a737f;
         display: inline-block;
         width: calc(40% - 2px);
         vertical-align: middle;
         margin: 0;
         text-transform: none; }
-        .page .listings-container .listing .text-row h6.cap-rate {
+        .page .listings-container .listing .text-row p.cap-rate {
           text-align: right;
           width: calc(60% - 1px); }
 
