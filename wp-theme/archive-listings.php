@@ -38,34 +38,22 @@
                 <h6>Single-Tenant</h6>
             </div>
         </div>
-        <div class="listings-container">
-            <?php
-                while( $listings->have_posts() ) :
-                $listings->the_post();
-                
-                $status = get_field('status');
-                $statusClass = strtolower(str_replace(' ', '-', $status));
-                $primImage = get_field('primary_photo');
-            ?>
-            <div class="listing <?php echo $statusClass ?>">
-                <a href="<?php the_permalink() ?>">
-                   <div class="image" style="background-image: url(<?php echo $primImage['url'] ?>);">
-                        <h5><?php echo $status ?></h5>
+        <div class="listings-container" data-ng-controller="listingsCtrl">
+	    <div class="listing {{ item.acf.status | lowercase }}" data-ng-repeat="item in listingsData">
+                <a data-ng-href="{{ item.slug }}">
+                   <div class="image" data-ng-style="{'background-image': 'url(' + item.acf.primary_photo.url + ')'}">
+                        <h5>{{ item.acf.status }}</h5>
                     </div> 
                 </a>
-                <h4><?php echo the_title(); ?></h4>
+                <h4 data-ng-bind-html="item.title.rendered | preserveHtml"></h4>
                 <div class="text-row">
-                    <p><?php the_field('price'); ?></p>
-                    <p class="cap-rate">Cap Rate: <?php the_field('cap_rate'); ?></p>
+                    <p>{{ item.acf.price }}</p>
+                    <p class="cap-rate">Cap Rate: {{ item.acf.cap_rate }}</p>
                 </div>
-                <p><?php the_field('street_address'); ?><br><?php the_field('city_state'); ?></p>
-                <a class="learn-more" href="<?php the_permalink() ?>">Learn More</a>
+                <p>{{ item.acf.street_address }}<br>{{ item.acf.city_state }}</p>
+                <a class="learn-more" data-ng-href="{{ item.slug }}">Learn More</a>
             </div>
-            <?php
-                endwhile;
-                wp_reset_postdata();
-            ?>
-        </div>
+	</div>
     </div>
 </div>
   

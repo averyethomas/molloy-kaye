@@ -278,7 +278,7 @@ nav{
   &.home{
     .hero{
       position: relative;
-      height: 90vh;
+      height: 100vh;
       margin: 0;
       
       .overlay{
@@ -286,6 +286,21 @@ nav{
         position: absolute;
         width: 100%;
         height: 100%;
+      }
+      
+      .down-arrow{
+        color: $white;
+        font-size: 2rem;
+        display: block;
+        width: 100%;
+        position: absolute;
+        bottom: 1rem;
+        text-align: center;
+        
+        .fa{
+          color: $white;
+          font-size: 2.5rem;
+        }
       }
       
       .text{
@@ -573,7 +588,7 @@ nav{
       
       .filter{
         border: 2px solid $orange;
-        padding: 3px 10px;
+        padding: 5px 10px;
         display: block;
         margin: 0 auto 1rem;
         max-width: 200px;
@@ -590,6 +605,7 @@ nav{
 
           h6{
             color: $white;
+          
           }
 
         }
@@ -606,6 +622,8 @@ nav{
           line-height: auto;
           margin: 0;
           color: $orange;
+            font-family: $sansSerif;
+            font-size: 1.6rem;
         }
       }
     }
@@ -1173,12 +1191,7 @@ nav{
         }
       }
       
-      h4{
-        padding: 0;
-        margin: 0 0 1rem;
-        line-height: 2.4rem;
-        font-size: 2.4rem;
-      }
+      
       
       p{
         i{
@@ -1197,6 +1210,15 @@ nav{
         p{
           margin: 0;
         }
+      }
+    }
+    .titles{
+      h4{
+        padding: 0;
+        margin: 0 0 0.5rem;
+        line-height: 2rem;
+        font-size: 2rem;
+        text-transform: uppercase;
       }
     }
     .left{
@@ -1309,13 +1331,15 @@ nav{
       }
       
       a.learn-more{
+        font-size: 1.4rem;
         border: 2px solid $light;
-        padding: 3px 10px;
+        font-family: $fjalla;
+        padding: 3px 8px;
         color: $light;
         margin: 1.2rem 0;
         text-transform: uppercase;
         display: block;
-        width: 135px;
+        width: 86px;
         transition: all 0.25s ease-in;
           
         &:hover{
@@ -1525,5 +1549,28 @@ footer{
     small{
       color: $white;
     }
+  }
+}
+
+/*
+------------------------------
+16. WYSIWYG
+------------------------------
+*/
+
+.alignleft, .alignright{
+  margin: 1.5rem auto;
+  max-width: 100%;
+  display: block;
+}
+
+@media all and (min-width: 768px){
+  .alignleft{
+    margin: 1.5rem 1.5rem 1.5rem 0;
+    float: left;
+  }
+  .alignright{
+    float: right;
+    margin: 1.5rem 0 1.5rem 1.5rem;
   }
 }

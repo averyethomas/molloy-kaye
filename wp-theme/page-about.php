@@ -40,7 +40,7 @@
 ?> 
     <div class="team-container">
         <div class="container">
-            <h5 class="underline">Meet Our Team</h5>
+            <h5 class="underline">Meet The Team</h5>
             <h2>Molloy Kaye Retail Group</h2>
             
 <?php       while( $people->have_posts() ) :
@@ -50,7 +50,7 @@
                 <a href='<?php echo the_permalink(); ?>' class="team-member">
                     <div class="photo" style="background-image: url(<?php echo $photo['url']; ?>);">
                         <div class="overlay">
-                            <h6>MORE INFO</h6>
+                            <h6>READ BIO</h6>
                         </div>
                     </div>
                     <h4><?php echo the_title(); ?></h4>

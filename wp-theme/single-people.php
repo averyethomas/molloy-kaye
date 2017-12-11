@@ -8,6 +8,18 @@
     <div class="container">
         <div class='visible-xs'>
             <h1><?php echo the_title(); ?></h1>
+<?php   if( have_rows('titles') ):
+?>
+        <div class="titles">
+<?php       while ( have_rows('titles') ) : the_row();
+?>
+            <h4><?php the_sub_field('title'); ?></h4>
+            
+<?php       endwhile;
+?>
+        </div>
+<?php       endif;
+?>
         </div>
         <div class="right">
             <?php 
@@ -19,15 +31,7 @@
                         <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
 
             <?php endif; ?>
-            <?php if( have_rows('titles') ):
-                
-                    while ( have_rows('titles') ) : the_row(); ?>
-                
-                        <h4><?php the_sub_field('title'); ?></h4>
-                        
-                    <?php endwhile;
-                
-                endif; ?>
+           
             <div class="contact">    
                 <p><i class="fa fa-envelope" aria-hidden="true"></i><a href='mailto:<?php the_field('email'); ?>'><?php the_field('email'); ?></a></p>
                 <?php if( get_field('cell_phone_number') ): ?>
@@ -60,6 +64,18 @@
         <div class="left">
             <div class='hide-xs'>
                 <h2><?php echo the_title(); ?></h2>
+<?php   if( have_rows('titles') ):
+?>
+        <div class="titles">
+<?php       while ( have_rows('titles') ) : the_row();
+?>
+            <h4><?php the_sub_field('title'); ?></h4>
+            
+<?php       endwhile;
+?>
+        </div>
+<?php       endif;
+?>                
             </div>
             <?php the_field('bio'); ?>
         </div>

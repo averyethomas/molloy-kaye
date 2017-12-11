@@ -24,6 +24,9 @@
             
             <h2><?php bloginfo('description'); ?></h2>
         </div>
+        <div class="down-arrow">
+            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+        </div>
     </div>
     <div class="intro">
         <div class="container">
