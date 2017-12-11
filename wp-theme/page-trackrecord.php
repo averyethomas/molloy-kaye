@@ -29,7 +29,21 @@
 ?>
 <div class="page listings">
     <div class="container">
-        <h1>Track Record</h1>
+        <h1><?php the_title(); ?></h1>
+	<div class="filters">
+            <div class="filter active">
+                <h6>All</h6>
+            </div>
+            <div class="filter">
+                <h6>Multi-Tenant</h6>
+            </div>
+            <div class="filter">
+                <h6>Single-Tenant</h6>
+            </div>
+	    <div class="filter">
+		<h6>JV Capital Facilitation</h6>
+	    </div>
+        </div>
         <div class="listings-container">
             <?php
                 while( $listings->have_posts() ) :
