@@ -54,6 +54,11 @@
                         </div>
                     </div>
                     <h4><?php echo the_title(); ?></h4>
+                    
+<?php   $titleRows = get_field('titles');
+        $firstTitle = $titleRows[0]['title'];
+?>
+                    <h6><?php echo $firstTitle; ?></h6>
                 </a>
                 
 <?php       endwhile;

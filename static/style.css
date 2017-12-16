@@ -690,6 +690,9 @@ nav {
           border-right: 2px solid #FF850E; } }
     .page.single .team-container a.team-member h4 {
       color: #ffffff; }
+    .page.single .team-container a.team-member h6 {
+      color: #6a737f;
+      margin: 1rem 0 0; }
     .page.single .team-container a.team-member:hover .photo .overlay {
       height: 100%;
       opacity: 0.9; }
@@ -1225,6 +1228,9 @@ nav {
     width: calc(65% - 20px);
     vertical-align: top;
     margin: 0 0 0 2rem; } }
+
+.page.people .left p {
+  text-align: justify; }
 
 /*
 ------------------------------

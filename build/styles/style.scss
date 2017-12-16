@@ -467,6 +467,11 @@ nav{
           color: $white;
         }
         
+        h6{
+          color: $light;
+          margin: 1rem 0 0;
+        }
+        
         &:hover{
           .photo{
             .overlay{
@@ -1234,7 +1239,12 @@ nav{
         vertical-align: top;
         margin: 0 0 0 2rem;
       }
+      
+      p{
+        text-align: justify;
+      }
     }
+    
   }
 }
 /*
