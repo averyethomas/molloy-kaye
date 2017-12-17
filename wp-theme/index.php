@@ -41,7 +41,7 @@
 
                 if( $objects ): ?>
             
-                <h3>Featured Listings</h3>
+                <h3 class="underline">Featured Listings</h3>
                 
                 
                 <div class="listings-container">
@@ -87,7 +87,7 @@
                 
                 <a class="cta" href="/molloy-kaye-wordpress/listings">View Listings</a>
             <?php endif;?>
-            <h3>Recently Closed</h3>
+            <h3 class="underline">Recently Closed</h3>
             <?php
                 $args = array(
                     'post_type'      => 'listings',

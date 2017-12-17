@@ -5,86 +5,42 @@ app.controller('mainCtrl', ['$scope', function ($scope) {
     
 }]);
 
-app.factory('apiCall', ['$location', function($location){
-
-    var protocol = $location.protocol() + '://';
-    var host = $location.host();
-    var origin = protocol + host;
-    var apiPoint = appInfo.api_url;
-    var apiCall = origin + '/molloy-kaye-wordpress/' + apiPoint;
-
-    return apiCall;
-
+app.controller('filterCtrl', ['$scope', function($scope){
+    
+    $scope.isActive = false;
+    
+    $scope.runFilter = function (input){
+        
+        $scope.items = document.getElementsByClassName('listing');
+        
+        angular.forEach($scope.items, function(value){
+            
+        })  
+    }
+    
+    $scope.runFilter();
+    
 }]);
 
-app.controller('listingsCtrl', ['$scope', '$window','$http','apiCall', function($scope, $window, $http, apiCall){
-    var count = 1;
-    $scope.listingsData = [];
-    $scope.rawUrl =  apiCall + 'listings';
-    console.log($scope.rawUrl);
+app.controller('scrollTopCtrl', ['$scope', function ($scope) {
 
-    $scope.init = function(){
-        $scope.loading = true;
-        $http({
-            method: 'GET',
-            url: $scope.rawUrl,
-            params:{
-                'per_page': 24,
-                'page': 1
-            }
-        }).
-        success(function(data, status, headers, config){
-            $scope.loading = false;
-            $scope.listingsData = $scope.listingsData.concat(data);
-            $scope.currentDataNumber = data.length;
-            console.log($scope.listingsData);
-        }).
-        error(function(data, status, headers, config){});
-    };
-    
-    $scope.init();
+    window.onscroll = function() {scrollFunction()};
 
-    $scope.getData = function(){
-        $scope.loading = true;
-        count = count+1;
-        $http({
-            method: 'GET',
-            url: $scope.rawUrl,
-            params:{
-                'per_page': 24,
-                'page': count
-            }
-        }).
-            success(function(data, status, headers, config){
-                $scope.currentDataNumber = data.length;
-                $scope.listingsData = $scope.listingsData.concat(data);
-                $scope.loading = false;
-        }).
-            error(function(data, status, headers, config){});
-    };
-    
-    $scope.dataCheck = function(){
-        if($scope.currentDataNumber === 24){
-            $scope.getData()
-        } else if($scope.currentDataNumber < 24){
-            $scope.loading = false;
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("scrollUp").style.display = "block";
+        } else {
+            document.getElementById("scrollUp").style.display = "none";
         }
-    };
+    }
     
-    angular.element($window).bind("scroll", function() {
-        var windowHeight = "innerHeight" in window ? window.innerHeight : document.documentElement.offsetHeight;
-        var body = document.body, html = document.documentElement;
-        var docHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight,  html.scrollHeight, html.offsetHeight);
-
-        windowBottom = windowHeight + window.pageYOffset;
-
-        if (windowBottom >= docHeight) {
-            $scope.$apply(function(){
-                $scope.dataCheck();
-            })
-        }
-    });
+    $scope.scrollToTop = function() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+    
 }]);
+
 
 app.controller('mapCtrl',['$scope', '$window', function($scope, $window){
         
@@ -254,7 +210,6 @@ app.controller('mapCtrl',['$scope', '$window', function($scope, $window){
         });
     };
 }])
-
 
 app.controller('galleryCtrl', ['$scope', function($scope){
     

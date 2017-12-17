@@ -39,7 +39,8 @@ nav{
       
       img{
         display: block;
-        width: 140px;
+        height: 40px;
+        width: auto;
       }
     }
   
@@ -254,7 +255,7 @@ nav{
       }
       
       @media all and (min-width: 768px){
-        min-height: 350px;
+        min-height: 410px;
         
         .container{
           h1{
@@ -373,10 +374,6 @@ nav{
         text-align: center;
         margin: 2.5rem 0 4rem;
         text-transform: uppercase;
-        
-        &:after{
-          display: none;
-        }
       }
     }
   }
@@ -546,20 +543,7 @@ nav{
       .category{
         padding: 0 0 2.5rem;
         
-        .post{
-          border: 1px solid $blue;
-          margin: 0 auto 1.5rem;
-          max-width: 300px;
-          
-          img{
-            width: 100%;
-          }
-          
-          .text{
-            padding: 1rem;
-          }
-          
-          @media all and (min-width: 768px){
+        @media all and (min-width: 768px){
             display: inline-block;
             width: calc((100%/3) - 15px);
             vertical-align: top;
@@ -574,6 +558,22 @@ nav{
               margin: 0 0 1rem 1rem;
             }
           }
+          
+        .post{
+          border: 1px solid $blue;
+          margin: 0 auto 1.5rem;
+          width: 100%;
+          max-width: 300px;
+          
+          img{
+            width: 100%;
+          }
+          
+          .text{
+            padding: 1rem;
+          }
+          
+          
         }
       }
     }
@@ -585,6 +585,16 @@ nav{
 09. LISTINGS PAGE
 ------------------------------
 */
+.has-hero{
+  .page{
+    &.listings{
+      .filters{
+        margin: 4rem auto;
+        padding: 0;
+      }
+    }
+  }
+}
 .page{
   &.listings{
     .filters{
@@ -630,6 +640,26 @@ nav{
             font-family: $sansSerif;
             font-size: 1.6rem;
         }
+      }
+    }
+    .toTop{
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 35px;
+      height: 35px;
+      border-radius: 100px;
+      background: $orange;
+      
+      .fa{
+        margin: 0;
+        padding: 0;
+        font-size: 1.5rem;
+        color: $white;
+        position: absolute;
+        top: 47%;
+        left: 50%;
+        transform: translate(-50%, -50%);
       }
     }
   }
@@ -1001,9 +1031,9 @@ nav{
     padding: 0;
     
     .contact-info{
-      padding: 3rem 1.5rem;
+      padding: 2rem 1.5rem;
       @media all and (min-width: 768px){
-        padding: 5rem 3rem 3rem;
+        padding: 2rem 2rem 1rem;
       }
       
       h1{
@@ -1016,11 +1046,23 @@ nav{
       }
       
       .item{
-        margin: 0 0 2rem;
+        margin: 0 0 1.5rem;
         
         h6{
           font-size: 1.6rem;
           line-height: 1.8rem;
+        }
+        p{
+          color: $light;
+          margin: 0;
+        }
+        
+        &:last-of-type{
+          margin: 0;
+        }
+        
+        a.cta{
+          margin: 2rem 0 0;
         }
       }
     }
@@ -1031,16 +1073,20 @@ nav{
       
       @media all and(min-width: 768px){
         width: 50%;
-        min-height: calc(100vh - 300px);
+        min-height: calc(100vh - 500px);
         float: left;
       }
       
       .overlay{
-        padding: 5rem 3rem;
+        padding: 3rem 3rem;
         display: block;
         width: 100%;
-        background: -webkit-gradient(linear, left top, left bottom, from(rgba(26, 40, 60, 0.8)), to(rgba(26, 40, 60, 0.9)));
-        background: linear-gradient(rgba(26, 40, 60, 0.8), rgba(26, 40, 60, 0.9));
+        background: -webkit-gradient(linear, left top, left bottom, from(rgba(26, 40, 60, 0.7)), to(rgba(26, 40, 60, 0.8)));
+        background: linear-gradient(rgba(26, 40, 60, 0.7), rgba(26, 40, 60, 0.8));
+        
+        @media all and (min-width: 768px){
+          padding: 6.75rem 3rem;
+        }
         
         @media all and (min-width: 1700px){
           position: absolute;
@@ -1544,21 +1590,23 @@ footer{
     margin: 0 auto;
     
     img{
-      display: block;
-      margin: 0 auto 1rem;
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0 1rem 1.25rem;
       
       &.mk-logo{
         max-width: 50px;
       }
       
       &.mm-logo{
-        max-width: 75px;
+        max-width: 125px;
       }
     }
     
     small{
       color: $white;
     }
+    
   }
 }
 

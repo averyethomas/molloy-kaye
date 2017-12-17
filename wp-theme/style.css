@@ -122,6 +122,7 @@ h1 {
   font-size: 5rem;
   font-weight: 700;
   line-height: 5.5rem;
+  letter-spacing: 0.5rem;
   color: #1a283c;
   text-transform: uppercase;
   text-align: center;
@@ -153,6 +154,20 @@ h3 {
   font-weight: 600;
   padding: 5px 0;
   margin: 0.5rem 0 1rem; }
+  h3.underline {
+    margin: 0.5rem auto 3.5rem;
+    position: relative; }
+    h3.underline::after {
+      content: '';
+      height: 0.3rem;
+      width: 10rem;
+      background-color: #FF850E;
+      display: block;
+      position: absolute;
+      margin: 0 auto;
+      left: 0;
+      bottom: -0.7rem;
+      right: 0; }
 
 h4 {
   font-size: 2.4rem;
@@ -266,6 +281,9 @@ a {
       color: #ffffff;
       background: #1a283c; }
 
+button.invisible {
+  visibility: hidden !important; }
+
 button.cta {
   font-family: "Source Sans Pro", sans-serif;
   font-size: 2rem;
@@ -370,7 +388,8 @@ nav {
         color: #1a283c; }
       nav .container .logo img {
         display: block;
-        width: 140px; }
+        height: 40px;
+        width: auto; }
     nav .container .mobileMenu {
       display: inline-block;
       width: 35px;
@@ -542,7 +561,7 @@ nav {
               transform: translate(-50%, -50%); }
     @media all and (min-width: 768px) {
       .has-hero .page .hero {
-        min-height: 350px; }
+        min-height: 410px; }
         .has-hero .page .hero .container h1 {
           padding: 0;
           margin: 0; } }
@@ -625,8 +644,6 @@ nav {
     text-align: center;
     margin: 2.5rem 0 4rem;
     text-transform: uppercase; }
-    .page.home .listings h3:after {
-      display: none; }
 
 /*
 ------------------------------
@@ -747,31 +764,36 @@ nav {
 */
 .page.press .container .category {
   padding: 0 0 2.5rem; }
+  @media all and (min-width: 768px) {
+    .page.press .container .category {
+      display: inline-block;
+      width: calc((100%/3) - 15px);
+      vertical-align: top;
+      margin: 0 1rem 1rem;
+      max-width: 500px; }
+      .page.press .container .category:nth-of-type(3n + 1) {
+        margin: 0 1rem 1rem 0; }
+      .page.press .container .category:nth-of-type(3n + 3) {
+        margin: 0 0 1rem 1rem; } }
   .page.press .container .category .post {
     border: 1px solid #1a283c;
     margin: 0 auto 1.5rem;
+    width: 100%;
     max-width: 300px; }
     .page.press .container .category .post img {
       width: 100%; }
     .page.press .container .category .post .text {
       padding: 1rem; }
-    @media all and (min-width: 768px) {
-      .page.press .container .category .post {
-        display: inline-block;
-        width: calc((100%/3) - 15px);
-        vertical-align: top;
-        margin: 0 1rem 1rem;
-        max-width: 500px; }
-        .page.press .container .category .post:nth-of-type(3n + 1) {
-          margin: 0 1rem 1rem 0; }
-        .page.press .container .category .post:nth-of-type(3n + 3) {
-          margin: 0 0 1rem 1rem; } }
 
 /*
 ------------------------------
 09. LISTINGS PAGE
 ------------------------------
 */
+.has-hero .page.listings .filters {
+  margin: 4rem auto;
+  padding: 0; }
+
 .page.listings .filters {
   text-align: center;
   padding: 0 0 3rem; }
@@ -802,6 +824,25 @@ nav {
       color: #FF850E;
       font-family: "Source Sans Pro", sans-serif;
       font-size: 1.6rem; }
+
+.page.listings .toTop {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 35px;
+  height: 35px;
+  border-radius: 100px;
+  background: #FF850E; }
+  .page.listings .toTop .fa {
+    margin: 0;
+    padding: 0;
+    font-size: 1.5rem;
+    color: #ffffff;
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%); }
 
 /*
 ------------------------------
@@ -1055,10 +1096,10 @@ nav {
 .page.contact {
   padding: 0; }
   .page.contact .contact-info {
-    padding: 3rem 1.5rem; }
+    padding: 2rem 1.5rem; }
     @media all and (min-width: 768px) {
       .page.contact .contact-info {
-        padding: 5rem 3rem 3rem; } }
+        padding: 2rem 2rem 1rem; } }
     .page.contact .contact-info h1 {
       text-align: left; }
     @media all and (min-width: 768px) {
@@ -1066,10 +1107,17 @@ nav {
         width: 50%;
         float: left; } }
     .page.contact .contact-info .item {
-      margin: 0 0 2rem; }
+      margin: 0 0 1.5rem; }
       .page.contact .contact-info .item h6 {
         font-size: 1.6rem;
         line-height: 1.8rem; }
+      .page.contact .contact-info .item p {
+        color: #6a737f;
+        margin: 0; }
+      .page.contact .contact-info .item:last-of-type {
+        margin: 0; }
+      .page.contact .contact-info .item a.cta {
+        margin: 2rem 0 0; }
   .page.contact .contact-form {
     position: relative;
     background: no-repeat 50% 50%;
@@ -1077,14 +1125,17 @@ nav {
     @media all and (min-width: 768px) {
       .page.contact .contact-form {
         width: 50%;
-        min-height: calc(100vh - 300px);
+        min-height: calc(100vh - 500px);
         float: left; } }
     .page.contact .contact-form .overlay {
-      padding: 5rem 3rem;
+      padding: 3rem 3rem;
       display: block;
       width: 100%;
-      background: -webkit-gradient(linear, left top, left bottom, from(rgba(26, 40, 60, 0.8)), to(rgba(26, 40, 60, 0.9)));
-      background: linear-gradient(rgba(26, 40, 60, 0.8), rgba(26, 40, 60, 0.9)); }
+      background: -webkit-gradient(linear, left top, left bottom, from(rgba(26, 40, 60, 0.7)), to(rgba(26, 40, 60, 0.8)));
+      background: linear-gradient(rgba(26, 40, 60, 0.7), rgba(26, 40, 60, 0.8)); }
+      @media all and (min-width: 768px) {
+        .page.contact .contact-form .overlay {
+          padding: 6.75rem 3rem; } }
       @media all and (min-width: 1700px) {
         .page.contact .contact-form .overlay {
           position: absolute;
@@ -1473,12 +1524,13 @@ footer {
     text-align: center;
     margin: 0 auto; }
     footer .footerSection img {
-      display: block;
-      margin: 0 auto 1rem; }
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0 1rem 1.25rem; }
       footer .footerSection img.mk-logo {
         max-width: 50px; }
       footer .footerSection img.mm-logo {
-        max-width: 75px; }
+        max-width: 125px; }
     footer .footerSection small {
       color: #ffffff; }
 

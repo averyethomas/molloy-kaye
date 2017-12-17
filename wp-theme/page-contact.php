@@ -5,30 +5,52 @@
 ?>
 <div class="page contact">
     <div class="contact-info">
-        <h1><?php echo the_title(); ?></h1>
-        <div class="item">
-            <h6>ADDRESS</h6>
-            <a target="_blank" href="https://www.google.com/maps/place/1100+Abernathy+Rd+NE+%23600,+Atlanta,+GA+30328/@33.9341453,-84.354505,17z/data=!3m1!4b1!4m5!3m4!1s0x88f5095567a17af5:0x260b71d3087bb798!8m2!3d33.9341409!4d-84.3523163"><?php the_field('address'); ?></a>
-        </div>
+        <div class="container">
+            <h1><?php echo the_title(); ?></h1>
+            <div class="item">
+                <h6>ADDRESS</h6>
+                <a target="_blank" href="https://www.google.com/maps/place/1100+Abernathy+Rd+NE+%23600,+Atlanta,+GA+30328/@33.9341453,-84.354505,17z/data=!3m1!4b1!4m5!3m4!1s0x88f5095567a17af5:0x260b71d3087bb798!8m2!3d33.9341409!4d-84.3523163"><?php the_field('address'); ?></a>
+            </div>
 <?php   if( get_field('fax') ):
 ?>
-        <div class="item">
-            <h6>FAX</h6>
-            <a href='tel:<?php the_field('fax'); ?>'><?php the_field('fax'); ?></a>
-        </div>
+            <div class="item">
+                <h6>FAX</h6>
+                <a href='tel:<?php the_field('fax'); ?>'><?php the_field('fax'); ?></a>
+            </div>
         
-<?php   endif;      
-        while(have_rows('contact_person')) : the_row();
-?>
-        <div class="item">
-            <h6><?php the_sub_field('name'); ?></h6>
-            <a href="tel:<?php the_sub_field('phone_number'); ?>"><?php the_sub_field('phone_number'); ?></a>
-            <br />
-            <a href="mailto:<?php the_sub_field('email'); ?>"><?php the_sub_field('email'); ?></a>
-        </div>
+<?php   endif;
+
+        while ( have_rows('contact_people') ) : the_row();
         
-<?php   endwhile;
+            $post_object = get_sub_field('person');
+            
+            if( $post_object ):
+            
+            $post = $post_object; setup_postdata( $post );
+            $titleRows = get_field('titles');
+            $firstTitle = $titleRows[0]['title'];
 ?>
+            <div class="item">
+                <h6><?php echo the_title(); ?></h6>
+                <p><?php echo $firstTitle; ?></p>
+                <a href="tel:<?php the_field('direct_phone_number'); ?>"><?php the_field('direct_phone_number'); ?></a>
+                <br />
+                <a href="mailto:<?php the_field('email'); ?>"><?php the_field('email'); ?></a>
+            </div>
+        
+<?php       wp_reset_postdata();
+            endif;   
+        endwhile;
+        
+        if( get_field('fax') ):
+?>
+            <div class="item">
+                <a class="cta" target="_blank" href="<?php the_field('marketing_flyer')?>">MARKETING FLYER</a>
+            </div>
+        
+<?php   endif;
+?>
+        </div>
     </div>
     <div class="contact-form" style="background-image: url(<?php echo $background['url']; ?>)">
         <div class="overlay">

@@ -12,8 +12,9 @@
     <script src="https://use.fontawesome.com/879fcc8444.js"></script>
     
 </head>
-<?php $heroImage = get_field('hero_image'); ?>    
-<body data-ng-app="angularApp" data-ng-controller="mainCtrl" data-ng-class="{'navOpen' : navToggle}" class="<?php if($heroImage){ echo 'has-hero'; } ?>">
+<?php   $heroImage = get_field('hero_image');
+?>    
+<body data-ng-app="angularApp" data-ng-controller="mainCtrl" data-ng-class="{'navOpen' : navToggle}" class="<?php if( is_post_type_archive('listings')){ echo 'has-hero'; } ?> <?php if($heroImage){ echo 'has-hero'; } ?>">
     <nav>
         <div class="container">
             <div class="logo">

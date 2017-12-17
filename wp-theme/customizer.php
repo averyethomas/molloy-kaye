@@ -27,6 +27,18 @@ function theme_customizer ( $wp_customize ) {
         'section'  => 'logo_section',
         'settings' => 'mc_logo',
     ) ) );
+    //LISTINGS HERO IMAGE
+    $wp_customize->add_section('listings_section', array(
+        'title' => 'Listings Hero Image',
+        'description' => '',
+        'priority' => 40,
+    ) );
+    $wp_customize->add_setting( 'listings_image' );
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'listings_image', array(
+        'label'    => __( 'Listings Image', 'Molloy Kaye' ),
+        'section'  => 'listings_section',
+        'settings' => 'listings_image',
+    ) ) );
 }
 add_action( 'customize_register', 'theme_customizer', 20);
 ?>
