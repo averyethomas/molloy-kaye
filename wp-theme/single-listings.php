@@ -215,11 +215,13 @@
         </div>
     </div>
 </div>
+<a href="<?php the_field('offering_memorandum'); ?>" download id="download" hidden></a>
 <script>
     document.addEventListener( 'wpcf7mailsent', function( event ) {
         console.log("<?php the_field('offering_memorandum'); ?>");
+        //window.open("<?php the_field('offering_memorandum'); ?>","_blank");
+        document.getElementById('download').click();
     }, false );    
-    //    location = '<?php the_field('offering_memorandum'); ?>
 </script>
 <?php
 
