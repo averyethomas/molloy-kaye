@@ -2,12 +2,37 @@
 
 /* Template Name: Press Page */
     get_header();
+        $heroImage = get_field('hero_image');
+
     
 ?>
 
 <div class="page press">
+<?php   if( $heroImage ):
+?>
+    <div class="hero" style="background-image: url(<?php echo $heroImage['url']; ?>);">
+        <div class="overlay">
+            <div class="container">
+                <h1><?php echo the_title(); ?></h1>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <?php the_field('copy'); ?>
+    </div>
+
+<?php   else:
+?>
     <div class="container">
         <h1><?php echo the_title(); ?></h1>
+        <div class="copy">
+            <?php the_field('copy'); ?>
+        </div>
+    </div>  
+
+<?php   endif;
+?>
+    <div class="container">
     <?php   $categories = get_categories();
                 
             foreach ( $categories as $category ): ?>
