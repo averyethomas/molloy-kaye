@@ -2,7 +2,7 @@
     get_header();
     $heroImage = get_field('hero_image');
 ?>
-<div class="page single">
+<div class="page single <?php echo basename(get_permalink()); ?>">
 
 <?php if( $heroImage ): ?>
 
