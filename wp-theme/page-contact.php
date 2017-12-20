@@ -4,6 +4,7 @@
     $background = get_field('form_background_image');
 ?>
 <div class="page contact">
+    <div class="container">
     <div class="contact-info">
         <div class="container">
             <h1><?php echo the_title(); ?></h1>
@@ -45,7 +46,7 @@
         if( get_field('fax') ):
 ?>
             <div class="item">
-                <a class="cta" target="_blank" href="<?php the_field('marketing_flyer')?>">MARKETING FLYER</a>
+                <a class="cta" target="_blank" href="<?php the_field('marketing_flyer')?>">MKRG Profile</a>
             </div>
         
 <?php   endif;
@@ -71,7 +72,7 @@
         <div class="map" id="contactMap"></div>
     </div>
 </div>
-
+</div>
 <?php
 
     get_footer();

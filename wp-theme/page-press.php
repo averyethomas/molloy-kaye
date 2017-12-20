@@ -41,21 +41,28 @@
                 <h2><?php echo $category->name; ?></h2>
 <?php       $args = array(
                 'category_name'  => $category->slug,
-                'posts_per_page' => 3,
+                'posts_per_page' => 5,
             );
             $catquery = new WP_Query($args);            
             while($catquery->have_posts()) : $catquery->the_post();
 ?>
-                <div class="post"><img src="http://media.cmgdigital.com/shared/img/photos/2011/09/07/2010_WSB_logo.jpg">
+                <div class="post">
+<?php               if ( has_post_thumbnail() ):
+?>
+                        <?php echo the_post_thumbnail('medium'); ?>
+<?php endif;
+?>
                     <div class="text">
                       <h4><?php echo the_title(); ?></h4>
-                      <p>This is a snippet of the post that is approximately 120 characters long ...</p><a href="#">Read More</a>
+                      <h6><?php echo get_the_date(); ?></h6>
+                      <p><?php the_excerpt(); ?></p>
+                      <a href="<?php the_permalink(); ?>">Read More</a>
                     </div>
                 </div>
                 
 <?php       endwhile;
 ?>
-                <div class="load-more"><a class="cta">Load More</a></div>
+                <div class="load-more"><a class="cta">See More</a></div>
             </div>
             
 <?php       endforeach; 

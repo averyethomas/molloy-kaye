@@ -107,3 +107,18 @@ function be_enable_vcard_upload( $mime_types ){
   return $mime_types;
 }
 add_filter('upload_mimes', 'be_enable_vcard_upload' );
+
+// Add theme support for Featured Images
+add_theme_support('post-thumbnails', array(
+'post',
+'page',
+'custom-post-type-name',
+));
+
+// ADD GET EXCERPT
+
+function custom_excerpt_length( $length ) {
+        return 20;
+    }
+    add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+?>

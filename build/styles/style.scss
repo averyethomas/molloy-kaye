@@ -566,7 +566,10 @@ nav{
           max-width: 300px;
           
           img{
-            width: 100%;
+            width: calc(100% - 2rem);
+            height: auto;
+            margin: 1rem;
+            display: block;
           }
           
           .text{

@@ -785,7 +785,10 @@ nav {
     width: 100%;
     max-width: 300px; }
     .page.press .container .category .post img {
-      width: 100%; }
+      width: calc(100% - 2rem);
+      height: auto;
+      margin: 1rem;
+      display: block; }
     .page.press .container .category .post .text {
       padding: 1rem; }
 
