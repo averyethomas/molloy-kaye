@@ -63,11 +63,12 @@
             $status = get_field('status');
             $statusClass = strtolower(str_replace(' ', '-', $status));
 	    $filter = get_field('tenant_type');
-	    $filterClass = strtolower(str_replace(' ', '-', $filter));
+	    $filterClass = strtolower(str_replace('-', '', $filter));
+	    $filterClass = str_replace(' ', '', $filterClass);
 	    
             $primImage = get_field('primary_photo');
 ?>
-            <div class="listing <?php echo $statusClass; ?> <?php echo $filterClass; ?>">
+            <div class="listing <?php echo $statusClass; ?>" data-ng-hide="<?php echo $filterClass; ?>">
                 <a href="<?php the_permalink() ?>">
                    <div class="image" style="background-image: url(<?php echo $primImage['url'] ?>);">
                         <h5><?php echo $status ?></h5>
@@ -84,7 +85,7 @@
 <?php	endwhile;
         wp_reset_postdata();
     endif;
-    echo do_shortcode('[ajax_load_more container_type="div" post_type="listings" posts_per_page="6" meta_key="status:status" meta_value="Under Contract:Available" meta_compare="IN:IN" meta_type="CHAR:CHAR" meta_relation="OR"]');
+    echo do_shortcode('[ajax_load_more container_type="div" post_type="listings" posts_per_page="6" meta_key="status:status" meta_value="Under Contract:Available" meta_compare="IN:IN" meta_type="CHAR:CHAR" meta_relation="OR" offset="12"]');
 ?>
         </div>
 	<div class="toTop" id="scrollUp" data-ng-click="scrollToTop();">

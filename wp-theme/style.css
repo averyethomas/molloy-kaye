@@ -779,6 +779,19 @@ nav {
         margin: 0 1rem 1rem 0; }
       .page.press .container .category:nth-of-type(3n + 3) {
         margin: 0 0 1rem 1rem; } }
+  .page.press .container .category a.category-link {
+    display: block;
+    text-transform: uppercase;
+    max-width: 120px;
+    margin: 2rem auto;
+    border: 2px solid #6a737f;
+    color: #ffffff;
+    background: #6a737f;
+    padding: 0.3rem 0.7rem;
+    text-align: center; }
+    .page.press .container .category a.category-link:hover {
+      color: #6a737f;
+      background: transparent; }
   .page.press .container .category .post {
     border: 1px solid #1a283c;
     margin: 0 auto 1.5rem;
@@ -791,6 +804,10 @@ nav {
       display: block; }
     .page.press .container .category .post .text {
       padding: 1rem; }
+    .page.press .container .category .post a {
+      color: #FF850E; }
+      .page.press .container .category .post a:hover {
+        color: #6a737f; }
 
 /*
 ------------------------------
@@ -1577,3 +1594,33 @@ footer {
 
 .page.services h5.orange {
   color: #FF850E; }
+
+/*
+------------------------------
+17. CATEGORY
+------------------------------
+*/
+.page.category .container .post {
+  border: 1px solid #1a283c;
+  margin: 0 auto 1.5rem;
+  width: 100%;
+  max-width: 300px; }
+  .page.category .container .post img {
+    width: calc(100% - 2rem);
+    height: auto;
+    margin: 1rem;
+    display: block; }
+  .page.category .container .post .text {
+    padding: 1rem; }
+  .page.category .container .post a {
+    color: #FF850E; }
+    .page.category .container .post a:hover {
+      color: #6a737f; }
+  @media all and (min-width: 768px) {
+    .page.category .container .post {
+      display: inline-block;
+      margin: 0 1rem 1.5rem;
+      width: calc((100%/3) - 2.1rem);
+      vertical-align: top; }
+      .page.category .container .post:nth-of-type(4n) {
+        clear: both; } }

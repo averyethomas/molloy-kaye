@@ -544,21 +544,39 @@ nav{
         padding: 0 0 2.5rem;
         
         @media all and (min-width: 768px){
-            display: inline-block;
-            width: calc((100%/3) - 15px);
-            vertical-align: top;
-            margin: 0 1rem 1rem;
-            max-width: 500px;
-            
-            &:nth-of-type(3n + 1){
-              margin: 0 1rem 1rem 0;
-            }
-            
-            &:nth-of-type(3n + 3){
-              margin: 0 0 1rem 1rem;
-            }
+          display: inline-block;
+          width: calc((100%/3) - 15px);
+          vertical-align: top;
+          margin: 0 1rem 1rem;
+          max-width: 500px;
+          
+          &:nth-of-type(3n + 1){
+            margin: 0 1rem 1rem 0;
           }
           
+          &:nth-of-type(3n + 3){
+            margin: 0 0 1rem 1rem;
+          }
+        }
+          
+        
+        a.category-link{
+          display: block;
+          text-transform: uppercase;
+          max-width: 120px;
+          margin: 2rem auto;
+          border: 2px solid $light;
+          color: $white;
+          background: $light;
+          padding: 0.3rem 0.7rem;
+          text-align: center;
+          
+          &:hover{
+            color: $light;
+            background: transparent;
+          }
+        }
+        
         .post{
           border: 1px solid $blue;
           margin: 0 auto 1.5rem;
@@ -576,13 +594,18 @@ nav{
             padding: 1rem;
           }
           
-          
+          a{
+            color: $orange;
+            
+            &:hover{
+              color: $light;
+            }
+          }
         }
+      }
       }
     }
   }
-  
-}
 /*
 ------------------------------
 09. LISTINGS PAGE
@@ -1659,6 +1682,54 @@ footer{
     h5{
       &.orange{
         color: $orange;
+      }
+    }
+  }
+}
+
+/*
+------------------------------
+17. CATEGORY
+------------------------------
+*/
+.page{
+  &.category{
+    .container{
+      .post{
+        border: 1px solid $blue;
+        margin: 0 auto 1.5rem;
+        width: 100%;
+        max-width: 300px;
+        
+        img{
+          width: calc(100% - 2rem);
+          height: auto;
+          margin: 1rem;
+          display: block;
+        }
+        
+        .text{
+          padding: 1rem;
+        }
+        
+        a{
+          color: $orange;
+          
+          &:hover{
+            color: $light;
+          }
+        }
+        
+        @media all and (min-width: 768px){
+          display: inline-block;
+          margin: 0 1rem 1.5rem;
+          width: calc((100%/3) - 2.1rem);
+          vertical-align: top;
+          
+          &:nth-of-type(4n){
+            clear: both;
+          }
+        }
       }
     }
   }

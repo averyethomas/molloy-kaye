@@ -6,7 +6,7 @@
     
     $heroImage = get_field('hero_image');
 ?>
-<div class="page listings" data-ng-controller="scrollTopCtrl">
+<div class="page listings" data-ng-controller="scrollTopCtrl" data-ng-init="multitenant = true; singletenant = true; jvcapitalfacillitation = true;" >
 
 <?php	if( $heroImage ):
 ?>
@@ -26,7 +26,7 @@
 ?>
     <div class="container">
 	<div class="filters">
-            <div class="filter active">
+            <div class="filter">
                 <h6>All</h6>
             </div>
             <div class="filter">
@@ -41,11 +41,10 @@
         </div>
         <div class="listings-container">
 <?php	$args = array(
-	    'post_type'   => 'listings',
-	    'post_status' => 'publish',
-	    'posts_per_page' => 6,
-	    'meta_query'  => array(
-	       
+	    'post_type'   	=> 'listings',
+	    'post_status' 	=> 'publish',
+	    'posts_per_page' 	=> 12,
+	    'meta_query'  	=> array(
 		array(
 		    'key'	=> 'status',
 		    'value' => array('Closed'),
@@ -65,8 +64,11 @@
             $status = get_field('status');
             $statusClass = strtolower(str_replace(' ', '-', $status));
             $primImage = get_field('primary_photo');
+	    $filter = get_field('tenant_type');
+	    $filterClass = strtolower(str_replace('-', '', $filter));
+	    $filterClass = str_replace(' ', '', $filterClass);
 ?>
-            <div class="listing <?php echo $statusClass ?>">
+            <div class="listing <?php echo $statusClass ?>" data-ng-show="<?php echo $filterClass; ?>">
                 <div class="image" style="background-image: url(<?php echo $primImage['url'] ?>);">
                     <h5><?php echo $status ?></h5>
                 </div> 
@@ -76,7 +78,7 @@
 <?php	endwhile;
         wp_reset_postdata();
     endif;
-    echo do_shortcode('[ajax_load_more container_type="div" post_type="listings" posts_per_page="6" meta_key="status" meta_value="Closed" meta_compare="IN" meta_type="CHAR"]');
+    echo do_shortcode('[ajax_load_more container_type="div" post_type="listings" posts_per_page="6" meta_key="status" meta_value="Closed" meta_compare="IN" meta_type="CHAR" offset="12"]');
 
 ?>
         </div>

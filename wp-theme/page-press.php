@@ -62,7 +62,7 @@
                 
 <?php       endwhile;
 ?>
-                <div class="load-more"><a class="cta">See More</a></div>
+                <a href="<?php echo get_site_url().'/'.$category->slug; ?>" class="category-link">View All</a>
             </div>
             
 <?php       endforeach; 
