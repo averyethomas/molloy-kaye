@@ -16,6 +16,9 @@
 ?>
     </div>
     <div class="footerSection">
+      <small><a href="tel:<?php if (get_theme_mod('phone') ): echo get_theme_mod('phone'); endif; ?>"><?php if (get_theme_mod('phone') ): echo get_theme_mod('phone'); endif; ?></a><span class="divide">|</span><?php if (get_theme_mod('address') ): echo get_theme_mod('address'); endif; ?></small>
+    </div>
+    <div class="footerSection">
       <small>&copy; Copyright <?php echo date("Y"); ?>, <?php bloginfo('name'); ?></small>
     </div>
   </div>

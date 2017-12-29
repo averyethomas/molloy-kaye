@@ -1556,7 +1556,15 @@ footer {
       footer .footerSection img.mm-logo {
         max-width: 125px; }
     footer .footerSection small {
-      color: #ffffff; }
+      color: #ffffff;
+      font-size: 1.2rem; }
+      footer .footerSection small a {
+        color: #ffffff;
+        font-size: 1.2rem; }
+      footer .footerSection small span.divide {
+        margin: 0 0.7rem; }
+      footer .footerSection small br {
+        display: none; }
 
 /*
 ------------------------------

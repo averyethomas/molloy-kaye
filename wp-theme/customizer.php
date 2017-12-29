@@ -39,6 +39,25 @@ function theme_customizer ( $wp_customize ) {
         'section'  => 'listings_section',
         'settings' => 'listings_image',
     ) ) );
+     $wp_customize->add_section('contact_info', array(
+        'title' => 'Contact Info',
+        'description' => '',
+        'priority' => 20,
+    ) );
+    $wp_customize->add_setting( 'phone' );
+    $wp_customize->add_control('phone', array(
+        'label' => 'Phone Number',
+        'section' => 'contact_info',
+        'settings' => 'phone',
+        'type' => 'text',
+    ) );
+    $wp_customize->add_setting( 'address' );
+    $wp_customize->add_control('address', array(
+        'label' => 'Address',
+        'section' => 'contact_info',
+        'settings' => 'address',
+        'type' => 'text',
+    ) );
 }
 add_action( 'customize_register', 'theme_customizer', 20);
 ?>
