@@ -63,6 +63,13 @@
                 
 <?php       endwhile;
             wp_reset_postdata();
+            
+            if( get_field('marketing_flyer')) :
+?>
+            <div class="item">
+                <a class="cta" target="_blank" href="<?php the_field('marketing_flyer')?>">MKRG Profile</a>
+            </div>
+<?php       endif;
 ?>
         </div>
     </div>    

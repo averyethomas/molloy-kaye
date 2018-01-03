@@ -16,7 +16,7 @@
 ?>
     </div>
     <div class="footerSection">
-      <small><a href="tel:<?php if (get_theme_mod('phone') ): echo get_theme_mod('phone'); endif; ?>"><?php if (get_theme_mod('phone') ): echo get_theme_mod('phone'); endif; ?></a><span class="divide">|</span><?php if (get_theme_mod('address') ): echo get_theme_mod('address'); endif; ?></small>
+      <small><?php if (get_theme_mod('address') ): echo get_theme_mod('address'); endif; ?><span class="divide">|</span><a href="tel:<?php if (get_theme_mod('phone') ): echo get_theme_mod('phone'); endif; ?>">Main: <?php if (get_theme_mod('phone') ): echo get_theme_mod('phone'); endif; ?></a><span class="divide">|</span><a href="tel:<?php if (get_theme_mod('fax') ): echo get_theme_mod('fax'); endif; ?>">Fax: <?php if (get_theme_mod('fax') ): echo get_theme_mod('fax'); endif; ?></a></small>
       <small>&copy; Copyright <?php echo date("Y"); ?>, <?php bloginfo('name'); ?></small>
     </div>
   </div>

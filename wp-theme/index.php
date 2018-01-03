@@ -87,47 +87,41 @@
                 
                 <a class="cta" href="/molloy-kaye-wordpress/listings">View Listings</a>
             <?php endif;?>
-            <h3 class="underline">Recently Closed</h3>
-            <?php
-                $args = array(
-                    'post_type'      => 'listings',
-                    'post_status'    => 'publish',
-                    'meta_key'       => 'status',
-                    'meta_value'     => 'Closed',
-                    'posts_per_page' => 3,
-                );
-                   
-                $listings = new WP_Query( $args );
-                if( $listings->have_posts() ) :
-            ?>
-                <div class="listings-container">
-                <?php
-                    while( $listings->have_posts() ) :
-                    $listings->the_post();
-                              
-                    $status = get_field('status');
-                    $statusClass = strtolower(str_replace(' ', '-', $status));
-                    $primImage = get_field('primary_photo');
-                ?>
-                    <div class="listing <?php echo $statusClass ?>">
-                        <div class="image" style="background-image: url(<?php echo $primImage['url'] ?>);">
-                            <h5><?php echo $status ?></h5>
-                        </div>
-                        <h4><?php echo the_title(); ?></h4>
-                        <p><?php the_field('street_address'); ?><br><?php the_field('city_state'); ?></p>
-                    </div>
-                <?php
-                    endwhile;
-                    wp_reset_postdata();
-                ?>
+<?php   $closed_objects = get_field('featured_closed_listings');
+        if( $closed_objects ):
+?>
+        <h3 class="underline">Featured Closed Listings</h3>
+        
+        <div class="listings-container">
+
+<?php   while ( have_rows('featured_closed_listings') ) : the_row();
+
+        $closed_post_object = get_sub_field('featured_closed_listing');
+        
+        if( $closed_post_object ):
+        
+        $post = $closed_post_object;
+        setup_postdata( $post );
+        
+            $status = get_field('status');
+            $statusClass = strtolower(str_replace(' ', '-', $status));
+            $primImage = get_field('primary_photo');
+?>
+                <div class="listing <?php echo $statusClass ?>">
+                    <div class="image" style="background-image: url(<?php echo $primImage['url'] ?>);">
+                        <h5><?php echo $status ?></h5>
+                    </div> 
+                    <h4><?php echo the_title(); ?></h4>
+                    <p><?php the_field('street_address'); ?><br><?php the_field('city_state'); ?></p>
                 </div>
+<?php       wp_reset_postdata();
+        endif;
+        endwhile;
+        endif;
+?>
                 
-              <?php
-              
-                  endif;
-                  
-              ?>
-          <a class="cta" href="/molloy-kaye-wordpress/track-record">View Track Record</a>
+            </div>
+            <a class="cta" href="/molloy-kaye-wordpress/track-record">View Track Record</a>
         </div>
     </div>
 </div>

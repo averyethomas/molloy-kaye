@@ -51,6 +51,13 @@ function theme_customizer ( $wp_customize ) {
         'settings' => 'phone',
         'type' => 'text',
     ) );
+    $wp_customize->add_setting( 'fax' );
+    $wp_customize->add_control('fax', array(
+        'label' => 'Fax Number',
+        'section' => 'contact_info',
+        'settings' => 'fax',
+        'type' => 'text',
+    ) );
     $wp_customize->add_setting( 'address' );
     $wp_customize->add_control('address', array(
         'label' => 'Address',

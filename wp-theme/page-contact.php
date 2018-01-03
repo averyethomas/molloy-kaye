@@ -8,20 +8,8 @@
     <div class="contact-info">
         <div class="container">
             <h1><?php echo the_title(); ?></h1>
-            <div class="item">
-                <h6>ADDRESS</h6>
-                <a target="_blank" href="https://www.google.com/maps/place/1100+Abernathy+Rd+NE+%23600,+Atlanta,+GA+30328/@33.9341453,-84.354505,17z/data=!3m1!4b1!4m5!3m4!1s0x88f5095567a17af5:0x260b71d3087bb798!8m2!3d33.9341409!4d-84.3523163"><?php the_field('address'); ?></a>
-            </div>
-<?php   if( get_field('fax') ):
-?>
-            <div class="item">
-                <h6>FAX</h6>
-                <a href='tel:<?php the_field('fax'); ?>'><?php the_field('fax'); ?></a>
-            </div>
         
-<?php   endif;
-
-        while ( have_rows('contact_people') ) : the_row();
+<?php   while ( have_rows('contact_people') ) : the_row();
         
             $post_object = get_sub_field('person');
             
@@ -43,13 +31,36 @@
             endif;   
         endwhile;
         
-        if( get_field('fax') ):
+        if (get_theme_mod('address') ):
+        $address = get_theme_mod('address');
+        $searchAddress = str_replace('<br>', '', $address);
+        $prepAddr = str_replace(' ','+',$address);
+        $removeSuite = str_replace('Suite 600,', '', $prepAddr );
+        $geocode = file_get_contents('https://maps.google.com/maps/api/geocode/json?address='.$prepAddr.'&sensor=false');
+        $output = json_decode($geocode);
+        $latitude = $output->results[0]->geometry->location->lat;
+        $longitude = $output->results[0]->geometry->location->lng;
+?>
+           <div class="item">
+                <h6>ADDRESS</h6>
+                <a target="_blank" href="https://www.google.com/maps/place/<?php echo $searchAddress ?>"><?php echo $address ?></a>
+            </div>
+<?php   endif;
+        if (get_theme_mod('phone') ):
 ?>
             <div class="item">
-                <a class="cta" target="_blank" href="<?php the_field('marketing_flyer')?>">MKRG Profile</a>
+                <h6>Phone</h6>
+                <a href="tel:<?php echo get_theme_mod('phone'); ?>"><?php echo get_theme_mod('phone'); ?></a>
             </div>
-        
+            
 <?php   endif;
+        if (get_theme_mod('fax') ):
+?>
+            <div class="item">
+                <h6>FAX</h6>
+                <a href='tel:<?php echo get_theme_mod('fax'); ?>'><?php echo get_theme_mod('fax'); ?></a>
+            </div>
+<?php endif;
 ?>
         </div>
     </div>
@@ -60,14 +71,6 @@
 ?>
         </div>
     </div>
-  
-<?php   $address = get_field('address');
-        $prepAddr = str_replace(' ','+',$address);
-        $geocode=file_get_contents('https://maps.google.com/maps/api/geocode/json?address='.$prepAddr.'&sensor=false');
-        $output= json_decode($geocode);
-        $latitude = $output->results[0]->geometry->location->lat;
-        $longitude = $output->results[0]->geometry->location->lng;
-?>  
     <div class="map-container"  data-ng-controller='mapCtrl' data-ng-init='initMap(<?php echo $latitude; ?>, <?php echo $longitude; ?>, "<?php echo get_template_directory_uri(); ?>")'>
         <div class="map" id="contactMap"></div>
     </div>
