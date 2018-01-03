@@ -697,20 +697,31 @@ nav{
 */
 .page{
   &.listing{
-    .arrows{
+    .arrowsContainer{
       position: fixed;
-      width: 100%;
+      width: 30px;
       height: 100vh;
       top: 0;
-      z-index: -1;
       
-      .container{
-        position: relative;
-        padding: 0;
-        height: 100%;
+      &.left{
+        left: 5px;
       }
       
-      button.arrow{
+      &.right{
+        right: 5px;
+      }
+      
+      @media all and (min-width: 1200px){
+        &.left{
+          left: 10%;
+        }
+        
+        &.right{
+          right: 10%;
+        }
+      }
+      
+      a.arrow{
         display: block;
         background: transparent;
         border: none;
@@ -949,6 +960,11 @@ nav{
             position: relative;
             z-index: 100;
           }
+          .video-inner{
+            iframe{
+              max-width: 100%;
+            }
+          }
         }
         .close-layer{
           width: 100%;
@@ -1129,13 +1145,14 @@ nav{
       display: block;
       clear: both;
       height: 250px;
+      background: url(assets/images/map.png) no-repeat 50% 50%;
+      background-size: cover;
       
       .map{
         height: 100%;
         width: 100%;
         display: block;
         position: relative;
-        background: #cecece;
         
         iframe{
           position: absolute;
@@ -1611,9 +1628,27 @@ footer{
   background-color: $blue;
   text-align: center;
   
+  .container{
+    max-width: 100%;
+  }
+  
   .footerSection{
     text-align: center;
     margin: 0 auto;
+    
+    @media all and (min-width: 992px){
+      display: inline-block;
+      width: calc(50% - 1rem);
+      vertical-align: middle;
+      
+      &:first-of-type{
+        text-align: left;
+      }
+      
+      &:last-of-type{
+        text-align: right;
+      }
+    }
     
     img{
       display: inline-block;
@@ -1632,6 +1667,8 @@ footer{
     small{
       color: $white;
       font-size: 1.2rem;
+      display: block;
+      margin: 0 auto 0.5rem;
       
       a{
         color: $white;
@@ -1739,7 +1776,7 @@ footer{
         @media all and (min-width: 768px){
           display: inline-block;
           margin: 0 1rem 1.5rem;
-          width: calc((100%/3) - 2.1rem);
+          width: calc((100%/3) - 2.2rem);
           vertical-align: top;
           
           &:nth-of-type(4n){

@@ -1,4 +1,4 @@
-var app = angular.module('angularApp', ['ngResource']);
+var app = angular.module('angularApp', ['ngResource', 'ngSanitize']);
 
 app.controller('mainCtrl', ['$scope', function ($scope) {
 
@@ -40,7 +40,6 @@ app.controller('scrollTopCtrl', ['$scope', function ($scope) {
     }
     
 }]);
-
 
 app.controller('mapCtrl',['$scope', '$window', function($scope, $window){
         
@@ -214,16 +213,25 @@ app.controller('mapCtrl',['$scope', '$window', function($scope, $window){
 app.controller('galleryCtrl', ['$scope', function($scope){
     
     $scope.galleryOpen = false;
+    $scope.galleryImages = document.getElementsByClassName('image');
+    $scope.galleryItems = document.getElementsByClassName('item');
+    $scope.galleryItemsClean = [];
     
-    $scope.galleryItems = document.getElementsByClassName('image');
+    angular.forEach($scope.galleryItems, function(value, index){
+        if ( value.classList.contains('image') == true ) {
+            $scope.galleryItemsClean.push({type: "img", source: value.getElementsByTagName('img')[0].src})
+        } else if ( value.classList.contains('video') == true){
+            $scope.galleryItemsClean.push({type: "vid", source: value.getElementsByTagName('iframe')[0].src})
+        }
+    });
     
     $scope.primaryId = 0;
    
-    $scope.primaryImage = $scope.galleryItems[$scope.primaryId].getElementsByTagName('img')[0].src;
+    $scope.primaryImage = $scope.galleryImages[$scope.primaryId].getElementsByTagName('img')[0].src;
    
     $scope.changePrimary = function(id){
        $scope.primaryId = id;
-       $scope.primaryImage = $scope.galleryItems[$scope.primaryId].getElementsByTagName('img')[0].src;
+       $scope.primaryImage = $scope.galleryImages[$scope.primaryId].getElementsByTagName('img')[0].src;
     }
     
     $scope.selectedIndex = 0;
@@ -232,17 +240,18 @@ app.controller('galleryCtrl', ['$scope', function($scope){
         $scope.selectedIndex = id;
         $scope.galleryOpen = true;
         $scope.disable();
-        $scope.selectedItem = $scope.galleryItems[$scope.selectedIndex].getElementsByTagName('img')[0].src;
+        $scope.selectedItem = $scope.galleryItemsClean[$scope.selectedIndex];
+        console.log($scope.selectedItem);
     }
    
     $scope.change = function(num){
         $scope.selectedIndex = $scope.selectedIndex += num;
         $scope.disable();
-        $scope.selectedItem = $scope.galleryItems[$scope.selectedIndex].getElementsByTagName('img')[0].src;
+        $scope.selectedItem = $scope.galleryItemsClean[$scope.selectedIndex]
 
     }
     
-    $scope.selectedItem = $scope.galleryItems[$scope.selectedIndex].getElementsByTagName('img')[0].src;
+    $scope.selectedItem = $scope.galleryItemsClean[$scope.selectedIndex]
 
    
     $scope.disable = function(){
@@ -252,7 +261,7 @@ app.controller('galleryCtrl', ['$scope', function($scope){
         } else if($scope.selectedIndex == $scope.galleryItems.length - 1){
             document.getElementById('prev').disabled = false;
             document.getElementById('next').disabled = true;
-        } else if ($scope.galleryItems.length == 1) {
+        } else if ($scope.galleryItemsClean.length == 1) {
             document.getElementById('next').disabled = true;
             document.getElementById('prev').disabled = true;
         } else {
@@ -277,3 +286,9 @@ app.filter('preserveHtml', function($sce) {
         return $sce.trustAsHtml(val);
     };
 });
+
+app.filter('trustAsResourceUrl', ['$sce', function($sce) {
+    return function(val) {
+        return $sce.trustAsResourceUrl(val);
+    };
+}]);

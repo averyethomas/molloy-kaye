@@ -7,15 +7,61 @@
     $status = get_field('status');
     $i = 0;
     $j = 1;
+    
+    $curr_id = $post ->ID;
+    
+    $posts = get_posts( array(
+        'post_type'      => 'listings',
+        'post_status'    => 'publish',
+        'posts_per_page' => 12,
+        'meta_query'     => array(
+            array(
+                'key'	=> 'status',
+                'value' => array('Available', 'Under Contract'),
+            )
+        ),
+    ));
+    $post_ids = array();
+    if($posts):
+        foreach($posts as $item){
+            $post_ids[] =  $item->ID;
+        }
+    endif;
+    $current_index = array_search($curr_id, $post_ids);
+    $length = sizeof($post_ids);
+    $last = $length - 1;
+    // Find the index of the next/prev items
+    $prev = $current_index - 1;
+    $next = $current_index + 1;
+    
+    //Prev post 
+    $prevLink = get_permalink($post_ids[$prev]);
+    
+    //Next post
+    $nextLink = get_permalink($post_ids[$next]);
+    
+    if ( $current_index == 0 ){
+        $prev = 0;
+    }
+    
+    if ( $current_index == $last){
+        $next = $current_index;
+    }
 ?>
 <div class="page listing" data-ng-controller="galleryCtrl">
-    <div class="arrows">
-        <div class="container">
-            <button class="arrow" id="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></button>
-            <button class="arrow" id="next"><i class="fa fa-angle-right" aria-hidden="true"></i></button>
-        </div>
-    </div>
+    
     <div class="container">
+        <?php   if( $prev != $current_index ) : ?>
+        <div class="arrowsContainer left">
+            <a class="arrow" id="prev" href="<?php echo $prevLink; ?>"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+        </div>
+        <?php   endif;
+                if( $next != $current_index ) :
+        ?>
+        <div class="arrowsContainer right">
+            <a class="arrow" id="next" href="<?php echo $nextLink; ?>"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+        </div>
+        <?php   endif; ?>
         <div class="top">
             <div class="gallery">
                 <div class="row single">
@@ -48,7 +94,7 @@
                 
                                             <div class="item video">
                                                 
-                                                <div class="video-inner">
+                                                <div class="video-inner" data-ng-click="openGallery(<?php echo $i++; ?>);">
                                                 
                                                     <?php $source = get_sub_field('video_source');
                                                     
@@ -90,7 +136,7 @@
                 
                                             <div class="item video">
                                                 
-                                                <div class="video-inner">
+                                                <div class="video-inner" data-ng-click="openGallery(<?php echo $i++; ?>);">
                                                 
                                                     <?php $source = get_sub_field('video_source');
                                                     
@@ -132,7 +178,7 @@
                 
                                             <div class="item video">
                                                 
-                                                <div class="video-inner">
+                                                <div class="video-inner" data-ng-click="openGallery(<?php echo $i++; ?>);">
                                                 
                                                     <?php $source = get_sub_field('video_source');
                                                     
@@ -210,7 +256,14 @@
             <div class="close" data-ng-click="galleryOpen = !galleryOpen"><span></span></div>
             <div class="image">
                 <div class="close-layer" data-ng-click="galleryOpen = !galleryOpen"></div>
-                <img data-ng-src="{{ selectedItem }}" />
+                <div data-ng-if="selectedItem.type == 'img'">
+                    <img data-ng-src="{{ selectedItem.source }}" />
+                </div>
+                <div data-ng-if="selectedItem.type == 'vid'">
+                    <div class="video-inner">
+                        <iframe src="{{ selectedItem.source | trustAsResourceUrl }}" width="640" height="360" frameborder="0"></iframe>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

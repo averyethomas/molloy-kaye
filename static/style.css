@@ -873,17 +873,21 @@ nav {
 10. INDIVIDUAL LISTING PAGE
 ------------------------------
 */
-.page.listing .arrows {
+.page.listing .arrowsContainer {
   position: fixed;
-  width: 100%;
+  width: 30px;
   height: 100vh;
-  top: 0;
-  z-index: -1; }
-  .page.listing .arrows .container {
-    position: relative;
-    padding: 0;
-    height: 100%; }
-  .page.listing .arrows button.arrow {
+  top: 0; }
+  .page.listing .arrowsContainer.left {
+    left: 5px; }
+  .page.listing .arrowsContainer.right {
+    right: 5px; }
+  @media all and (min-width: 1200px) {
+    .page.listing .arrowsContainer.left {
+      left: 10%; }
+    .page.listing .arrowsContainer.right {
+      right: 10%; } }
+  .page.listing .arrowsContainer a.arrow {
     display: block;
     background: transparent;
     border: none;
@@ -891,23 +895,23 @@ nav {
     top: 50%;
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%); }
-    .page.listing .arrows button.arrow:disabled {
+    .page.listing .arrowsContainer a.arrow:disabled {
       opacity: 0.3; }
-      .page.listing .arrows button.arrow:disabled .fa:hover {
+      .page.listing .arrowsContainer a.arrow:disabled .fa:hover {
         color: #1a283c; }
-    .page.listing .arrows button.arrow:focus {
+    .page.listing .arrowsContainer a.arrow:focus {
       outline: none; }
-      .page.listing .arrows button.arrow:focus .fa {
+      .page.listing .arrowsContainer a.arrow:focus .fa {
         color: #FF850E; }
-    .page.listing .arrows button.arrow .fa {
+    .page.listing .arrowsContainer a.arrow .fa {
       font-size: 5rem;
       color: #1a283c; }
-      .page.listing .arrows button.arrow .fa:hover {
+      .page.listing .arrowsContainer a.arrow .fa:hover {
         color: #FF850E;
         cursor: pointer; }
-    .page.listing .arrows button.arrow#prev {
+    .page.listing .arrowsContainer a.arrow#prev {
       left: 0; }
-    .page.listing .arrows button.arrow#next {
+    .page.listing .arrowsContainer a.arrow#next {
       right: 0; }
 
 .page.listing .container {
@@ -1046,6 +1050,8 @@ nav {
       margin: 0 auto;
       position: relative;
       z-index: 100; }
+    .page.listing .modal#gallery-modal .image .video-inner iframe {
+      max-width: 100%; }
   .page.listing .modal#gallery-modal .close-layer {
     width: 100%;
     height: 100%;
@@ -1170,13 +1176,14 @@ nav {
   .page.contact .map-container {
     display: block;
     clear: both;
-    height: 250px; }
+    height: 250px;
+    background: url(assets/images/map.png) no-repeat 50% 50%;
+    background-size: cover; }
     .page.contact .map-container .map {
       height: 100%;
       width: 100%;
       display: block;
-      position: relative;
-      background: #cecece; }
+      position: relative; }
       .page.contact .map-container .map iframe {
         position: absolute;
         top: 0;
@@ -1544,9 +1551,20 @@ footer {
   padding: 1rem 0;
   background-color: #1a283c;
   text-align: center; }
+  footer .container {
+    max-width: 100%; }
   footer .footerSection {
     text-align: center;
     margin: 0 auto; }
+    @media all and (min-width: 992px) {
+      footer .footerSection {
+        display: inline-block;
+        width: calc(50% - 1rem);
+        vertical-align: middle; }
+        footer .footerSection:first-of-type {
+          text-align: left; }
+        footer .footerSection:last-of-type {
+          text-align: right; } }
     footer .footerSection img {
       display: inline-block;
       vertical-align: middle;
@@ -1557,7 +1575,9 @@ footer {
         max-width: 125px; }
     footer .footerSection small {
       color: #ffffff;
-      font-size: 1.2rem; }
+      font-size: 1.2rem;
+      display: block;
+      margin: 0 auto 0.5rem; }
       footer .footerSection small a {
         color: #ffffff;
         font-size: 1.2rem; }
@@ -1628,7 +1648,7 @@ footer {
     .page.category .container .post {
       display: inline-block;
       margin: 0 1rem 1.5rem;
-      width: calc((100%/3) - 2.1rem);
+      width: calc((100%/3) - 2.2rem);
       vertical-align: top; }
       .page.category .container .post:nth-of-type(4n) {
         clear: both; } }
