@@ -55,7 +55,7 @@
  
                         <?php $post = $post_object; setup_postdata( $post );
                             
-                              $status = get_field('status');
+                              $status = get_field('sale_status');
                               $statusClass = strtolower(str_replace(' ', '-', $status));
                               $primImage = get_field('primary_photo');
                         
@@ -103,7 +103,7 @@
         $post = $closed_post_object;
         setup_postdata( $post );
         
-            $status = get_field('status');
+            $status = get_field('sale_status');
             $statusClass = strtolower(str_replace(' ', '-', $status));
             $primImage = get_field('primary_photo');
 ?>

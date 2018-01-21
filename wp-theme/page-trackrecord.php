@@ -6,7 +6,7 @@
     
     $heroImage = get_field('hero_image');
 ?>
-<div class="page listings" data-ng-controller="scrollTopCtrl" data-ng-init="multitenant = true; singletenant = true; jvcapitalfacillitation = true;" >
+<div class="page listings" data-ng-controller="scrollTopCtrl">
 
 <?php	if( $heroImage ):
 ?>
@@ -24,70 +24,57 @@
 	</div>
 <?php 	endif;
 ?>
-    <div class="container">
-	<div class="filters">
-            <div class="filter">
+    <div class="container" data-ng-controller="listingsCtrl">
+<?php	if( have_rows('stats') ):
+?>
+	<div class="stats">
+	
+<?php   while ( have_rows('stats') ) : the_row();
+	$icon = get_sub_field('icon');
+?>
+
+	    <div class="stat">
+		<div class="text">
+		    <h2><?php the_sub_field('number'); ?></h2>
+		    <h6><?php the_sub_field('description'); ?></h6>
+		</div>
+		<img src="<?php echo $icon['url'] ?>" />
+	    </div>
+
+<?php    endwhile;
+?>
+	</div>
+<?php 	endif;
+?>
+	<div class="filters" data-ng-init="filterNum = 1">
+            <div class="filter" data-ng-class="{'active' : filterNum == 1}" data-ng-click="tenantFilter = undefined; filterNum = 1">
                 <h6>All</h6>
             </div>
-            <div class="filter">
+            <div class="filter" data-ng-class="{'active' : filterNum == 2}"  data-ng-click="tenantFilter = { acf : { tenant_type : 'Multi-Tenant' }}; filterNum = 2">
                 <h6>Multi-Tenant</h6>
             </div>
-            <div class="filter">
+            <div class="filter" data-ng-class="{'active' : filterNum == 3}" data-ng-click="tenantFilter = { acf : { tenant_type : 'Single-Tenant' }}; filterNum = 3">
                 <h6>Single-Tenant</h6>
             </div>
-	    <div class="filter">
+	    <div class="filter" data-ng-class="{'active' : filterNum == 4}" data-ng-click="tenantFilter = { acf : { tenant_type : 'JV Capital Facilitation' }}; filterNum = 4">
 		<h6>JV Capital Facilitation</h6>
 	    </div>
         </div>
         <div class="listings-container">
-<?php	$args = array(
-	    'post_type'   	=> 'listings',
-	    'post_status' 	=> 'publish',
-	    'posts_per_page' 	=> 12,
-	    'meta_query'  	=> array(
-		array(
-		    'key'	=> 'status',
-		    'value' => array('Closed'),
-		),
-		array(
-		    'key'	=> 'tenant_type',
-		    'value'	=> array('Single-Tenant', 'Multi-Tenant'),
-		),
-	    ),
-	 );
-      
-    $listings = new WP_Query( $args );
-    if( $listings->have_posts() ) :
-	while( $listings->have_posts() ) :
-            
-	    $listings->the_post();
-            $status = get_field('status');
-            $statusClass = strtolower(str_replace(' ', '-', $status));
-            $primImage = get_field('primary_photo');
-	    $filter = get_field('tenant_type');
-	    $filterClass = strtolower(str_replace('-', '', $filter));
-	    $filterClass = str_replace(' ', '', $filterClass);
-?>
-            <div class="listing <?php echo $statusClass ?>" data-ng-show="<?php echo $filterClass; ?>">
-                <div class="image" style="background-image: url(<?php echo $primImage['url'] ?>);">
-                    <h5><?php echo $status ?></h5>
+            <div class="listing closed" data-ng-repeat="listing in closedListings | filter: tenantFilter">
+                <div class="image" data-ng-style="{'background-image':'url( {{ listing.acf.primary_photo.sizes.large }} )'}">
+		    <h5 ng-bind-html="listing.acf.sale_status | preserveHtml"></h5>
                 </div> 
-                <h4><?php echo the_title(); ?></h4>
-                <p><?php the_field('street_address'); ?><br><?php the_field('city_state'); ?></p>
+                <h4 ng-bind-html="listing.title.rendered | preserveHtml"></h4>
+                <p>{{ listing.acf.street_address | preserveHtml }}<br>{{ listing.acf.city_state | preserveHtml }}</p>
             </div>
-<?php	endwhile;
-        wp_reset_postdata();
-    endif;
-    echo do_shortcode('[ajax_load_more container_type="div" post_type="listings" posts_per_page="6" meta_key="status" meta_value="Closed" meta_compare="IN" meta_type="CHAR" offset="12"]');
 
-?>
         </div>
 	<div class="toTop" id="scrollUp" data-ng-click="scrollToTop();">
 	    <i class="fa fa-chevron-up" aria-hidden="true"></i>
 	</div>
     </div>
 </div>
-
 <?php
 
     get_footer();

@@ -24,69 +24,33 @@
 	
 <?php 	endif;
 ?>
-    <div class="container" data-ng-controller="filterCtrl">
-        <div class="filters">
-            <div class="filter active">
+    <div class="container" data-ng-controller="listingsCtrl" data-ng-init="filterNum = 1">
+       <div class="filters">
+            <div class="filter" data-ng-class="{'active' : filterNum == 1}" data-ng-click="tenantFilter = undefined; filterNum = 1">
                 <h6>All</h6>
             </div>
-            <div class="filter">
+            <div class="filter" data-ng-class="{'active' : filterNum == 2}" data-ng-click="tenantFilter = { acf : { tenant_type : 'Multi-Tenant' }}; filterNum = 2">
                 <h6>Multi-Tenant</h6>
             </div>
-            <div class="filter">
+            <div class="filter" data-ng-class="{'active' : filterNum == 3}" data-ng-click="tenantFilter = { acf : { tenant_type : 'Single-Tenant' }}; filterNum = 3">
                 <h6>Single-Tenant</h6>
             </div>
         </div>
         <div class="listings-container">
-	    
-<?php	$args = array(
-	    'post_type'   => 'listings',
-	    'post_status' => 'publish',
-	    'posts_per_page' => 12,
-	    'meta_query'  => array(
-	       
-		array(
-		    'key'	=> 'status',
-		    'value' => array('Available', 'Under Contract'),
-		),
-		array(
-		    'key'	=> 'tenant_type',
-		    'value'	=> array('Single-Tenant', 'Multi-Tenant'),
-		),
-	    ),
-	 );
-
-    $listings = new WP_Query( $args );
-    if( $listings->have_posts() ) :
-
-	while( $listings->have_posts() ) :
-	    $listings->the_post();
-            $status = get_field('status');
-            $statusClass = strtolower(str_replace(' ', '-', $status));
-	    $filter = get_field('tenant_type');
-	    $filterClass = strtolower(str_replace('-', '', $filter));
-	    $filterClass = str_replace(' ', '', $filterClass);
-	    
-            $primImage = get_field('primary_photo');
-?>
-            <div class="listing <?php echo $statusClass; ?>" data-ng-hide="<?php echo $filterClass; ?>">
-                <a href="<?php the_permalink() ?>">
-                   <div class="image" style="background-image: url(<?php echo $primImage['url'] ?>);">
-                        <h5><?php echo $status ?></h5>
-                    </div> 
+	    <div class="listing {{ listing.acf.sale_status | spaceless }}" data-ng-repeat="listing in listings | filter: tenantFilter">
+		<a data-ng-href="{{ listing.link }}">
+		    <div class="image" data-ng-style="{'background-image':'url( {{ listing.acf.primary_photo.sizes.large }} )'}">
+			<h5 ng-bind-html="listing.acf.sale_status | preserveHtml"></h5>
+		    </div>
                 </a>
-                <h4><?php echo the_title(); ?></h4>
-                <div class="text-row">
-                    <p><?php the_field('price'); ?></p>
-                    <p class="cap-rate">Cap Rate: <?php the_field('cap_rate'); ?></p>
+		<div class="text-row">
+                    <p>{{ listing.acf.price | preserveHtml }}</p>
+                    <p class="cap-rate">Cap Rate: {{ listing.acf.cap_rate | preserveHtml }}</p>
                 </div>
-                <p><?php the_field('street_address'); ?><br><?php the_field('city_state'); ?></p>
-                <a class="learn-more" href="<?php the_permalink() ?>">Learn More</a>
+                <h4 ng-bind-html="listing.title.rendered | preserveHtml"></h4>
+                <p>{{ listing.acf.street_address | preserveHtml }}<br>{{ listing.acf.city_state | preserveHtml }}</p>
+		<a class="learn-more" data-ng-href="{{ listing.link }}">Learn More</a>
             </div>
-<?php	endwhile;
-        wp_reset_postdata();
-    endif;
-    echo do_shortcode('[ajax_load_more container_type="div" post_type="listings" posts_per_page="6" meta_key="status:status" meta_value="Under Contract:Available" meta_compare="IN:IN" meta_type="CHAR:CHAR" meta_relation="OR" offset="12"]');
-?>
         </div>
 	<div class="toTop" id="scrollUp" data-ng-click="scrollToTop();">
 	    <i class="fa fa-chevron-up" aria-hidden="true"></i>

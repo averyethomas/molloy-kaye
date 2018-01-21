@@ -78,32 +78,31 @@
     <div class="container">
         <div class="listings-container" id="closed">
             <h2>Recently Closed</h2>
-<?php   $args = array(
-            'post_type'      => 'listings',
-            'post_status'    => 'publish',
-            'meta_key'       => 'status',
-            'meta_value'     => 'Closed',
-            'posts_per_page' => 3,
-        );              
-        $listings = new WP_Query( $args );
+<?php   $closed_objects = get_field('featured_closed_listings');
+        if( $closed_objects ):
+        while ( have_rows('featured_closed_listings') ) : the_row();
 
-        if( $listings->have_posts() ) :
-            while( $listings->have_posts() ) :
-                $listings->the_post();
-                $status = get_field('status');
-                $statusClass = strtolower(str_replace(' ', '-', $status));
-                $primImage = get_field('primary_photo');
+        $closed_post_object = get_sub_field('featured_closed_listing');
+        
+        if( $closed_post_object ):
+        
+        $post = $closed_post_object;
+        setup_postdata( $post );
+        
+            $status = get_field('sale_status');
+            $statusClass = strtolower(str_replace(' ', '-', $status));
+            $primImage = get_field('primary_photo');
 ?>
                 <div class="listing <?php echo $statusClass ?>">
                     <div class="image" style="background-image: url(<?php echo $primImage['url'] ?>);">
                         <h5><?php echo $status ?></h5>
-                    </div>
+                    </div> 
                     <h4><?php echo the_title(); ?></h4>
                     <p><?php the_field('street_address'); ?><br><?php the_field('city_state'); ?></p>
                 </div>
-    
-<?php       endwhile;
-            wp_reset_postdata();
+<?php       wp_reset_postdata();
+        endif;
+        endwhile;
         endif;
 ?>
             <a class="cta" href="/molloy-kaye-wordpress/track-record">View Track Record</a>

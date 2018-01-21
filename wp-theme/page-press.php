@@ -33,39 +33,36 @@
 <?php   endif;
 ?>
     <div class="container">
-    <?php   $categories = get_categories();
-                
-            foreach ( $categories as $category ): ?>
-            
+<?php   if ( have_rows('newsroom_category') ):
+            while ( have_rows('newsroom_category') ) : the_row();
+?>            
             <div class='category'>
-                <h2><?php echo $category->name; ?></h2>
-<?php       $args = array(
-                'category_name'  => $category->slug,
-                'posts_per_page' => 5,
-            );
-            $catquery = new WP_Query($args);            
-            while($catquery->have_posts()) : $catquery->the_post();
-?>
+                <h2><?php the_sub_field('category_title'); ?></h2>
+<?php   if ( have_rows('article') ):  
+            while ( have_rows('article') ) : the_row();
+?> 
                 <div class="post">
-<?php               if ( has_post_thumbnail() ):
+<?php               $photo = get_sub_field('image');
+
+                    if ( $photo ):
 ?>
-                        <?php echo the_post_thumbnail('medium'); ?>
+                       <img src="<?php echo $photo; ?>" />
 <?php endif;
 ?>
                     <div class="text">
-                      <h4><?php echo the_title(); ?></h4>
-                      <h6><?php echo get_the_date(); ?></h6>
-                      <p><?php the_excerpt(); ?></p>
-                      <a href="<?php the_permalink(); ?>">Read More</a>
+                      <h4><?php the_sub_field('title'); ?></h4>
+                      <h6><?php the_sub_field('date'); ?></h6>
+                      <p><?php the_sub_field('summary'); ?></p>
+                      <a target="_blank" href="<?php the_sub_field('link'); ?>">Read More</a>
                     </div>
                 </div>
                 
 <?php       endwhile;
-?>
-                <a href="<?php echo get_site_url().'/'.$category->slug; ?>" class="category-link">View All</a>
+        endif; 
+?>               
             </div>
-            
-<?php       endforeach; 
+<?php       endwhile;
+        endif; 
 ?>
     </div>
 </div>

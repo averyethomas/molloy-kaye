@@ -692,6 +692,14 @@ nav {
     color: #ffffff; }
     .page.single .team-container h2:after {
       display: none; }
+  .page.single .team-container .item a.cta {
+    color: #FF850E;
+    background: transparent;
+    letter-spacing: 0.05rem; }
+    .page.single .team-container .item a.cta:hover {
+      background: #FF850E;
+      color: #ffffff;
+      text-shadow: -1px -1px 0 #1a283c, 1px -1px 0 #1a283c, -1px 1px 0 #1a283c, 1px 1px 0 #1a283c; }
   .page.single .team-container a.team-member {
     text-align: center;
     max-width: 300px;
@@ -804,6 +812,8 @@ nav {
       display: block; }
     .page.press .container .category .post .text {
       padding: 1rem; }
+      .page.press .container .category .post .text h6 {
+        margin: 1rem 0; }
     .page.press .container .category .post a {
       color: #FF850E; }
       .page.press .container .category .post a:hover {
@@ -817,6 +827,40 @@ nav {
 .has-hero .page.listings .filters {
   margin: 4rem auto;
   padding: 0; }
+
+.has-hero .page.listings .stats {
+  text-align: center; }
+  .has-hero .page.listings .stats .stat {
+    text-align: center;
+    position: relative;
+    min-height: 150px;
+    display: inline-block;
+    width: 185px; }
+    .has-hero .page.listings .stats .stat .text {
+      z-index: 1;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%);
+      width: 75%; }
+      .has-hero .page.listings .stats .stat .text h2 {
+        letter-spacing: 0.2rem;
+        font-size: 3.7rem;
+        margin: 0.5rem auto 1rem; }
+        .has-hero .page.listings .stats .stat .text h2:after {
+          display: none; }
+      .has-hero .page.listings .stats .stat .text h6 {
+        color: #6a737f;
+        line-height: 1.6rem; }
+    .has-hero .page.listings .stats .stat img {
+      opacity: 0.15;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%);
+      width: 60%; }
 
 .page.listings .filters {
   text-align: center;
@@ -1155,7 +1199,7 @@ nav {
     @media all and (min-width: 768px) {
       .page.contact .contact-form {
         width: 50%;
-        min-height: calc(100vh - 500px);
+        min-height: 550px;
         float: left; } }
     .page.contact .contact-form .overlay {
       padding: 3rem 3rem;
@@ -1176,7 +1220,7 @@ nav {
   .page.contact .map-container {
     display: block;
     clear: both;
-    height: 250px;
+    height: 380px;
     background: url(assets/images/map.png) no-repeat 50% 50%;
     background-size: cover; }
     .page.contact .map-container .map {
@@ -1559,11 +1603,12 @@ footer {
     @media all and (min-width: 992px) {
       footer .footerSection {
         display: inline-block;
-        width: calc(50% - 1rem);
+        width: calc(40% - 1rem);
         vertical-align: middle; }
         footer .footerSection:first-of-type {
           text-align: left; }
         footer .footerSection:last-of-type {
+          width: calc(60% - 1rem);
           text-align: right; } }
     footer .footerSection img {
       display: inline-block;
@@ -1575,12 +1620,12 @@ footer {
         max-width: 125px; }
     footer .footerSection small {
       color: #ffffff;
-      font-size: 1.2rem;
+      font-size: 1.35rem;
       display: block;
       margin: 0 auto 0.5rem; }
       footer .footerSection small a {
         color: #ffffff;
-        font-size: 1.2rem; }
+        font-size: 1.35rem; }
       footer .footerSection small span.divide {
         margin: 0 0.7rem; }
       footer .footerSection small br {
@@ -1601,8 +1646,7 @@ footer {
   margin: 1.5rem auto;
   max-width: 100%;
   display: block;
-  border: 2px solid #6a737f;
-  padding: 1rem; }
+  padding: 0.5rem; }
 
 @media all and (min-width: 768px) {
   .alignleft {
@@ -1640,6 +1684,8 @@ footer {
     display: block; }
   .page.category .container .post .text {
     padding: 1rem; }
+    .page.category .container .post .text h6 {
+      margin: 1rem 0; }
   .page.category .container .post a {
     color: #FF850E; }
     .page.category .container .post a:hover {

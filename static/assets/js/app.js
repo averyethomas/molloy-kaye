@@ -5,6 +5,105 @@ app.controller('mainCtrl', ['$scope', function ($scope) {
     
 }]);
 
+app.factory('apiCall', ['$location', function($location){
+
+    var protocol = $location.protocol() + '://';
+    var host = $location.host();
+    var origin = protocol + host + '/molloy-kaye-wordpress';
+    var apiPoint = appInfo.api_url;
+    var apiCall = origin + '/' + apiPoint;
+    
+    return apiCall;
+
+}]);
+
+app.controller('listingsCtrl', ['$scope', '$window','$http','apiCall', function($scope, $window, $http, apiCall){
+    var count = 1;
+    $scope.listings = [];
+    $scope.closedListings = [];
+    $scope.rawUrl =  apiCall + 'listings';
+    
+    $scope.init = function(){
+        $scope.loading = true;
+        $http({
+            method: 'GET',
+            url: $scope.rawUrl,
+            params:{
+                'per_page': 90,
+                'page': 1,
+                'orderby' : 'date',
+                'order' : 'desc'
+            }
+        }).
+        success(function(data, status, headers, config){
+            $scope.loading = false;
+            //$scope.listings = $scope.listings.concat(data);
+            $scope.currentDataNumber = data.length;
+            console.log(data);
+            
+            angular.forEach(data, function(value){                
+                if (value.acf.sale_status == "Closed") {
+                    $scope.closedListings = $scope.closedListings.concat(value);
+                } else {
+                    $scope.listings = $scope.listings.concat(value);
+                }
+            })
+        }).
+        error(function(data, status, headers, config){});
+    };
+    
+    $scope.init();
+
+    $scope.getData = function(){
+        $scope.loading = true;
+        count = count+1;
+        $http({
+            method: 'GET',
+            url: $scope.rawUrl,
+            params:{
+                'per_page': 90,
+                'page': count,
+                'orderby' : 'date',
+                'order' : 'desc'
+            }
+        }).
+        success(function(data, status, headers, config){
+            $scope.currentDataNumber = data.length;
+            //$scope.listings = $scope.listings.concat(data);
+            $scope.loading = false;
+            
+            angular.forEach(data, function(value){                
+                if (value.acf.sale_status == "Closed") {
+                    $scope.closedListings = $scope.closedListings.concat(value);
+                } else {
+                    $scope.listings = $scope.listings.concat(value);
+                }
+            })
+        }).
+        error(function(data, status, headers, config){});
+    };
+    $scope.dataCheck = function(){
+        if($scope.currentDataNumber === 90){
+            $scope.getData()
+        } else if($scope.currentDataNumber < 90){
+            $scope.loading = false;
+        }
+    };
+    angular.element($window).bind("scroll", function() {
+        var windowHeight = "innerHeight" in window ? window.innerHeight : document.documentElement.offsetHeight;
+        var body = document.body, html = document.documentElement;
+        var docHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight,  html.scrollHeight, html.offsetHeight);
+
+        windowBottom = windowHeight + window.pageYOffset;
+
+        if (windowBottom >= docHeight) {
+            $scope.$apply(function(){
+                $scope.dataCheck();
+            })
+        }
+    });
+}]);
+
 app.controller('filterCtrl', ['$scope', function($scope){
     
     $scope.isActive = false;
@@ -292,3 +391,12 @@ app.filter('trustAsResourceUrl', ['$sce', function($sce) {
         return $sce.trustAsResourceUrl(val);
     };
 }]);
+
+
+app.filter('spaceless',function() {
+    return function(input) {
+        if (input) {
+            return input.replace(/\s+/g, '-').toLowerCase();    
+        }
+    }
+});

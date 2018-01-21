@@ -34,9 +34,9 @@
         if (get_theme_mod('address') ):
         $address = get_theme_mod('address');
         $searchAddress = str_replace('<br>', '', $address);
-        $prepAddr = str_replace(' ','+',$address);
-        $removeSuite = str_replace('Suite 600,', '', $prepAddr );
-        $geocode = file_get_contents('https://maps.google.com/maps/api/geocode/json?address='.$prepAddr.'&sensor=false');
+        $prepAddr = str_replace(' ','+',$searchAddress);
+        $removeSuite = str_replace('Suite 600 ', '', $prepAddr );
+        $geocode = file_get_contents('https://maps.google.com/maps/api/geocode/json?address='.$removeSuite.'&sensor=false');
         $output = json_decode($geocode);
         $latitude = $output->results[0]->geometry->location->lat;
         $longitude = $output->results[0]->geometry->location->lng;
