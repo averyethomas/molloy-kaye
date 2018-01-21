@@ -37,7 +37,6 @@ app.controller('listingsCtrl', ['$scope', '$window','$http','apiCall', function(
         }).
         success(function(data, status, headers, config){
             $scope.loading = false;
-            //$scope.listings = $scope.listings.concat(data);
             $scope.currentDataNumber = data.length;
             console.log(data);
             
@@ -69,7 +68,6 @@ app.controller('listingsCtrl', ['$scope', '$window','$http','apiCall', function(
         }).
         success(function(data, status, headers, config){
             $scope.currentDataNumber = data.length;
-            //$scope.listings = $scope.listings.concat(data);
             $scope.loading = false;
             
             angular.forEach(data, function(value){                
@@ -102,23 +100,6 @@ app.controller('listingsCtrl', ['$scope', '$window','$http','apiCall', function(
             })
         }
     });
-}]);
-
-app.controller('filterCtrl', ['$scope', function($scope){
-    
-    $scope.isActive = false;
-    
-    $scope.runFilter = function (input){
-        
-        $scope.items = document.getElementsByClassName('listing');
-        
-        angular.forEach($scope.items, function(value){
-            
-        })  
-    }
-    
-    $scope.runFilter();
-    
 }]);
 
 app.controller('scrollTopCtrl', ['$scope', function ($scope) {
@@ -311,8 +292,9 @@ app.controller('mapCtrl',['$scope', '$window', function($scope, $window){
 
 app.controller('galleryCtrl', ['$scope', function($scope){
     
+    //Gallery Functionality
+    
     $scope.galleryOpen = false;
-    $scope.galleryImages = document.getElementsByClassName('image');
     $scope.galleryItems = document.getElementsByClassName('item');
     $scope.galleryItemsClean = [];
     
@@ -324,15 +306,6 @@ app.controller('galleryCtrl', ['$scope', function($scope){
         }
     });
     
-    $scope.primaryId = 0;
-   
-    $scope.primaryImage = $scope.galleryImages[$scope.primaryId].getElementsByTagName('img')[0].src;
-   
-    $scope.changePrimary = function(id){
-       $scope.primaryId = id;
-       $scope.primaryImage = $scope.galleryImages[$scope.primaryId].getElementsByTagName('img')[0].src;
-    }
-    
     $scope.selectedIndex = 0;
      
     $scope.openGallery = function(id){
@@ -340,24 +313,21 @@ app.controller('galleryCtrl', ['$scope', function($scope){
         $scope.galleryOpen = true;
         $scope.disable();
         $scope.selectedItem = $scope.galleryItemsClean[$scope.selectedIndex];
-        console.log($scope.selectedItem);
     }
    
     $scope.change = function(num){
         $scope.selectedIndex = $scope.selectedIndex += num;
         $scope.disable();
-        $scope.selectedItem = $scope.galleryItemsClean[$scope.selectedIndex]
-
+        $scope.selectedItem = $scope.galleryItemsClean[$scope.selectedIndex];
     }
     
-    $scope.selectedItem = $scope.galleryItemsClean[$scope.selectedIndex]
-
+    $scope.selectedItem = $scope.galleryItemsClean[$scope.selectedIndex];
    
     $scope.disable = function(){
         if($scope.selectedIndex == 0) {
             document.getElementById('prev').disabled = true;
             document.getElementById('next').disabled = false;
-        } else if($scope.selectedIndex == $scope.galleryItems.length - 1){
+        } else if($scope.selectedIndex == $scope.galleryItemsClean.length - 1){
             document.getElementById('prev').disabled = false;
             document.getElementById('next').disabled = true;
         } else if ($scope.galleryItemsClean.length == 1) {
@@ -367,7 +337,7 @@ app.controller('galleryCtrl', ['$scope', function($scope){
             document.getElementById('next').disabled = false;
             document.getElementById('prev').disabled = false;
         }
-   };
+    };
    
    (function($){
         $(document).keydown(function (e){
@@ -378,6 +348,17 @@ app.controller('galleryCtrl', ['$scope', function($scope){
             }
         });
     }(jQuery));
+   
+   //Primary Image Functionality
+    
+    $scope.primaryId = 0;
+    $scope.galleryImages = document.getElementsByClassName('image');
+    $scope.primaryImage = $scope.galleryImages[$scope.primaryId].getElementsByTagName('img')[0].src;
+   
+    $scope.changePrimary = function(id){
+       $scope.primaryId = id;
+       $scope.primaryImage = $scope.galleryImages[$scope.primaryId].getElementsByTagName('img')[0].src;
+    }
 }]);
 
 app.filter('preserveHtml', function($sce) {

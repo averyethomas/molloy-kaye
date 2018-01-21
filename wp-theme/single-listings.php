@@ -48,18 +48,18 @@
         $next = $current_index;
     }
 ?>
-<div class="page listing" data-ng-controller="galleryCtrl">
+<div class="page listing" data-ng-controller="galleryCtrl" ng-cloak>
     
     <div class="container">
         <?php   if( $prev != $current_index ) : ?>
         <div class="arrowsContainer left">
-            <a class="arrow" id="prev" href="<?php echo $prevLink; ?>"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+            <a class="arrow" id="back" href="<?php echo $prevLink; ?>"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
         </div>
         <?php   endif;
                 if( $next != $current_index ) :
         ?>
         <div class="arrowsContainer right">
-            <a class="arrow" id="next" href="<?php echo $nextLink; ?>"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+            <a class="arrow" id="forward" href="<?php echo $nextLink; ?>"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
         </div>
         <?php   endif; ?>
         <div class="top">

@@ -953,9 +953,9 @@ nav {
       .page.listing .arrowsContainer a.arrow .fa:hover {
         color: #FF850E;
         cursor: pointer; }
-    .page.listing .arrowsContainer a.arrow#prev {
+    .page.listing .arrowsContainer a.arrow#back {
       left: 0; }
-    .page.listing .arrowsContainer a.arrow#next {
+    .page.listing .arrowsContainer a.arrow#forward {
       right: 0; }
 
 .page.listing .container {
