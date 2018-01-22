@@ -123,53 +123,5 @@ function custom_excerpt_length( $length ) {
         return 20;
     }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
-    
-// REST API PARAMETERS
-
-add_filter( 'rest_query_vars', 'flux_allow_meta_query' );
-
-function flux_allow_meta_query( $valid_vars )
-{
-    $valid_vars = array_merge( $valid_vars, array( 'meta_key', 'meta_value', 'meta_compare' ) );
-    return $valid_vars;
-}
-
-function closed_rest() {
-	$args = array(
-	    'post_type'   	=> 'listings',
-	    'post_status' 	=> 'publish',
-	    'posts_per_page' 	=> -1,
-	    'meta_query'  	=> array(
-		array(
-		    'key'	=> 'sale_status',
-		    'value' => array('Closed'),
-		)
-	    ),
-	 );
-      
-	$meta_query = new WP_Query( $args );
-	
-	if($meta_query->have_posts()) {
-            //Define and empty array
-            $data = array();
-            // Store each post's title in the array
-            while($meta_query->have_posts()) {
-                $meta_query->the_post();
-                $data[] =  get_the_title();
-            }
-            // Return the data
-            return $meta_query;
-        } else {
-            // If there is no post
-            return 'No post to show';
-        }	
-}
-
-add_action( 'rest_api_init', function () {
-        register_rest_route( 'api-listings/v2', '/closed/', array(
-                'methods' => 'GET',
-                'callback' => 'closed_rest'
-        ) );
-} );
   
 ?>

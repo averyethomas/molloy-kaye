@@ -105,7 +105,7 @@
         endwhile;
         endif;
 ?>
-            <a class="cta" href="/molloy-kaye-wordpress/track-record">View Track Record</a>
+            <a class="cta" href="/track-record">View Track Record</a>
         </div>
     </div>
 </div>

@@ -18,7 +18,7 @@
     <nav>
         <div class="container">
             <div class="logo">
-                <a href="/molloy-kaye-wordpress/">
+                <a href="/">
                     <?php if ( get_theme_mod( 'long_logo' ) ) : ?>
  
                         <img src="<?php echo get_theme_mod( 'long_logo' ); ?>" />

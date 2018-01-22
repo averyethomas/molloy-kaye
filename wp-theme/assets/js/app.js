@@ -9,7 +9,7 @@ app.factory('apiCall', ['$location', function($location){
 
     var protocol = $location.protocol() + '://';
     var host = $location.host();
-    var origin = protocol + host + '/molloy-kaye-wordpress';
+    var origin = protocol + host;
     var apiPoint = appInfo.api_url;
     var apiCall = origin + '/' + apiPoint;
     
