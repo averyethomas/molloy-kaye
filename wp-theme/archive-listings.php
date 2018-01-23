@@ -43,11 +43,11 @@
 			<h5 ng-bind-html="listing.acf.sale_status | preserveHtml"></h5>
 		    </div>
                 </a>
+                <h4 ng-bind-html="listing.title.rendered | preserveHtml"></h4>
 		<div class="text-row">
                     <p>{{ listing.acf.price | preserveHtml }}</p>
                     <p class="cap-rate">Cap Rate: {{ listing.acf.cap_rate | preserveHtml }}</p>
                 </div>
-                <h4 ng-bind-html="listing.title.rendered | preserveHtml"></h4>
                 <p>{{ listing.acf.street_address | preserveHtml }}<br>{{ listing.acf.city_state | preserveHtml }}</p>
 		<a class="learn-more" data-ng-href="{{ listing.link }}">Learn More</a>
             </div>

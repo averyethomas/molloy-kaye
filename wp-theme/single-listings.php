@@ -4,7 +4,7 @@
     if ( have_posts() ) :
         while ( have_posts() ) : the_post();
     
-    $status = get_field('status');
+    $status = get_field('sale_status');
     $i = 0;
     $j = 1;
     
