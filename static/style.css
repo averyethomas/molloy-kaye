@@ -1580,7 +1580,8 @@ nav {
   font-family: "Source Sans Pro", sans-serif;
   margin: 2rem auto 1rem;
   display: block;
-  text-align: center; }
+  text-align: center;
+  border: none; }
   .page form .wpcf7-response-output.wpcf7-validation-errors {
     border: none; }
   .page form .wpcf7-response-output.wpcf7-mail-sent-ok {
